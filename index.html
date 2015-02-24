@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap-theme.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Battery Monitoring System</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Preference</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Group Setting</a>
+                    </li>
+                    <li><a href="#">Discharge Setting</a>
+                    </li>
+                    <li><a href="#">Network Connection</a>
+                    </li>
+                    <li><a href="#">Subscribe Notification</a>
+                    </li>
+                    <li><a href="#">My Account</a>
+                    </li>
+                </ul>
+            </li>
+        
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">More</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">System Log</a>
+                    </li>
+                    <li><a href="#">About E-Link</a>
+                    </li>
+                    <li><a href="#" data-toggle="modal" data-target="#contact-form">Contact Us</a>
+                    </li>
+                </ul>
+            </li>
+         
+            <li><a href="#" class="navbar-link">Log In</a></li>
+                </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-sm-3 col-md-2">
+          <ul class="nav">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Export</a></li>
+            <li><a href="">Nav item</a></li>
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+            <li><a href="">More navigation</a></li>
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-9 col-md-10">
+          <h1 class="page-header">Dashboard</h1>
+
+          <div class="row">
+            <div class="col-xs-6 col-sm-3">
+              <img src="img/bug.png" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3">
+              <img src="img/bug.png" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3">
+              <img src="img/bug.png" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3">
+              <img src="img/bug.png" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+          </div>
+
+          <h2>告警</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>位置</th>
+                  <th>訊息</th>
+                  <th>發生時間</th>
+                  <th>數值</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Gateway 1, Module A, Cell 5</td>
+                  <td>電壓錯誤</td>
+                  <td>08/10/2014 11:06</td>
+                  <td>7.84V</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Gateway 2, Module C, Cell 1</td>
+                  <td>電阻錯誤</td>
+                  <td>08/10/2014 11:06</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Gateway 4, Module C, Cell 3</td>
+                  <td>容量過低</td>
+                  <td>08/13/2014 20:06</td>
+                  <td>17%</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Gateway 4, Module D, Cell 4</td>
+                  <td>溫度過高</td>
+                  <td>08/15/2014 21:36</td>
+                  <td>40</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Gateway 4, Module C, Cell 5</td>
+                  <td>電流錯誤</td>
+                  <td>08/17/2014 00:20</td>
+                  <td>7.84A</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Gateway 1, Module A, Cell 5</td>
+                  <td>電壓錯誤</td>
+                  <td>08/10/2014 11:06</td>
+                  <td>7.84V</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- start of Contact Us Form Modal -->
+    <div class="modal fade" id="contact-form">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                    </button>
+                    <h4 class="modal-title">Contact AcBel</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="contact-name" class="col-sm-offset-2 col-sm-2 control-label">Name</label>
+                            <div class="col-sm-7">
+                                <input type="text" name="contact-name" class="form-control" id="contact-name" placeholder="Your Name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email" class="col-sm-offset-2 col-sm-2 control-label">Email</label>
+                            <div class="col-sm-7">
+                                <input type="email" name="contact-email" class="form-control" id="contact-email" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message" class="col-sm-offset-2 col-sm-2 control-label">Message</label>
+                            <div class="col-sm-7">
+                                <textarea type="text" name="contact-message" class="form-control" rows="7" id="contact-message" placeholder="Your Message here" required></textarea>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="submit" id="contact-submit" class="btn btn-primary col-sm-offset-5" value="Submit">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <!--<script>
+    (function(b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+            function() {
+                (b[l].q = b[l].q || []).push(arguments)
+            });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = '//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+    </script>-->
+</body>
+
+</html>
