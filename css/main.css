@@ -1,6 +1,6 @@
-.network-setting {
-  right: -385px;  /* start off behind the scenes */
+.subscribe, .account, .contact, .login {
+  right: -300px;  /* start off behind the scenes */
   height: 100%;
-  position: absolute;
-  width: 385px;
+  position: fixed;
+  width: 300px;
 }
