@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>放电设定 - 电池检测系统</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- this is ACE bootstrap.css-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/ace-fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/ace.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+    <!-- start of navbar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">电池检测系统</a>
+            </div>
+            <div id="navbar-menu" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- start of 偏好设定 tab -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">偏好设定 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="discharge.html">放电设定</a>
+                            </li>
+                            <li><a href="network.html">网路配置</a>
+                            </li>
+                            <li class="subscribe-btn"><a href="#">订阅通知</a>
+                            </li>
+                            <li class="account-btn"><a href="#">个人帐号</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- start of 更多设置 tab -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多设置 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="log.html">系统纪录</a>
+                            </li>
+                            <li><a href="about.html">关於易联科</a>
+                            </li>
+                            <li class="contact-btn"><a href="#">联络我们</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- start of 登入 tab -->
+                    <li class="login-btn"><a href="#">登入</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- start of content -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- start of left part: battery relationship tree -->
+            <div class="col-sm-3 col-md-2 left-part">
+                <ul class="nav">
+                    <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li><a href="#">Reports</a>
+                    </li>
+                    <li><a href="#">Analytics</a>
+                    </li>
+                    <li><a href="#">Export</a>
+                    </li>
+                    <li><a href="">Nav item</a>
+                    </li>
+                    <li><a href="">Nav item again</a>
+                    </li>
+                    <li><a href="">One more nav</a>
+                    </li>
+                    <li><a href="">Another nav item</a>
+                    </li>
+                    <li><a href="">More navigation</a>
+                    </li>
+                    <li><a href="">Nav item again</a>
+                    </li>
+                    <li><a href="">One more nav</a>
+                    </li>
+                    <li><a href="">Another nav item</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- start of middle part-->
+            <div class="col-sm-9 col-md-10 mid-part">
+                <!-- start of breadcrumb -->
+                <div class="breadcrumb">
+                    <li><a href="index.html">电池检测系统</a>
+                    </li>
+                    <li class="active">放电设定</li>
+                </div>
+                <!-- start of on-demand discharge form and scheduled discharged date-->
+                <div>
+                    <div class="col-sm-6 col-md-6">
+                        <form class="panel panel-primary">
+                            <div class="panel-heading">即时放电设定</div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>编号</th>
+                                        <th>名称</th>
+                                        <th>选项</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>放电％</td>
+                                        <td>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="discharge" id="discharge" value="50">50%
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="discharge" id="discharge" value="100">100%
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>自订放电</td>
+                                        <td>
+                                            <input type="text" name="discharge" id="discharge" class="form-control" placeholder="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>CC</td>
+                                        <td>
+                                            <input type="text" name="ondemand-cc" id="ondemand-cc" class="form-control" placeholder="1CC = 15分钟">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <input type="submit" name="ondemand-discharge-submit" id="ischarge-submit" class="btn btn-info" value="确认">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">排定放电日程</div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>编号</th>
+                                        <th>放电日期时间</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>03/03/2015 10:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>04/03/2015 10:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>05/03/2015 10:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>06/03/2015 10:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>07/03/2015 10:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>08/03/2015 10:00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12">
+                        <form class="panel panel-primary">
+                            <div class="panel-heading">未来放电设定</div>
+                            <div class="panel-body">
+                                <div class="col-sm-3 col-md-3">
+                                    <p class="text-center">三月, 2015</p>
+                                    <img src="img/calendar.png">
+                                </div>
+                                <div class="col-sm-3 col-md-3">
+                                    <p class="text-center">四月, 2015</p>
+                                    <img src="img/calendar.png">
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>项目</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>重复放电</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" name="repeat-days" id="repeat-days">
+                                                            <select name="repeat-days" id="repeat-days" class="form-control">
+                                                                <option value="" disabled selected>单位：天</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                                <option value="6">6</option>
+                                                                <option value="7">7</option>
+                                                                <option value="8">8</option>
+                                                                <option value="9">9</option>
+                                                                <option value="10">10</option>
+                                                            </select>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" name="repeat-months" id="repeat-months">
+                                                            <select name="repeat-months" id="repeat-months" class="form-control">
+                                                                <option value="" disabled selected>单位：月</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                                <option value="6">6</option>
+                                                                <option value="7">7</option>
+                                                                <option value="8">8</option>
+                                                                <option value="9">9</option>
+                                                                <option value="10">10</option>
+                                                                <option value="10">11</option>
+                                                                <option value="10">12</option>
+                                                            </select>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" name="repeat-years" id="repeat-years">
+                                                            <select name="repeat-years" id="repeat-years" class="form-control">
+                                                                <option value="" disabled selected>单位：年</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                                <option value="6">6</option>
+                                                                <option value="7">7</option>
+                                                                <option value="8">8</option>
+                                                                <option value="9">9</option>
+                                                                <option value="10">10</option>
+                                                            </select>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" name="repeat-6years" value="yes">电池使用六年後，每年进行放电
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>CC</td>
+                                                <td>
+                                                    <input type="text" name="scheduled-cc" id="scheduled-cc" class="form-control" placeholder="1CC = 15分钟">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <input type="submit" name="scheduled-discharge-submit" id="scheduled-discharge-submit" class="btn btn-info" value="确认">
+                                                    <input type="reset" button id="scheduled-discharge-reset" id="scheduled-discharge-reset" class="btn btn-danger" value="删除排定放电"></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- start of subscribe notification form -->
+                <form class="subscribe">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">订阅告警通知
+                            <button type="button" class="close subscribe-close"><span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>姓名</td>
+                                    <td>
+                                        <input type="text" name="subscribe-name" class="form-control" id="subscribe-name" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>电子信箱</td>
+                                    <td>
+                                        <input type="email" name="subscribe-email" class="form-control" id="subscribe-email">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>电话</td>
+                                    <td>
+                                        <input type="text" name="subscribe-phone" class="form-control" id="subscribe-phone">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="subscribe" id="subscribe" value="yes">订阅
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="subscribe" id="subscribe" value="no">取消订阅
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" id="subscribe-submit" class="btn btn-info btn-block" value="确认">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+                <!-- start of my account form -->
+                <form class="account">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">个人资料
+                            <button type="button" class="close account-close"><span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>帐号</td>
+                                    <td>shungyang@elink.com</td>
+                                </tr>
+                                <tr>
+                                    <td>姓名</td>
+                                    <td>
+                                        <input type="text" name="account-name" class="form-control" id="account-name">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>电子信箱</td>
+                                    <td>
+                                        <input type="email" name="account-email" class="form-control" id="account-email">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="panel-heading">修改密码
+                        </div>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>目前密码</td>
+                                    <td>
+                                        <input type="password" name="old-pwd" class="form-control" id="old-pwd">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>新密码</td>
+                                    <td>
+                                        <input type="password" name="new-pwd" class="form-control" id="new-pwd">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" id="pwd-submit" class="btn btn-warning btn-block" value="更新">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+                <!-- start of contact us form -->
+                <form class="contact">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">联络我们
+                            <button type="button" class="close contact-close"><span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>姓名</td>
+                                    <td>
+                                        <input type="text" name="contact-name" class="form-control" id="contact-name" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>电子信箱</td>
+                                    <td>
+                                        <input type="email" name="contact-email" class="form-control" id="contact-email" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>讯息</td>
+                                    <td>
+                                        <textarea type="text" name="contact-message" class="form-control" rows="7" id="contact-message" required></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" id="contact-submit" class="btn btn-success btn-block" value="送出">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+                <!-- start of log in form -->
+                <form class="login">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">登入
+                            <a href="#">&#40;建立新帐号&#41;</a>
+                            <button type="button" class="close login-close"><span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>电子信箱</td>
+                                    <td>
+                                        <input type="email" name="login-email" class="form-control" id="login-email" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>密码</td>
+                                    <td>
+                                        <input type="password" name="login-pwd" class="form-control" id="login-pwd" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" id="login-submit" class="btn btn-danger btn-block" value="登入">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <!--<script>
+    (function(b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+            function() {
+                (b[l].q = b[l].q || []).push(arguments)
+            });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = '//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+    </script>-->
+</body>
+
+</html>
