@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>网路配置 - 电池检测系统</title>
+    <title>系统纪录 - 电池检测系统</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -96,211 +96,198 @@
                 </ul>
             </div>
             <!-- start of middle part-->
-            <div class="col-sm-9 col-md-10 mid-part">
-                <!-- start of breadcrumb -->
+            <div class="col-sm-9 col-md-10">
                 <div class="breadcrumb">
                     <li><a href="index.html">电池检测系统</a>
                     </li>
-                    <li class="active">网路配置</li>
+                    <li class="active">系统纪录</li>
                 </div>
-                <!-- start of network connection form -->
-                <div>
-                    <form class="col-md-offset-2 col-md-7">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">LAN 网路设定列表</div>
-                            <table class="table">
+                <div role="tabpanel">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active"><a href="#alarm-log" data-toggle="tab">告警纪录</a>
+                        </li>
+                        <li><a href="#system-log" data-toggle="tab">系统使用纪录</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane active table-responsive" id="alarm-log">
+                            <form class="form-inline text-center">
+                                <input type="datetime-local" name="alarmlog-starttime" class="form-control" id="alarmlog-starttime">
+                                <input type="datetime-local" name="alarmlog-endtime" class="form-control" id="alarmlog-endtime">
+                                <input type="submit" id="alarmlog-submit" class="btn btn-danger btn-sm" value="搜寻">
+                            </form>
+                            <button type="button" class="btn btn-success pull-right">Excel</button>
+                            <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>编号</th>
-                                        <th>名称</th>
+                                        <th>#</th>
+                                        <th>位置</th>
+                                        <th>讯息</th>
+                                        <th>发生时间</th>
                                         <th>数值</th>
-                                        <th>备注</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>网路连接型态</td>
-                                        <td>
-                                            <select name="lan-connection-type" id="lan-connection-type" class="form-control">
-                                                <option value="static-ip">固定IP</option>
-                                                <option value="dynamic-ip">动态IP</option>
-                                                <option value="disable">停用</option>
-                                            </select>
-                                        </td>
-                                        <td></td>
+                                        <td>Gateway 1, Module A, Cell 5</td>
+                                        <td>电压错误</td>
+                                        <td>08/10/2014 11:06</td>
+                                        <td>7.84V</td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td>网路卡号码</td>
-                                        <td>
-                                            <input type="text" name="lan-mac-address" class="form-control" id="lan-mac-address">
-                                        </td>
-                                        <td></td>
+                                        <td>Gateway 2, Module C, Cell 1</td>
+                                        <td>电阻错误</td>
+                                        <td>08/10/2014 11:06</td>
+                                        <td>0</td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
-                                        <td>网路IP位址</td>
-                                        <td>
-                                            <input type="text" name="lan-ip-address" class="form-control" id="lan-ip-address">
-                                        </td>
-                                        <td></td>
+                                        <td>Gateway 4, Module C, Cell 3</td>
+                                        <td>容量过低</td>
+                                        <td>08/13/2014 20:06</td>
+                                        <td>17%</td>
                                     </tr>
                                     <tr>
                                         <td>4</td>
-                                        <td>网路遮罩</td>
-                                        <td>
-                                            <input type="text" name="lan-network-mask" class="form-control" id="lan-network-mask">
-                                        </td>
-                                        <td></td>
+                                        <td>Gateway 4, Module D, Cell 4</td>
+                                        <td>温度过高</td>
+                                        <td>08/15/2014 21:36</td>
+                                        <td>40</td>
                                     </tr>
                                     <tr>
                                         <td>5</td>
-                                        <td>预设闸道</td>
-                                        <td>
-                                            <input type="text" name="lan-default-gateway" class="form-control" id="lan-default-gateway">
-                                        </td>
-                                        <td></td>
+                                        <td>Gateway 4, Module C, Cell 5</td>
+                                        <td>电流错误</td>
+                                        <td>08/17/2014 00:20</td>
+                                        <td>7.84A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Gateway 1, Module A, Cell 5</td>
+                                        <td>电压错误</td>
+                                        <td>08/10/2014 11:06</td>
+                                        <td>7.84V</td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <div class="panel-heading">LAN DNS 设定</div>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th>数值</th>
-                                        <th>备注</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <input type="text" name="lan-dns" class="form-control" id="lan-dns">
-                                        </td>
-                                        <td>
-                                            <input type="submit" id="lan-dns-submit" class="btn btn-success" value="新增">
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="panel-heading">WAN 网路设定列表</div>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>编号</th>
-                                        <th>名称</th>
-                                        <th>数值</th>
-                                        <th>备注</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>网路连接型态</td>
-                                        <td>
-                                            <select name="wan-connection-type" id="wan-connection-type" class="form-control">
-                                                <option value="static-ip">固定IP</option>
-                                                <option value="dynamic-ip">动态IP</option>
-                                                <option value="disable">停用</option>
-                                            </select>
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>网路卡号码</td>
-                                        <td>
-                                            <input type="text" name="wan-mac-address" class="form-control" id="wan-mac-address">
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>网路IP位址</td>
-                                        <td>
-                                            <input type="text" name="wan-ip-address" class="form-control" id="wan-ip-address">
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>网路遮罩</td>
-                                        <td>
-                                            <input type="text" name="wan-network-mask" class="form-control" id="wan-network-mask">
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>预设闸道</td>
-                                        <td>
-                                            <input type="text" name="wan-default-gateway" class="form-control" id="wan-default-gateway">
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="panel-heading">WAN DNS 设定</div>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th>数值</th>
-                                        <th>备注</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <input type="text" name="wan-dns" class="form-control" id="wan-dns">
-                                        </td>
-                                        <td>
-                                            <input type="submit" id="wan-dns-submit" class="btn btn-success" value="新增">
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="panel-heading">读取资料周期设定</div>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th>数值</th>
-                                        <th>备注</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <input type="text" name="getdata-interval" class="form-control" id="getdata-interval" placeholder="单位：分钟">
-                                        </td>
-                                        <td>
-                                            <input type="submit" name="getdata-interval-submit" id="getdata-interval-submit" class="btn btn-success" value="修改">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <input type="submit" id="network-submit" class="btn btn-success" value="修改">
-                                            <input type="reset" id="network-reset" class="btn btn-success" value="重设">
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <nav class="text-center">
+                                <ul class="pagination">
+                                    <li>
+                                        <a href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#">1</a>
+                                    </li>
+                                    <li><a href="#">2</a>
+                                    </li>
+                                    <li><a href="#">3</a>
+                                    </li>
+                                    <li><a href="#">4</a>
+                                    </li>
+                                    <li><a href="#">5</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
-                    </form>
+                        <div class="tab-pane table-responsive" id="system-log">
+                            <form class="form-inline text-center">
+                                <input type="datetime-local" name="systemlog-starttime" class="form-control" id="systemlog-starttime">
+                                <input type="datetime-local" name="systemlog-endtime" class="form-control" id="systemlog-endtime">
+                                <input type="submit" id="systemlog-submit" class="btn btn-danger btn-sm" value="搜寻">
+                            </form>
+                            <button type="button" class="btn btn-success pull-right">Excel</button>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>发生时间</th>
+                                        <th>事件</th>
+                                        <th>使用者</th>
+                                        <th>IP</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>02/10/2015 11:06:43</td>
+                                        <td>使用者登入</td>
+                                        <td>MavisJheng</td>
+                                        <td>101.85.78.104</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>02/10/2015 11:06:57</td>
+                                        <td>修改密码</td>
+                                        <td>MavisJheng</td>
+                                        <td>101.85.78.104</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>02/10/2015 13:11:02</td>
+                                        <td>系统重启</td>
+                                        <td>ShungYang</td>
+                                        <td>192.213.80.213</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>02/10/2015 13:21:36</td>
+                                        <td>使用者登出</td>
+                                        <td>ShungYang</td>
+                                        <td>192.213.80.213</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>02/10/2015 14:46:00</td>
+                                        <td>新使用者注册</td>
+                                        <td>AnneSo</td>
+                                        <td>150.135.126.226</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>02/10/2015 15:29:10</td>
+                                        <td>修改密码</td>
+                                        <td>AnneSo</td>
+                                        <td>150.135.126.226</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <nav class="text-center">
+                                <ul class="pagination">
+                                    <li>
+                                        <a href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#">1</a>
+                                    </li>
+                                    <li><a href="#">2</a>
+                                    </li>
+                                    <li><a href="#">3</a>
+                                    </li>
+                                    <li><a href="#">4</a>
+                                    </li>
+                                    <li><a href="#">5</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <!-- start of subscribe notification form -->
