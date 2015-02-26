@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">  <!-- this is ACE bootstrap.css-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <!-- this is ACE bootstrap.css-->
     <link rel="stylesheet" type="text/css" href="css/ace-fonts.css">
     <link rel="stylesheet" type="text/css" href="css/ace.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
@@ -49,7 +50,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="#">系统纪录</a>
                             </li>
-                            <li><a href="#">关於易联科</a>
+                            <li><a href="about.html">关於易联科</a>
                             </li>
                             <li class="contact-btn"><a href="#">联络我们</a>
                             </li>
@@ -104,202 +105,202 @@
                 </div>
                 <!-- start of network connection form -->
                 <div>
-                <form class="col-md-offset-2 col-md-7">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">LAN 网路设定列表</div>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>编号</th>
-                                    <th>名称</th>
-                                    <th>数值</th>
-                                    <th>备注</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>网路连接型态</td>
-                                    <td>
-                                        <select name="lan-connection-type" id="lan-connection-type" class="form-control">
-                                            <option value="static-ip">固定IP</option>
-                                            <option value="dynamic-ip">动态IP</option>
-                                            <option value="disable">停用</option>
-                                        </select>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>网路卡号码</td>
-                                    <td>
-                                        <input type="text" name="lan-mac-address" class="form-control" id="lan-mac-address" required>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>网路IP位址</td>
-                                    <td>
-                                        <input type="text" name="lan-ip-address" class="form-control" id="lan-ip-address" required>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>网路遮罩</td>
-                                    <td>
-                                        <input type="text" name="lan-network-mask" class="form-control" id="lan-network-mask" required>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>预设闸道</td>
-                                    <td>
-                                        <input type="text" name="lan-default-gateway" class="form-control" id="lan-default-gateway" required>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="panel-heading">LAN DNS 设定</div>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th>数值</th>
-                                    <th>备注</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <input type="text" name="lan-dns" class="form-control" id="lan-dns" required>
-                                    </td>
-                                    <td>
-                                        <input type="submit" id="lan-dns-submit" class="btn btn-success" value="新增">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="panel-heading">WAN 网路设定列表</div>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>编号</th>
-                                    <th>名称</th>
-                                    <th>数值</th>
-                                    <th>备注</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>网路连接型态</td>
-                                    <td>
-                                        <select name="wan-connection-type" id="wan-connection-type" class="form-control">
-                                            <option value="static-ip">固定IP</option>
-                                            <option value="dynamic-ip">动态IP</option>
-                                            <option value="disable">停用</option>
-                                        </select>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>网路卡号码</td>
-                                    <td>
-                                        <input type="text" name="wan-mac-address" class="form-control" id="wan-mac-address" required>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>网路IP位址</td>
-                                    <td>
-                                        <input type="text" name="wan-ip-address" class="form-control" id="wan-ip-address" required>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>网路遮罩</td>
-                                    <td>
-                                        <input type="text" name="wan-network-mask" class="form-control" id="wan-network-mask" required>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>预设闸道</td>
-                                    <td>
-                                        <input type="text" name="wan-default-gateway" class="form-control" id="wan-default-gateway" required>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="panel-heading">WAN DNS 设定</div>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th>数值</th>
-                                    <th>备注</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <input type="text" name="wan-dns" class="form-control" id="wan-dns" required>
-                                    </td>
-                                    <td>
-                                        <input type="submit" id="wan-dns-submit" class="btn btn-success" value="新增">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="panel-heading">读取资料周期设定</div>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th>数值</th>
-                                    <th>备注</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <input type="text" name="data-interval" class="form-control" id="data-interval" placeholder="單位：分" required>
-                                    </td>
-                                    <td>
-                                        <input type="submit" name="data-interval-submit" id="data-interval-submit" class="btn btn-success" value="修改">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <input type="submit" id="network-submit" class="btn btn-success" value="修改">
-                                        <input type="reset" id="network-reset" class="btn btn-success" value="重设">
-                                    </td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </form>
+                    <form class="col-md-offset-2 col-md-7">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">LAN 网路设定列表</div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>编号</th>
+                                        <th>名称</th>
+                                        <th>数值</th>
+                                        <th>备注</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>网路连接型态</td>
+                                        <td>
+                                            <select name="lan-connection-type" id="lan-connection-type" class="form-control">
+                                                <option value="static-ip">固定IP</option>
+                                                <option value="dynamic-ip">动态IP</option>
+                                                <option value="disable">停用</option>
+                                            </select>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>网路卡号码</td>
+                                        <td>
+                                            <input type="text" name="lan-mac-address" class="form-control" id="lan-mac-address">
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>网路IP位址</td>
+                                        <td>
+                                            <input type="text" name="lan-ip-address" class="form-control" id="lan-ip-address">
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>网路遮罩</td>
+                                        <td>
+                                            <input type="text" name="lan-network-mask" class="form-control" id="lan-network-mask">
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>预设闸道</td>
+                                        <td>
+                                            <input type="text" name="lan-default-gateway" class="form-control" id="lan-default-gateway">
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="panel-heading">LAN DNS 设定</div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th>数值</th>
+                                        <th>备注</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <input type="text" name="lan-dns" class="form-control" id="lan-dns">
+                                        </td>
+                                        <td>
+                                            <input type="submit" id="lan-dns-submit" class="btn btn-success" value="新增">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="panel-heading">WAN 网路设定列表</div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>编号</th>
+                                        <th>名称</th>
+                                        <th>数值</th>
+                                        <th>备注</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>网路连接型态</td>
+                                        <td>
+                                            <select name="wan-connection-type" id="wan-connection-type" class="form-control">
+                                                <option value="static-ip">固定IP</option>
+                                                <option value="dynamic-ip">动态IP</option>
+                                                <option value="disable">停用</option>
+                                            </select>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>网路卡号码</td>
+                                        <td>
+                                            <input type="text" name="wan-mac-address" class="form-control" id="wan-mac-address">
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>网路IP位址</td>
+                                        <td>
+                                            <input type="text" name="wan-ip-address" class="form-control" id="wan-ip-address">
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>网路遮罩</td>
+                                        <td>
+                                            <input type="text" name="wan-network-mask" class="form-control" id="wan-network-mask">
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>预设闸道</td>
+                                        <td>
+                                            <input type="text" name="wan-default-gateway" class="form-control" id="wan-default-gateway">
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="panel-heading">WAN DNS 设定</div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th>数值</th>
+                                        <th>备注</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <input type="text" name="wan-dns" class="form-control" id="wan-dns">
+                                        </td>
+                                        <td>
+                                            <input type="submit" id="wan-dns-submit" class="btn btn-success" value="新增">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="panel-heading">读取资料周期设定</div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th>数值</th>
+                                        <th>备注</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <input type="text" name="getdata-interval" class="form-control" id="getdata-interval" placeholder="单位：分钟">
+                                        </td>
+                                        <td>
+                                            <input type="submit" name="getdata-interval-submit" id="getdata-interval-submit" class="btn btn-success" value="修改">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <input type="submit" id="network-submit" class="btn btn-success" value="修改">
+                                            <input type="reset" id="network-reset" class="btn btn-success" value="重设">
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
                 </div>
             </div>
             <!-- start of subscribe notification form -->
@@ -320,7 +321,7 @@
                             <tr>
                                 <td>电子信箱</td>
                                 <td>
-                                    <input type="text" name="subscribe-email" class="form-control" id="subscribe-email">
+                                    <input type="email" name="subscribe-email" class="form-control" id="subscribe-email">
                                 </td>
                             </tr>
                             <tr>
@@ -372,7 +373,7 @@
                             <tr>
                                 <td>电子信箱</td>
                                 <td>
-                                    <input type="text" name="account-email" class="form-control" id="account-email">
+                                    <input type="email" name="account-email" class="form-control" id="account-email">
                                 </td>
                             </tr>
                         </tbody>
@@ -421,7 +422,7 @@
                             <tr>
                                 <td>电子信箱</td>
                                 <td>
-                                    <input type="text" name="contact-email" class="form-control" id="contact-email" required>
+                                    <input type="email" name="contact-email" class="form-control" id="contact-email" required>
                                 </td>
                             </tr>
                             <tr>
@@ -444,7 +445,7 @@
             <form class="login">
                 <div class="panel panel-danger">
                     <div class="panel-heading">登入
-                    <a href="#">&#40;建立新帐号&#41;</a>
+                        <a href="#">&#40;建立新帐号&#41;</a>
                         <button type="button" class="close login-close"><span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -453,7 +454,7 @@
                             <tr>
                                 <td>电子信箱</td>
                                 <td>
-                                    <input type="text" name="login-email" class="form-control" id="login-email" required>
+                                    <input type="email" name="login-email" class="form-control" id="login-email" required>
                                 </td>
                             </tr>
                             <tr>
