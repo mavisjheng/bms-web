@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>系统纪录 - 电池检测系统</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- this is ACE bootstrap.css-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/ace-fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/ace.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+    <!-- start of navbar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">电池检测系统</a>
+            </div>
+            <div id="navbar-menu" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- start of 偏好设定 tab -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">偏好设定 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="discharge.html">放电设定</a>
+                            </li>
+                            <li><a href="network.html">网路配置</a>
+                            </li>
+                            <li class="subscribe-btn"><a href="#">订阅通知</a>
+                            </li>
+                            <li class="account-btn"><a href="#">个人帐号</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- start of 更多设置 tab -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多设置 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="log.html">系统纪录</a>
+                            </li>
+                            <li><a href="about.html">关於易联科</a>
+                            </li>
+                            <li class="contact-btn"><a href="#">联络我们</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- start of 登入 tab -->
+                    <li class="login-btn"><a href="#">登入</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- start of content -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- start of left part: battery relationship tree -->
+            <div class="col-sm-3 col-md-2 left-part">
+                <ul class="nav">
+                    <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li><a href="#">Reports</a>
+                    </li>
+                    <li><a href="#">Analytics</a>
+                    </li>
+                    <li><a href="#">Export</a>
+                    </li>
+                    <li><a href="">Nav item</a>
+                    </li>
+                    <li><a href="">Nav item again</a>
+                    </li>
+                    <li><a href="">One more nav</a>
+                    </li>
+                    <li><a href="">Another nav item</a>
+                    </li>
+                    <li><a href="">More navigation</a>
+                    </li>
+                    <li><a href="">Nav item again</a>
+                    </li>
+                    <li><a href="">One more nav</a>
+                    </li>
+                    <li><a href="">Another nav item</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- start of middle part-->
+            <div class="col-sm-9 col-md-10">
+                <div class="breadcrumb">
+                    <li><a href="index.html">电池检测系统</a>
+                    </li>
+                    <li class="active">系统纪录</li>
+                </div>
+                <div role="tabpanel">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active"><a href="#alarm-log" data-toggle="tab">告警纪录</a>
+                        </li>
+                        <li><a href="#system-log" data-toggle="tab">系统使用纪录</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane active table-responsive" id="alarm-log">
+                            <form class="form-inline text-center">
+                                <input type="datetime-local" name="alarmlog-starttime" class="form-control" id="alarmlog-starttime">
+                                <input type="datetime-local" name="alarmlog-endtime" class="form-control" id="alarmlog-endtime">
+                                <input type="submit" id="alarmlog-submit" class="btn btn-danger btn-sm" value="搜寻">
+                            </form>
+                            <button type="button" class="btn btn-success pull-right">Excel</button>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>位置</th>
+                                        <th>讯息</th>
+                                        <th>发生时间</th>
+                                        <th>数值</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Gateway 1, Module A, Cell 5</td>
+                                        <td>电压错误</td>
+                                        <td>08/10/2014 11:06</td>
+                                        <td>7.84V</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Gateway 2, Module C, Cell 1</td>
+                                        <td>电阻错误</td>
+                                        <td>08/10/2014 11:06</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Gateway 4, Module C, Cell 3</td>
+                                        <td>容量过低</td>
+                                        <td>08/13/2014 20:06</td>
+                                        <td>17%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Gateway 4, Module D, Cell 4</td>
+                                        <td>温度过高</td>
+                                        <td>08/15/2014 21:36</td>
+                                        <td>40</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Gateway 4, Module C, Cell 5</td>
+                                        <td>电流错误</td>
+                                        <td>08/17/2014 00:20</td>
+                                        <td>7.84A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Gateway 1, Module A, Cell 5</td>
+                                        <td>电压错误</td>
+                                        <td>08/10/2014 11:06</td>
+                                        <td>7.84V</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <nav class="text-center">
+                                <ul class="pagination">
+                                    <li>
+                                        <a href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#">1</a>
+                                    </li>
+                                    <li><a href="#">2</a>
+                                    </li>
+                                    <li><a href="#">3</a>
+                                    </li>
+                                    <li><a href="#">4</a>
+                                    </li>
+                                    <li><a href="#">5</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="tab-pane table-responsive" id="system-log">
+                            <form class="form-inline text-center">
+                                <input type="datetime-local" name="systemlog-starttime" class="form-control" id="systemlog-starttime">
+                                <input type="datetime-local" name="systemlog-endtime" class="form-control" id="systemlog-endtime">
+                                <input type="submit" id="systemlog-submit" class="btn btn-danger btn-sm" value="搜寻">
+                            </form>
+                            <button type="button" class="btn btn-success pull-right">Excel</button>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>发生时间</th>
+                                        <th>事件</th>
+                                        <th>使用者</th>
+                                        <th>IP</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>02/10/2015 11:06:43</td>
+                                        <td>使用者登入</td>
+                                        <td>MavisJheng</td>
+                                        <td>101.85.78.104</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>02/10/2015 11:06:57</td>
+                                        <td>修改密码</td>
+                                        <td>MavisJheng</td>
+                                        <td>101.85.78.104</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>02/10/2015 13:11:02</td>
+                                        <td>系统重启</td>
+                                        <td>ShungYang</td>
+                                        <td>192.213.80.213</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>02/10/2015 13:21:36</td>
+                                        <td>使用者登出</td>
+                                        <td>ShungYang</td>
+                                        <td>192.213.80.213</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>02/10/2015 14:46:00</td>
+                                        <td>新使用者注册</td>
+                                        <td>AnneSo</td>
+                                        <td>150.135.126.226</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>02/10/2015 15:29:10</td>
+                                        <td>修改密码</td>
+                                        <td>AnneSo</td>
+                                        <td>150.135.126.226</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <nav class="text-center">
+                                <ul class="pagination">
+                                    <li>
+                                        <a href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#">1</a>
+                                    </li>
+                                    <li><a href="#">2</a>
+                                    </li>
+                                    <li><a href="#">3</a>
+                                    </li>
+                                    <li><a href="#">4</a>
+                                    </li>
+                                    <li><a href="#">5</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- start of subscribe notification form -->
+            <form class="subscribe">
+                <div class="panel panel-info">
+                    <div class="panel-heading">订阅告警通知
+                        <button type="button" class="close subscribe-close"><span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>姓名</td>
+                                <td>
+                                    <input type="text" name="subscribe-name" class="form-control" id="subscribe-name" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>电子信箱</td>
+                                <td>
+                                    <input type="email" name="subscribe-email" class="form-control" id="subscribe-email">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>电话</td>
+                                <td>
+                                    <input type="text" name="subscribe-phone" class="form-control" id="subscribe-phone">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="subscribe" id="subscribe" value="yes">订阅
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="subscribe" id="subscribe" value="no">取消订阅
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="submit" id="subscribe-submit" class="btn btn-info btn-block" value="确认">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+            <!-- start of my account form -->
+            <form class="account">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">个人资料
+                        <button type="button" class="close account-close"><span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>帐号</td>
+                                <td>shungyang@elink.com</td>
+                            </tr>
+                            <tr>
+                                <td>姓名</td>
+                                <td>
+                                    <input type="text" name="account-name" class="form-control" id="account-name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>电子信箱</td>
+                                <td>
+                                    <input type="email" name="account-email" class="form-control" id="account-email">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="panel-heading">修改密码
+                    </div>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>目前密码</td>
+                                <td>
+                                    <input type="password" name="old-pwd" class="form-control" id="old-pwd">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>新密码</td>
+                                <td>
+                                    <input type="password" name="new-pwd" class="form-control" id="new-pwd">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="submit" id="pwd-submit" class="btn btn-warning btn-block" value="更新">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+            <!-- start of contact us form -->
+            <form class="contact">
+                <div class="panel panel-success">
+                    <div class="panel-heading">联络我们
+                        <button type="button" class="close contact-close"><span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>姓名</td>
+                                <td>
+                                    <input type="text" name="contact-name" class="form-control" id="contact-name" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>电子信箱</td>
+                                <td>
+                                    <input type="email" name="contact-email" class="form-control" id="contact-email" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>讯息</td>
+                                <td>
+                                    <textarea type="text" name="contact-message" class="form-control" rows="7" id="contact-message" required></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="submit" id="contact-submit" class="btn btn-success btn-block" value="送出">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+            <!-- start of log in form -->
+            <form class="login">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">登入
+                        <a href="#">&#40;建立新帐号&#41;</a>
+                        <button type="button" class="close login-close"><span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>电子信箱</td>
+                                <td>
+                                    <input type="email" name="login-email" class="form-control" id="login-email" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>密码</td>
+                                <td>
+                                    <input type="password" name="login-pwd" class="form-control" id="login-pwd" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="submit" id="login-submit" class="btn btn-danger btn-block" value="登入">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <!--<script>
+    (function(b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+            function() {
+                (b[l].q = b[l].q || []).push(arguments)
+            });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = '//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+    </script>-->
+</body>
+
+</html>
