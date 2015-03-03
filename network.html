@@ -2,502 +2,942 @@
 <html lang="en">
 
 <head>
-    <title>网路配置 - 电池检测系统</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- this is ACE bootstrap.css-->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/ace-fonts.css">
-    <link rel="stylesheet" type="text/css" href="css/ace.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap-theme.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>系统配置 - 电池检测系统</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="css/vendor/ace-bootstrap.css" />
+    <link rel="stylesheet" href="css/vendor/font-awesome.css" />
+
+    <!-- page specific plugin styles -->
+
+    <!-- text fonts -->
+    <link rel="stylesheet" href="css/vendor/ace-fonts.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="css/vendor/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+    <!--[if lte IE 9]>
+            <link rel="stylesheet" href="../assets/css/ace-part2.css" class="ace-main-stylesheet" />
+        <![endif]-->
+
+    <!--[if lte IE 9]>
+          <link rel="stylesheet" href="../assets/css/ace-ie.css" />
+        <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+    <script src="js/ace-js/ace-extra.js"></script>
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+    <!--[if lte IE 8]>
+        <script src="../assets/js/html5shiv.js"></script>
+        <script src="../assets/js/respond.js"></script>
+        <![endif]-->
 </head>
 
-<body>
-    <!-- start of navbar -->
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">电池检测系统</a>
+<body class="no-skin">
+    <!-- #section:basics/navbar.layout -->
+    <div id="navbar" class="navbar navbar-default">
+        <script type="text/javascript">
+        try {
+            ace.settings.check('navbar', 'fixed')
+        } catch (e) {}
+        </script>
+
+        <div class="navbar-container" id="navbar-container">
+            <!-- #section:basics/sidebar.mobile.toggle -->
+            <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+                <span class="sr-only">Toggle sidebar</span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- /section:basics/sidebar.mobile.toggle -->
+            <div class="navbar-header pull-left">
+                <!-- #section:basics/navbar.layout.brand -->
+                <a href="index.html" class="navbar-brand">
+                    <small>
+                        <i class="fa fa-desktop"></i>
+                        电池检测系统
+                    </small>
+                </a>
+
+                <!-- /section:basics/navbar.layout.brand -->
+
+                <!-- #section:basics/navbar.toggle -->
+
+                <!-- /section:basics/navbar.toggle -->
             </div>
-            <div id="navbar-menu" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- start of 偏好设定 tab -->
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">偏好设定 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="discharge.html">放电设定</a>
-                            </li>
-                            <li><a href="network.html">网路配置</a>
-                            </li>
-                            <li class="subscribe-btn"><a href="#">订阅通知</a>
-                            </li>
-                            <li class="account-btn"><a href="#">个人帐号</a>
+
+            <!-- #section:basics/navbar.dropdown -->
+            <div class="navbar-buttons navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav">
+                    <li class="grey">
+                        <a href="log.html">
+                            <i class="ace-icon fa fa-history"></i> 系统纪录
+                        </a>
+                    </li>
+
+                    <li class="purple">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="ace-icon fa fa-cog"></i> 偏好设定
+                        </a>
+
+                        <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+                            <li class="dropdown-content">
+                                <ul class="dropdown-menu dropdown-navbar navbar-pink">
+                                    <li>
+                                        <a href="discharge.html">
+                                            <div class="clearfix">
+                                                <span class="pull-left">
+                                                        <i class="btn btn-xs no-hover btn-danger fa fa-bolt"></i>
+                                                        放电设定
+                                                    </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="network.html">
+                                            <div class="clearfix">
+                                                <span class="pull-left">
+                                                        <i class="btn btn-xs no-hover btn-primary fa fa-wrench"></i>
+                                                        系统配置
+                                                    </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
-                    <!-- start of 更多设置 tab -->
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多设置 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="log.html">系统纪录</a>
-                            </li>
-                            <li><a href="about.html">关於易联科</a>
-                            </li>
-                            <li class="contact-btn"><a href="#">联络我们</a>
-                            </li>
-                        </ul>
+
+                    <li class="green">
+                        <a href="more.html">
+                            <i class="ace-icon fa fa-info-circle"></i> 更多选项
+                        </a>
                     </li>
-                    <!-- start of 登入 tab -->
-                    <li class="login-btn"><a href="#">登入</a>
+
+                    <li class="light-blue login-btn">
+                        <a href="#">
+                            <i class="ace-icon fa fa-sign-in"></i> 登入
+                        </a>
                     </li>
                 </ul>
             </div>
+            <!-- /section:basics/navbar.dropdown -->
         </div>
-    </nav>
-    <!-- start of content -->
-    <div class="container-fluid">
-        <div class="row">
-            <!-- start of left part: battery relationship tree -->
-            <div class="col-sm-3 col-md-2 left-part">
-                <ul class="nav">
-                    <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li><a href="#">Reports</a>
-                    </li>
-                    <li><a href="#">Analytics</a>
-                    </li>
-                    <li><a href="#">Export</a>
-                    </li>
-                    <li><a href="">Nav item</a>
-                    </li>
-                    <li><a href="">Nav item again</a>
-                    </li>
-                    <li><a href="">One more nav</a>
-                    </li>
-                    <li><a href="">Another nav item</a>
-                    </li>
-                    <li><a href="">More navigation</a>
-                    </li>
-                    <li><a href="">Nav item again</a>
-                    </li>
-                    <li><a href="">One more nav</a>
-                    </li>
-                    <li><a href="">Another nav item</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- start of middle part-->
-            <div class="col-sm-9 col-md-10 mid-part">
-                <!-- start of breadcrumb -->
-                <div class="breadcrumb">
-                    <li><a href="index.html">电池检测系统</a>
-                    </li>
-                    <li class="active">网路配置</li>
-                </div>
-                <!-- start of network connection form -->
-                <div>
-                    <form class="col-md-offset-2 col-md-7">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">LAN 网路设定列表</div>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>编号</th>
-                                        <th>名称</th>
-                                        <th>数值</th>
-                                        <th>备注</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>网路连接型态</td>
-                                        <td>
-                                            <select name="lan-connection-type" id="lan-connection-type" class="form-control">
-                                                <option value="static-ip">固定IP</option>
-                                                <option value="dynamic-ip">动态IP</option>
-                                                <option value="disable">停用</option>
-                                            </select>
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>网路卡号码</td>
-                                        <td>
-                                            <input type="text" name="lan-mac-address" class="form-control" id="lan-mac-address">
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>网路IP位址</td>
-                                        <td>
-                                            <input type="text" name="lan-ip-address" class="form-control" id="lan-ip-address">
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>网路遮罩</td>
-                                        <td>
-                                            <input type="text" name="lan-network-mask" class="form-control" id="lan-network-mask">
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>预设闸道</td>
-                                        <td>
-                                            <input type="text" name="lan-default-gateway" class="form-control" id="lan-default-gateway">
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="panel-heading">LAN DNS 设定</div>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th>数值</th>
-                                        <th>备注</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <input type="text" name="lan-dns" class="form-control" id="lan-dns">
-                                        </td>
-                                        <td>
-                                            <input type="submit" id="lan-dns-submit" class="btn btn-success" value="新增">
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="panel-heading">WAN 网路设定列表</div>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>编号</th>
-                                        <th>名称</th>
-                                        <th>数值</th>
-                                        <th>备注</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>网路连接型态</td>
-                                        <td>
-                                            <select name="wan-connection-type" id="wan-connection-type" class="form-control">
-                                                <option value="static-ip">固定IP</option>
-                                                <option value="dynamic-ip">动态IP</option>
-                                                <option value="disable">停用</option>
-                                            </select>
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>网路卡号码</td>
-                                        <td>
-                                            <input type="text" name="wan-mac-address" class="form-control" id="wan-mac-address">
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>网路IP位址</td>
-                                        <td>
-                                            <input type="text" name="wan-ip-address" class="form-control" id="wan-ip-address">
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>网路遮罩</td>
-                                        <td>
-                                            <input type="text" name="wan-network-mask" class="form-control" id="wan-network-mask">
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>预设闸道</td>
-                                        <td>
-                                            <input type="text" name="wan-default-gateway" class="form-control" id="wan-default-gateway">
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="panel-heading">WAN DNS 设定</div>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th>数值</th>
-                                        <th>备注</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <input type="text" name="wan-dns" class="form-control" id="wan-dns">
-                                        </td>
-                                        <td>
-                                            <input type="submit" id="wan-dns-submit" class="btn btn-success" value="新增">
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="panel-heading">读取资料周期设定</div>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th>数值</th>
-                                        <th>备注</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <input type="text" name="getdata-interval" class="form-control" id="getdata-interval" placeholder="单位：分钟">
-                                        </td>
-                                        <td>
-                                            <input type="submit" name="getdata-interval-submit" id="getdata-interval-submit" class="btn btn-success" value="修改">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <input type="submit" id="network-submit" class="btn btn-success" value="修改">
-                                            <input type="reset" id="network-reset" class="btn btn-success" value="重设">
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- start of subscribe notification form -->
-            <form class="subscribe">
-                <div class="panel panel-info">
-                    <div class="panel-heading">订阅告警通知
-                        <button type="button" class="close subscribe-close"><span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>姓名</td>
-                                <td>
-                                    <input type="text" name="subscribe-name" class="form-control" id="subscribe-name" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>电子信箱</td>
-                                <td>
-                                    <input type="email" name="subscribe-email" class="form-control" id="subscribe-email">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>电话</td>
-                                <td>
-                                    <input type="text" name="subscribe-phone" class="form-control" id="subscribe-phone">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="subscribe" id="subscribe" value="yes">订阅
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="subscribe" id="subscribe" value="no">取消订阅
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <input type="submit" id="subscribe-submit" class="btn btn-info btn-block" value="确认">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </form>
-            <!-- start of my account form -->
-            <form class="account">
-                <div class="panel panel-warning">
-                    <div class="panel-heading">个人资料
-                        <button type="button" class="close account-close"><span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>帐号</td>
-                                <td>shungyang@elink.com</td>
-                            </tr>
-                            <tr>
-                                <td>姓名</td>
-                                <td>
-                                    <input type="text" name="account-name" class="form-control" id="account-name">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>电子信箱</td>
-                                <td>
-                                    <input type="email" name="account-email" class="form-control" id="account-email">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="panel-heading">修改密码
-                    </div>
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>目前密码</td>
-                                <td>
-                                    <input type="password" name="old-pwd" class="form-control" id="old-pwd">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>新密码</td>
-                                <td>
-                                    <input type="password" name="new-pwd" class="form-control" id="new-pwd">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <input type="submit" id="pwd-submit" class="btn btn-warning btn-block" value="更新">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </form>
-            <!-- start of contact us form -->
-            <form class="contact">
-                <div class="panel panel-success">
-                    <div class="panel-heading">联络我们
-                        <button type="button" class="close contact-close"><span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>姓名</td>
-                                <td>
-                                    <input type="text" name="contact-name" class="form-control" id="contact-name" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>电子信箱</td>
-                                <td>
-                                    <input type="email" name="contact-email" class="form-control" id="contact-email" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>讯息</td>
-                                <td>
-                                    <textarea type="text" name="contact-message" class="form-control" rows="7" id="contact-message" required></textarea>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <input type="submit" id="contact-submit" class="btn btn-success btn-block" value="送出">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </form>
-            <!-- start of log in form -->
-            <form class="login">
-                <div class="panel panel-danger">
-                    <div class="panel-heading">登入
-                        <a href="#">&#40;建立新帐号&#41;</a>
-                        <button type="button" class="close login-close"><span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>电子信箱</td>
-                                <td>
-                                    <input type="email" name="login-email" class="form-control" id="login-email" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>密码</td>
-                                <td>
-                                    <input type="password" name="login-pwd" class="form-control" id="login-pwd" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <input type="submit" id="login-submit" class="btn btn-danger btn-block" value="登入">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </form>
-        </div>
+        <!-- /.navbar-container -->
     </div>
 
-    <script src="js/vendor/jquery-1.11.2.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    <script src="js/plugins.js"></script>
+    <!-- /section:basics/navbar.layout -->
+    <div class="main-container" id="main-container">
+        <!-- #section:basics/sidebar -->
+        <div id="sidebar" class="sidebar responsive">
+            <script type="text/javascript">
+            try {
+                ace.settings.check('sidebar', 'fixed')
+            } catch (e) {}
+            </script>
+
+            <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                <button class="btn btn-default btn-block">
+                    <i class="ace-icon fa fa-edit"></i> 编辑
+                </button>
+                <!-- /section:basics/sidebar.layout.shortcuts -->
+            </div>
+            <!-- /.sidebar-shortcuts -->
+
+            <ul class="nav nav-list">
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-tachometer"></i>
+                        <span class="menu-text">
+                                系统 XWZ
+                            </span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 1
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 P
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 A
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 B
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 C
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 D
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 E
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 TU
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 NN
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 K
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 L
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 M
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 N
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-tachometer"></i>
+                        <span class="menu-text">
+                                系统 CHA
+                            </span>
+
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 JH
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 KP
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 A
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 B
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 C
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 D
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 E
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 ASO
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 OCD
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 K
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 L
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 M
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 N
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-tachometer"></i>
+                        <span class="menu-text">
+                                系统 TPE
+                            </span>
+
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 MNL
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 NHK
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 A
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 B
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 C
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 D
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 E
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 NASA
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 JP
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 K
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 L
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 M
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 N
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /.nav-list -->
+
+            <!-- #section:basics/sidebar.layout.minimize -->
+            <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+                <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+            </div>
+
+            <!-- /section:basics/sidebar.layout.minimize -->
+            <script type="text/javascript">
+            try {
+                ace.settings.check('sidebar', 'collapsed')
+            } catch (e) {}
+            </script>
+        </div>
+        <!-- /section:basics/sidebar -->
+
+        <div class="main-content">
+            <div class="main-content-inner">
+                <div id="breadcrumbs" class="breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li><i class="fa fa-home home-icon"></i> <a href="index.html">电池检测系统</a>
+                        </li>
+                        <li class="active">系统配置</li>
+                    </ul>
+                </div>
+                <!-- /.breadcrumb -->
+
+                <div class="page-content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="tabbable tabs-left">
+                                <ul class="nav nav-tabs" id="myTab3">
+                                    <li class="active">
+                                        <a data-toggle="tab" href="#home3"><i class="pink ace-icon fa fa-spinner bigger-110"></i> LAN 网路设定列表</a>
+                                    </li>
+
+                                    <li>
+                                        <a data-toggle="tab" href="#profile3"><i class="blue ace-icon fa fa-external-link bigger-110"></i> WAN 网路设定列表</a>
+                                    </li>
+
+                                    <li>
+                                        <a data-toggle="tab" href="#dropdown13"><i class="purple ace-icon fa fa-repeat bigger-110"></i> 读取资料周期设定</a>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div id="home3" class="tab-pane in active">
+                                        <form>
+                                            <table id="simple-table" class="table table-striped table-bordered table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>编号</th>
+                                                        <th>名称</th>
+                                                        <th>数值</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>网路连接型态</td>
+                                                        <td>
+                                                            <select name="lan-connection-type" id="lan-connection-type" class="form-control">
+                                                                <option value="static-ip">固定IP</option>
+                                                                <option value="dynamic-ip">动态IP</option>
+                                                                <option value="disable">停用</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>网路卡号码</td>
+                                                        <td>
+                                                            <input type="text" name="lan-mac-address" class="form-control" id="lan-mac-address">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>网路IP位址</td>
+                                                        <td>
+                                                            <input type="text" name="lan-ip-address" class="form-control" id="lan-ip-address">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>网路遮罩</td>
+                                                        <td>
+                                                            <input type="text" name="lan-network-mask" class="form-control" id="lan-network-mask">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td>预设闸道</td>
+                                                        <td>
+                                                            <input type="text" name="lan-default-gateway" class="form-control" id="lan-default-gateway">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6</td>
+                                                        <td>DNS 设定</td>
+                                                        <td>
+                                                            <input type="text" name="lan-dns" class="form-control" id="lan-dns" required>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>
+                                                            <button type="submit" class="btn btn-sm btn-success">
+                                                                新增
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </form>
+                                    </div>
+
+                                    <div id="profile3" class="tab-pane">
+                                        <form>
+                                            <table id="simple-table" class="table table-striped table-bordered table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>编号</th>
+                                                        <th>名称</th>
+                                                        <th>数值</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>网路连接型态</td>
+                                                        <td>
+                                                            <select name="lan-connection-type" id="lan-connection-type" class="form-control">
+                                                                <option value="static-ip">固定IP</option>
+                                                                <option value="dynamic-ip">动态IP</option>
+                                                                <option value="disable">停用</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>网路卡号码</td>
+                                                        <td>
+                                                            <input type="text" name="lan-mac-address" class="form-control" id="lan-mac-address">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>网路IP位址</td>
+                                                        <td>
+                                                            <input type="text" name="lan-ip-address" class="form-control" id="lan-ip-address">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>网路遮罩</td>
+                                                        <td>
+                                                            <input type="text" name="lan-network-mask" class="form-control" id="lan-network-mask">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td>预设闸道</td>
+                                                        <td>
+                                                            <input type="text" name="lan-default-gateway" class="form-control" id="lan-default-gateway">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6</td>
+                                                        <td>DNS 设定</td>
+                                                        <td>
+                                                            <input type="text" name="lan-dns" class="form-control" id="lan-dns" required>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>
+                                                            <button type="submit" class="btn btn-sm btn-success">
+                                                                新增
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </form>
+                                    </div>
+
+                                    <div id="dropdown13" class="tab-pane">
+                                        <form>
+                                            <table id="simple-table" class="table table-striped table-bordered table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>名称</th>
+                                                        <th>数值</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>资料更新周期</td>
+                                                        <td>
+                                                            <input type="text" name="getdata-interval" class="form-control" id="getdata-interval" placeholder="单位：分钟" required>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>
+                                                            <button type="submit" class="btn btn-sm btn-success">
+                                                                更新
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.page-content -->
+            </div>
+        </div>
+        <!-- /.main-content -->
+    </div>
+    <!-- /.main-content -->
+    </div>
+    <!-- /.main-container -->
+
+    <!-- basic scripts -->
+
+    <!--[if !IE]> -->
+    <script type="text/javascript">
+    window.jQuery || document.write("<script src='js/ace-js/jquery.js'>" + "<" + "/script>");
+    </script>
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='../assets/js/jquery1x.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+    <script type="text/javascript">
+    if ('ontouchstart' in document.documentElement) document.write("<script src='js/ace-js/jquery.mobile.custom.js'>" + "<" + "/script>");
+    </script>
+    <script src="js/ace-js/bootstrap.js"></script>
+    <!-- page specific plugin scripts -->
+
+    <!-- ace scripts -->
+    <script src="js/ace-js/ace/elements.scroller.js"></script>
+    <script src="js/ace-js/ace/elements.colorpicker.js"></script>
+    <script src="js/ace-js/ace/elements.fileinput.js"></script>
+    <script src="js/ace-js/ace/elements.typeahead.js"></script>
+    <script src="js/ace-js/ace/elements.wysiwyg.js"></script>
+    <script src="js/ace-js/ace/elements.spinner.js"></script>
+    <script src="js/ace-js/ace/elements.treeview.js"></script>
+    <script src="js/ace-js/ace/elements.wizard.js"></script>
+    <script src="js/ace-js/ace/elements.aside.js"></script>
+    <script src="js/ace-js/ace/ace.js"></script>
+    <script src="js/ace-js/ace/ace.ajax-content.js"></script>
+    <script src="js/ace-js/ace/ace.touch-drag.js"></script>
+    <script src="js/ace-js/ace/ace.sidebar.js"></script>
+    <script src="js/ace-js/ace/ace.sidebar-scroll-1.js"></script>
+    <script src="js/ace-js/ace/ace.submenu-hover.js"></script>
+    <script src="js/ace-js/ace/ace.widget-box.js"></script>
+    <script src="js/ace-js/ace/ace.settings.js"></script>
+    <script src="js/ace-js/ace/ace.settings-rtl.js"></script>
+    <script src="js/ace-js/ace/ace.settings-skin.js"></script>
+    <script src="js/ace-js/ace/ace.widget-on-reload.js"></script>
+    <script src="js/ace-js/ace/ace.searchbox-autocomplete.js"></script>
+
+    <!-- inline scripts related to this page -->
     <script src="js/main.js"></script>
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <!--<script>
-    (function(b, o, i, l, e, r) {
-        b.GoogleAnalyticsObject = l;
-        b[l] || (b[l] =
-            function() {
-                (b[l].q = b[l].q || []).push(arguments)
-            });
-        b[l].l = +new Date;
-        e = o.createElement(i);
-        r = o.getElementsByTagName(i)[0];
-        e.src = '//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e, r)
-    }(window, document, 'script', 'ga'));
-    ga('create', 'UA-XXXXX-X');
-    ga('send', 'pageview');
-    </script>-->
+    <!-- the following scripts are used in demo only for onpage help and you don't need them -->
+    <!--link rel="stylesheet" href="../assets/css/ace.onpage-help.css" /-->
+    <!--link rel="stylesheet" href="../docs/assets/js/themes/sunburst.css" /-->
+
+    <script type="text/javascript">
+    ace.vars['base'] = '..';
+    </script>
+    <script src="js/ace-js/ace/elements.onpage-help.js"></script>
+    <script src="js/ace-js/ace/ace.onpage-help.js"></script>
+    <!--script src="../docs/assets/js/rainbow.js"></script>
+        <script src="../docs/assets/js/language/generic.js"></script>
+        <script src="../docs/assets/js/language/html.js"></script>
+        <script src="../docs/assets/js/language/css.js"></script>
+        <script src="../docs/assets/js/language/javascript.js"></script-->
 </body>
 
 </html>
