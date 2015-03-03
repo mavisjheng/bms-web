@@ -2,433 +2,1154 @@
 <html lang="en">
 
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
     <title>首页 - 电池检测系统</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- this is ACE bootstrap.css >
-    <link rel="stylesheet" type="text/css" href="css/vendor/ace-bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="css/vendor/ace-fonts.css">
-    <link rel="stylesheet" type="text/css" href="css/vendor/ace.css"> -->
 
-    <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap-theme.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="css/vendor/ace-bootstrap.css" />
+    <link rel="stylesheet" href="css/vendor/font-awesome.css" />
+
+    <!-- page specific plugin styles -->
+
+    <!-- text fonts -->
+    <link rel="stylesheet" href="css/vendor/ace-fonts.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="css/vendor/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+    <!--[if lte IE 9]>
+            <link rel="stylesheet" href="../assets/css/ace-part2.css" class="ace-main-stylesheet" />
+        <![endif]-->
+
+    <!--[if lte IE 9]>
+          <link rel="stylesheet" href="../assets/css/ace-ie.css" />
+        <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+    <script src="js/ace-js/ace-extra.js"></script>
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+    <!--[if lte IE 8]>
+        <script src="../assets/js/html5shiv.js"></script>
+        <script src="../assets/js/respond.js"></script>
+        <![endif]-->
 </head>
 
-<body>
-    <!-- start of navbar -->
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">电池检测系统</a>
+<body class="no-skin">
+    <!-- #section:basics/navbar.layout -->
+    <div id="navbar" class="navbar navbar-default">
+        <script type="text/javascript">
+        try {
+            ace.settings.check('navbar', 'fixed')
+        } catch (e) {}
+        </script>
+
+        <div class="navbar-container" id="navbar-container">
+            <!-- #section:basics/sidebar.mobile.toggle -->
+            <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+                <span class="sr-only">Toggle sidebar</span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- /section:basics/sidebar.mobile.toggle -->
+            <div class="navbar-header pull-left">
+                <!-- #section:basics/navbar.layout.brand -->
+                <a href="index.html" class="navbar-brand">
+                    <small>
+                        <i class="fa fa-desktop"></i>
+                        电池检测系统
+                    </small>
+                </a>
+
+                <!-- /section:basics/navbar.layout.brand -->
+
+                <!-- #section:basics/navbar.toggle -->
+
+                <!-- /section:basics/navbar.toggle -->
             </div>
-            <div id="navbar-menu" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- start of 偏好设定 tab -->
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">偏好设定 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="discharge.html">放电设定</a>
-                            </li>
-                            <li><a href="network.html">网路配置</a>
-                            </li>
-                            <li class="subscribe-btn"><a href="#">订阅通知</a>
-                            </li>
-                            <li class="account-btn"><a href="#">个人帐号</a>
+
+            <!-- #section:basics/navbar.dropdown -->
+            <div class="navbar-buttons navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav">
+                    <li class="grey">
+                        <a href="log.html">
+                            <i class="ace-icon fa fa-history"></i> 系统纪录
+                        </a>
+                    </li>
+
+                    <li class="purple">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="ace-icon fa fa-cog"></i> 偏好设定
+                        </a>
+
+                        <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+                            <li class="dropdown-content">
+                                <ul class="dropdown-menu dropdown-navbar navbar-pink">
+                                    <li>
+                                        <a href="discharge.html">
+                                            <div class="clearfix">
+                                                <span class="pull-left">
+                                                        <i class="btn btn-xs no-hover btn-danger fa fa-bolt"></i>
+                                                        放电设定
+                                                    </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="network.html">
+                                            <div class="clearfix">
+                                                <span class="pull-left">
+                                                        <i class="btn btn-xs no-hover btn-primary fa fa-wrench"></i>
+                                                        系统配置
+                                                    </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="subscribe-btn">
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">
+                                                        <i class="btn btn-xs no-hover btn-success fa fa-bell"></i>
+                                                        订阅通知
+                                                    </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="account-btn">
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">
+                                                        <i class="btn btn-xs no-hover btn-pink fa fa-user"></i>
+                                                        个人帐号
+                                                    </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
-                    <!-- start of 更多设置 tab -->
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多设置 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="log.html">系统纪录</a>
-                            </li>
-                            <li><a href="about.html">关於易联科</a>
-                            </li>
-                            <li class="contact-btn"><a href="#">联络我们</a>
+
+                    <li class="green">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="ace-icon fa fa-info-circle"></i> 更多选项
+                        </a>
+
+                        <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+                            <li class="dropdown-content">
+                                <ul class="dropdown-menu dropdown-navbar">
+                                    <li class="account-btn">
+                                        <a href="about.html">
+                                            <div class="clearfix">
+                                                <span class="pull-left">
+                                                        <i class="btn btn-xs no-hover btn-warning fa fa-question-circle"></i>
+                                                        关於易联科
+                                                    </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="contact-btn">
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">
+                                                        <i class="btn btn-xs no-hover btn-info fa fa-envelope"></i>
+                                                        联络我们
+                                                    </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
-                    <!-- start of 登入 tab -->
-                    <li class="login-btn"><a href="#">登入</a>
+
+                    <li class="light-blue login-btn">
+                        <a href="#">
+                            <i class="ace-icon fa fa-sign-in"></i> 登入
+                        </a>
                     </li>
                 </ul>
             </div>
+            <!-- /section:basics/navbar.dropdown -->
         </div>
-    </nav>
-    <!-- start of content -->
-    <div class="container-fluid">
-        <div class="row">
-            <!-- start of left part: battery relationship tree -->
-            <div class="col-sm-3 col-md-2 left-part">
-                <ul class="nav">
-                    <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li><a href="#"><span class="fa fa-bar-chart" aria-hidden="true"></span> Reports</a>
-                    </li>
-                    <li><a href="#">Analytics</a>
-                    </li>
-                    <li><a href="#">Export</a>
-                    </li>
-                    <li><a href="">Nav item</a>
-                    </li>
-                    <li><a href="">Nav item again</a>
-                    </li>
-                    <li><a href="">One more nav</a>
-                    </li>
-                    <li><a href="">Another nav item</a>
-                    </li>
-                    <li><a href="">More navigation</a>
-                    </li>
-                    <li><a href="">Nav item again</a>
-                    </li>
-                    <li><a href="">One more nav</a>
-                    </li>
-                    <li><a href="">Another nav item</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- start of middle part: dashboard -->
-            <div class="col-sm-9 col-md-10 mid-part">
-                <!-- start of breadcrumb -->
-                <div class="breadcrumb">
-                    <li><a href="index.html">电池检测系统</a>
-                    </li>
-                    <li class="active">总览</li>
-                </div>
-                <!-- start of system state, total value and chart -->
-                <h2 class="page-header">Dashboard</h2>
-                <div class="row">
-                    <div class="col-xs-6 col-sm-3">
-                        <img src="img/bug.png" class="img-responsive" alt="Generic placeholder thumbnail">
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3">
-                        <img src="img/bug.png" class="img-responsive" alt="Generic placeholder thumbnail">
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3">
-                        <img src="img/bug.png" class="img-responsive" alt="Generic placeholder thumbnail">
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3">
-                        <img src="img/bug.png" class="img-responsive" alt="Generic placeholder thumbnail">
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
-                </div>
-                <!-- start of discharged date and alarm records table -->
-                <div class="col-sm-5 col-md-5">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">排定放电日程</div>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>编号</th>
-                                    <th>放电日期时间</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>03/03/2015 10:00</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>04/03/2015 10:00</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>05/03/2015 10:00</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>06/03/2015 10:00</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>07/03/2015 10:00</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>08/03/2015 10:00</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="col-sm-7 col-md-7">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">即时告警</div>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>位置</th>
-                                    <th>讯息</th>
-                                    <th>发生时间</th>
-                                    <th>数值</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Gateway 1, Module A, Cell 5</td>
-                                    <td>电压错误</td>
-                                    <td>08/10/2014 11:06</td>
-                                    <td>7.84V</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Gateway 2, Module C, Cell 1</td>
-                                    <td>电阻错误</td>
-                                    <td>08/10/2014 11:06</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Gateway 4, Module C, Cell 3</td>
-                                    <td>容量过低</td>
-                                    <td>08/13/2014 20:06</td>
-                                    <td>17%</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Gateway 4, Module D, Cell 4</td>
-                                    <td>温度过高</td>
-                                    <td>08/15/2014 21:36</td>
-                                    <td>40</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Gateway 4, Module C, Cell 5</td>
-                                    <td>电流错误</td>
-                                    <td>08/17/2014 00:20</td>
-                                    <td>7.84A</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Gateway 1, Module A, Cell 5</td>
-                                    <td>电压错误</td>
-                                    <td>08/10/2014 11:06</td>
-                                    <td>7.84V</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <!-- start of battery status icon -->
-        </div>
-        <!-- start of subscribe notification form -->
-        <form class="subscribe">
-            <div class="panel panel-info">
-                <div class="panel-heading">订阅告警通知
-                    <button type="button" class="close subscribe-close"><span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <td>姓名</td>
-                            <td>
-                                <input type="text" name="subscribe-name" class="form-control" id="subscribe-name" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>电子信箱</td>
-                            <td>
-                                <input type="email" name="subscribe-email" class="form-control" id="subscribe-email">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>电话</td>
-                            <td>
-                                <input type="text" name="subscribe-phone" class="form-control" id="subscribe-phone">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <label class="radio-inline">
-                                    <input type="radio" name="subscribe" id="subscribe" value="yes">订阅
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="subscribe" id="subscribe" value="no">取消订阅
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <input type="submit" id="subscribe-submit" class="btn btn-info btn-block" value="确认">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </form>
-        <!-- start of my account form -->
-        <form class="account">
-            <div class="panel panel-warning">
-                <div class="panel-heading">个人资料
-                    <button type="button" class="close account-close"><span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <td>帐号</td>
-                            <td>shungyang@elink.com</td>
-                        </tr>
-                        <tr>
-                            <td>姓名</td>
-                            <td>
-                                <input type="text" name="account-name" class="form-control" id="account-name">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>电子信箱</td>
-                            <td>
-                                <input type="email" name="account-email" class="form-control" id="account-email">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="panel-heading">修改密码
-                </div>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <td>目前密码</td>
-                            <td>
-                                <input type="password" name="old-pwd" class="form-control" id="old-pwd">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>新密码</td>
-                            <td>
-                                <input type="password" name="new-pwd" class="form-control" id="new-pwd">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <input type="submit" id="pwd-submit" class="btn btn-warning btn-block" value="更新">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </form>
-        <!-- start of contact us form -->
-        <form class="contact">
-            <div class="panel panel-success">
-                <div class="panel-heading">联络我们
-                    <button type="button" class="close contact-close"><span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <td>姓名</td>
-                            <td>
-                                <input type="text" name="contact-name" class="form-control" id="contact-name" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>电子信箱</td>
-                            <td>
-                                <input type="email" name="contact-email" class="form-control" id="contact-email" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>讯息</td>
-                            <td>
-                                <textarea type="text" name="contact-message" class="form-control" rows="7" id="contact-message" required></textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <input type="submit" id="contact-submit" class="btn btn-success btn-block" value="送出">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </form>
-        <!-- start of log in form -->
-        <form class="login">
-            <div class="panel panel-danger">
-                <div class="panel-heading">登入
-                    <a href="#">&#40;建立新帐号&#41;</a>
-                    <button type="button" class="close login-close"><span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <td>电子信箱</td>
-                            <td>
-                                <input type="email" name="login-email" class="form-control" id="login-email" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>密码</td>
-                            <td>
-                                <input type="password" name="login-pwd" class="form-control" id="login-pwd" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <input type="submit" id="login-submit" class="btn btn-danger btn-block" value="登入">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </form>
-    </div>
+        <!-- /.navbar-container -->
     </div>
 
-    <script src="js/vendor/jquery-1.11.2.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    <script src="js/plugins.js"></script>
+    <!-- /section:basics/navbar.layout -->
+    <div class="main-container" id="main-container">
+        <!-- #section:basics/sidebar -->
+        <div id="sidebar" class="sidebar responsive">
+            <script type="text/javascript">
+            try {
+                ace.settings.check('sidebar', 'fixed')
+            } catch (e) {}
+            </script>
+
+            <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                <button class="btn btn-default btn-block">
+                    <i class="ace-icon fa fa-edit"></i> 编辑
+                </button>
+                <!-- /section:basics/sidebar.layout.shortcuts -->
+            </div>
+            <!-- /.sidebar-shortcuts -->
+
+            <ul class="nav nav-list">
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-tachometer"></i>
+                        <span class="menu-text">
+                                系统 XWZ
+                            </span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 1
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 P
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 A
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 B
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 C
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 D
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 E
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 TU
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 NN
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 K
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 L
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 M
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 N
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-tachometer"></i>
+                        <span class="menu-text">
+                                系统 CHA
+                            </span>
+
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 JH
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 KP
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 A
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 B
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 C
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 D
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 E
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 ASO
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 OCD
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 K
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 L
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 M
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 N
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-tachometer"></i>
+                        <span class="menu-text">
+                                系统 TPE
+                            </span>
+
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 MNL
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 NHK
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 A
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 B
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 C
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 D
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 E
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 NASA
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i> 模组 JP
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 K
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 L
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 M
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#">
+                                        <i class="menu-icon fa fa-caret-right"></i> 电池 N
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /.nav-list -->
+
+            <!-- #section:basics/sidebar.layout.minimize -->
+            <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+                <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+            </div>
+
+            <!-- /section:basics/sidebar.layout.minimize -->
+            <script type="text/javascript">
+            try {
+                ace.settings.check('sidebar', 'collapsed')
+            } catch (e) {}
+            </script>
+        </div>
+        <!-- /section:basics/sidebar -->
+
+        <div class="main-content">
+            <div class="main-content-inner">
+                <div id="breadcrumbs" class="breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li><i class="fa fa-home home-icon"></i> <a href="index.html">电池检测系统</a>
+                        </li>
+                        <li class="active">首页</li>
+                    </ul>
+                </div>
+                <!-- /.breadcrumb -->
+
+                <div class="page-content">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-3 widget-container-col">
+                            <div class="widget-box">
+                                <div class="widget-header">
+                                    <h5 class="widget-title">系统状态</h5>
+                                </div>
+                                <div class="widget-body">
+                                    <div class="widget-main">
+                                        <div class="infobox infobox-green">
+                                            <div class="infobox-icon">
+                                                <i class="ace-icon fa fa-thumbs-up"></i>
+                                            </div>
+                                            <div class="infobox-data">
+                                                <span class="infobox-data-number">正常</span>
+                                            </div>
+
+                                            <!-- #section:pages/dashboard.infobox.stat -->
+                                            <!-- /section:pages/dashboard.infobox.stat -->
+                                        </div>
+
+                                        <div class="infobox infobox-blue">
+                                            <div class="infobox-icon">
+                                                <i class="ace-icon fa fa-plug"></i>
+                                            </div>
+
+                                            <div class="infobox-data">
+                                                <span class="infobox-data-number">充电</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="infobox infobox-pink">
+                                            <div class="infobox-icon">
+                                                <i class="ace-icon fa fa-bolt"></i>
+                                            </div>
+
+                                            <div class="infobox-data">
+                                                <span class="infobox-data-number">放电</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-4 widget-container-col">
+                            <div class="widget-box widget-color-dark light-border">
+                                <div class="widget-header">
+                                    <h5 class="widget-title smaller">总电压</h5>
+                                </div>
+
+                                <div class="widget-body">
+                                    <div class="widget-main padding-6">
+                                        <div class="alert alert-info"> 47.3 </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-6"></div>
+                            <div class="widget-box widget-color-dark light-border">
+                                <div class="widget-header">
+                                    <h5 class="widget-title smaller">总电流</h5>
+                                </div>
+
+                                <div class="widget-body">
+                                    <div class="widget-main padding-6">
+                                        <div class="alert alert-info"> 200 </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-5 widget-container-col">
+                            <div class="widget-box widget-color-dark">
+                                <div class="widget-header">
+                                    <h6 class="widget-title">历史电压电流</h6>
+                                </div>
+                                <div class="widget-body">
+                                    <div class="widget-main">
+                                        <label>
+                                            <input type="radio" name="history" class="ace" value="voltage" />
+                                            <span class="lbl">历史电压</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="history" class="ace" value="current" />
+                                            <span class="lbl">历史電流</span>
+                                        </label>
+                                        <img src="img/stats.png" height="150" width="400">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr hr32 hr-dotted"></div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-5">
+                            <div class="table-header">
+                                排定放电日程
+                            </div>
+                            <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>编号</th>
+                                        <th>放电日期时间</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>03/03/2015 10:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>04/03/2015 10:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>05/03/2015 10:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>06/03/2015 10:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>07/03/2015 10:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>08/03/2015 10:00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">1</a>
+                                </li>
+                                <li><a href="#">2</a>
+                                </li>
+                                <li><a href="#">3</a>
+                                </li>
+                                <li><a href="#">4</a>
+                                </li>
+                                <li><a href="#">5</a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-7">
+                            <div class="table-header">
+                                即时告警
+                            </div>
+                            <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>位置</th>
+                                        <th>讯息</th>
+                                        <th>发生时间</th>
+                                        <th>数值</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>系统 1, 模组 A, 电池 5</td>
+                                        <td>电压错误</td>
+                                        <td>08/10/2014 11:06</td>
+                                        <td>7.84V</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>系统 2, 模组 C, 电池 1</td>
+                                        <td>电阻错误</td>
+                                        <td>08/10/2014 11:06</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>系统 4, 模组 C, 电池 3</td>
+                                        <td>容量过低</td>
+                                        <td>08/13/2014 20:06</td>
+                                        <td>17%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>系统 4, 模组 D, 电池 4</td>
+                                        <td>温度过高</td>
+                                        <td>08/15/2014 21:36</td>
+                                        <td>40</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>系统 4, 模组 C, 电池 5</td>
+                                        <td>电流错误</td>
+                                        <td>08/17/2014 00:20</td>
+                                        <td>7.84A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>系统 1, 模组 A, 电池 5</td>
+                                        <td>电压错误</td>
+                                        <td>08/10/2014 11:06</td>
+                                        <td>7.84V</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">1</a>
+                                </li>
+                                <li><a href="#">2</a>
+                                </li>
+                                <li><a href="#">3</a>
+                                </li>
+                                <li><a href="#">4</a>
+                                </li>
+                                <li><a href="#">5</a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hr hr32 hr-dotted"></div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 widget-container-col">
+                            <!-- #section:custom/widget-box -->
+                            <div class="widget-box">
+                                <div class="widget-header">
+                                    <h5 class="widget-title">系统 XWZ, 模组TU</h5>
+                                    <!-- #section:custom/widget-box.toolbar -->
+                                    <div class="widget-toolbar">
+                                        <button class="btn btn-xs btn-yellow">
+                                            <i class="ace-icon fa fa-arrow-left"></i> 前
+                                        </button>
+                                        <button class="btn btn-xs btn-yellow">
+                                            <i class="ace-icon fa fa-arrow-right"></i> 後
+                                        </button>
+                                        <div class="widget-toolbar">
+                                            <a href="#" data-action="reload">
+                                                <i class="ace-icon fa fa-refresh"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- /section:custom/widget-box.toolbar -->
+                                </div>
+
+                                <div class="widget-body">
+                                    <div class="widget-main">
+                                        <div class="infobox infobox-green">
+                                            <div class="infobox-progress">
+                                                <!-- #section:pages/dashboard.infobox.easypiechart -->
+                                                <div class="easy-pie-chart percentage" data-percent="42" data-size="46">
+                                                    <span class="percent">42</span>%
+                                                </div>
+
+                                                <!-- /section:pages/dashboard.infobox.easypiechart -->
+                                            </div>
+                                            <div class="infobox-data">
+                                                <span class="infobox-text">2V 7A</span>
+
+                                                <div class="infobox-content">
+                                                    <span class="bigger-110"></span> 电池 1
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="infobox infobox-green">
+                                            <div class="infobox-progress">
+                                                <!-- #section:pages/dashboard.infobox.easypiechart -->
+                                                <div class="easy-pie-chart percentage" data-percent="42" data-size="46">
+                                                    <span class="percent">58</span>%
+                                                </div>
+
+                                                <!-- /section:pages/dashboard.infobox.easypiechart -->
+                                            </div>
+                                            <div class="infobox-data">
+                                                <span class="infobox-text">2V 7A</span>
+
+                                                <div class="infobox-content">
+                                                    <span class="bigger-110"></span> 电池 2
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="infobox infobox-green">
+                                            <div class="infobox-progress">
+                                                <!-- #section:pages/dashboard.infobox.easypiechart -->
+                                                <div class="easy-pie-chart percentage" data-percent="42" data-size="46">
+                                                    <span class="percent">90</span>%
+                                                </div>
+
+                                                <!-- /section:pages/dashboard.infobox.easypiechart -->
+                                            </div>
+                                            <div class="infobox-data">
+                                                <span class="infobox-text">2V 7A</span>
+
+                                                <div class="infobox-content">
+                                                    <span class="bigger-110"></span> 电池 3
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="infobox infobox-green">
+                                            <div class="infobox-progress">
+                                                <!-- #section:pages/dashboard.infobox.easypiechart -->
+                                                <div class="easy-pie-chart percentage" data-percent="42" data-size="46">
+                                                    <span class="percent">8</span>%
+                                                </div>
+
+                                                <!-- /section:pages/dashboard.infobox.easypiechart -->
+                                            </div>
+                                            <div class="infobox-data">
+                                                <span class="infobox-text">2V 7A</span>
+
+                                                <div class="infobox-content">
+                                                    <span class="bigger-110"></span> 电池 4
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="infobox infobox-green">
+                                            <div class="infobox-progress">
+                                                <!-- #section:pages/dashboard.infobox.easypiechart -->
+                                                <div class="easy-pie-chart percentage" data-percent="42" data-size="46">
+                                                    <span class="percent">55</span>%
+                                                </div>
+
+                                                <!-- /section:pages/dashboard.infobox.easypiechart -->
+                                            </div>
+                                            <div class="infobox-data">
+                                                <span class="infobox-text">2V 7A</span>
+
+                                                <div class="infobox-content">
+                                                    <span class="bigger-110"></span> 电池 5
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- /section:custom/widget-box -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.page-content -->
+    </div>
+    </div>
+    <!-- /.main-content -->
+    </div>
+    <!-- /.main-content -->
+    </div>
+    <!-- /.main-container -->
+
+    <!-- basic scripts -->
+
+    <!--[if !IE]> -->
+    <script type="text/javascript">
+    window.jQuery || document.write("<script src='js/ace-js/jquery.js'>" + "<" + "/script>");
+    </script>
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='../assets/js/jquery1x.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+    <script type="text/javascript">
+    if ('ontouchstart' in document.documentElement) document.write("<script src='js/ace-js/jquery.mobile.custom.js'>" + "<" + "/script>");
+    </script>
+    <script src="js/ace-js/bootstrap.js"></script>
+    <!-- page specific plugin scripts -->
+    <script src="js/ace-js/jquery.easypiechart.js"></script>
+
+    <!-- ace scripts -->
+    <script src="js/ace-js/ace/elements.scroller.js"></script>
+    <script src="js/ace-js/ace/elements.colorpicker.js"></script>
+    <script src="js/ace-js/ace/elements.fileinput.js"></script>
+    <script src="js/ace-js/ace/elements.typeahead.js"></script>
+    <script src="js/ace-js/ace/elements.wysiwyg.js"></script>
+    <script src="js/ace-js/ace/elements.spinner.js"></script>
+    <script src="js/ace-js/ace/elements.treeview.js"></script>
+    <script src="js/ace-js/ace/elements.wizard.js"></script>
+    <script src="js/ace-js/ace/elements.aside.js"></script>
+    <script src="js/ace-js/ace/ace.js"></script>
+    <script src="js/ace-js/ace/ace.ajax-content.js"></script>
+    <script src="js/ace-js/ace/ace.touch-drag.js"></script>
+    <script src="js/ace-js/ace/ace.sidebar.js"></script>
+    <script src="js/ace-js/ace/ace.sidebar-scroll-1.js"></script>
+    <script src="js/ace-js/ace/ace.submenu-hover.js"></script>
+    <script src="js/ace-js/ace/ace.widget-box.js"></script>
+    <script src="js/ace-js/ace/ace.settings.js"></script>
+    <script src="js/ace-js/ace/ace.settings-rtl.js"></script>
+    <script src="js/ace-js/ace/ace.settings-skin.js"></script>
+    <script src="js/ace-js/ace/ace.widget-on-reload.js"></script>
+    <script src="js/ace-js/ace/ace.searchbox-autocomplete.js"></script>
+
+    <!-- inline scripts related to this page -->
     <script src="js/main.js"></script>
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <!--<script>
-    (function(b, o, i, l, e, r) {
-        b.GoogleAnalyticsObject = l;
-        b[l] || (b[l] =
-            function() {
-                (b[l].q = b[l].q || []).push(arguments)
-            });
-        b[l].l = +new Date;
-        e = o.createElement(i);
-        r = o.getElementsByTagName(i)[0];
-        e.src = '//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e, r)
-    }(window, document, 'script', 'ga'));
-    ga('create', 'UA-XXXXX-X');
-    ga('send', 'pageview');
-    </script>-->
+    <!-- the following scripts are used in demo only for onpage help and you don't need them -->
+    <!--link rel="stylesheet" href="../assets/css/ace.onpage-help.css" /-->
+    <!--link rel="stylesheet" href="../docs/assets/js/themes/sunburst.css" /-->
+
+    <script type="text/javascript">
+    ace.vars['base'] = '..';
+    </script>
+    <script src="js/ace-js/ace/elements.onpage-help.js"></script>
+    <script src="js/ace-js/ace/ace.onpage-help.js"></script>
+    <!--script src="../docs/assets/js/rainbow.js"></script>
+        <script src="../docs/assets/js/language/generic.js"></script>
+        <script src="../docs/assets/js/language/html.js"></script>
+        <script src="../docs/assets/js/language/css.js"></script>
+        <script src="../docs/assets/js/language/javascript.js"></script-->
 </body>
 
 </html>
