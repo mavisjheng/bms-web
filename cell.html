@@ -184,13 +184,16 @@
             </div>
             <!-- /.sidebar-shortcuts -->
 
-                        <ul class="nav nav-list">
+            <ul class="nav nav-list">
                 <li class="">
                     <a href="#" class="dropdown-toggle">
                         <i class="menu-icon fa fa-tachometer"></i>
                         <span class="menu-text">
                                 系统 XWZ
-                            </span>
+                                <span class="badge badge-transparent">
+                                    <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                                </span>
+                        </span>
                         <b class="arrow fa fa-angle-down"></b>
                     </a>
 
@@ -198,6 +201,9 @@
                         <li class="">
                             <a href="#" class="dropdown-toggle">
                                 <i class="menu-icon fa fa-caret-right"></i> 模组 1
+                                <span class="badge badge-transparent">
+                                    <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                                </span>
                                 <b class="arrow fa fa-angle-down"></b>
                             </a>
 
@@ -223,6 +229,9 @@
                                 <li class="">
                                     <a href="cell.html">
                                         <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                        <span class="badge badge-transparent tooltip-error" title="2 Important Events">
+                                            <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                                    </span>
                                     </a>
                                 </li>
 
@@ -235,6 +244,9 @@
                                 <li class="">
                                     <a href="cell.html">
                                         <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                        <span class="badge badge-transparent">
+                                            <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                                        </span>
                                     </a>
                                 </li>
                             </ul>
@@ -288,6 +300,9 @@
                         <li class="">
                             <a href="#" class="dropdown-toggle">
                                 <i class="menu-icon fa fa-caret-right"></i> 模组 TU
+                                <span class="badge badge-transparent">
+                                    <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                                </span>
                                 <b class="arrow fa fa-angle-down"></b>
                             </a>
 
@@ -301,6 +316,9 @@
                                 <li class="">
                                     <a href="cell.html">
                                         <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                        <span class="badge badge-transparent">
+                                    <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                                </span>
                                     </a>
                                 </li>
 
@@ -319,6 +337,9 @@
                                 <li class="">
                                     <a href="cell.html">
                                         <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                        <span class="badge badge-transparent">
+                                    <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                                </span>
                                     </a>
                                 </li>
 
@@ -563,8 +584,10 @@
                         <i class="menu-icon fa fa-tachometer"></i>
                         <span class="menu-text">
                                 系统 TPE
-                            </span>
-
+                                <span class="badge badge-transparent">
+                                    <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                                </span>
+                        </span>
                         <b class="arrow fa fa-angle-down"></b>
                     </a>
 
@@ -617,6 +640,9 @@
                         <li class="">
                             <a href="#" class="dropdown-toggle">
                                 <i class="menu-icon fa fa-caret-right"></i> 模组 NHK
+                                <span class="badge badge-transparent">
+                                    <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                                </span>
                                 <b class="arrow fa fa-angle-down"></b>
                             </a>
 
@@ -636,12 +662,18 @@
                                 <li class="">
                                     <a href="cell.html">
                                         <i class="menu-icon fa fa-caret-right"></i> 电池 B
+                                        <span class="badge badge-transparent">
+                                    <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                                </span>
                                     </a>
                                 </li>
 
                                 <li class="">
                                     <a href="cell.html">
                                         <i class="menu-icon fa fa-caret-right"></i> 电池 C
+                                        <span class="badge badge-transparent">
+                                    <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                                </span>
                                     </a>
                                 </li>
 
@@ -716,7 +748,7 @@
                                         <i class="menu-icon fa fa-caret-right"></i> 模组资讯
                                     </a>
                                 </li>
-                                
+
                                 <li class="">
                                     <a href="cell.html">
                                         <i class="menu-icon fa fa-caret-right"></i> 电池 K
@@ -787,9 +819,9 @@
                                         <i class="ace-icon fa fa-bolt green"></i> 放电
                                     </strong>
                                     </div>
-                                    <i class="ace-icon fa fa-pie-chart fa-5x"></i>
-                                    <div>
-                                        <label class="bigger-120">35%</label>
+
+                                    <div class="easy-pie-chart percentage" data-percent="20" data-color="#ffcc00">
+                                        <span class="percent" style="font-size:38px">20</span>%
                                     </div>
                                 </div>
                                 <div class="col-sm-8">
@@ -1174,7 +1206,9 @@
     </script>
     <script src="js/ace-js/bootstrap.js"></script>
     <!-- page specific plugin scripts -->
+    <script src="js/ace-js/jquery.easypiechart.js"></script>
 
+    <!-- ace scripts -->
     <script src="js/ace-js/ace/elements.scroller.js"></script>
     <script src="js/ace-js/ace/elements.colorpicker.js"></script>
     <script src="js/ace-js/ace/elements.fileinput.js"></script>
@@ -1198,7 +1232,31 @@
     <script src="js/ace-js/ace/ace.searchbox-autocomplete.js"></script>
 
     <!-- inline scripts related to this page -->
+    <script type="text/javascript">
+    jQuery(function($) {
+        $('.easy-pie-chart.percentage').each(function() {
+            var $box = $(this).closest('.infobox');
+            var barColor = $(this).data('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') : 'rgba(255,255,255,0.95)');
+            var trackColor = barColor == 'rgba(255,255,255,0.95)' ? 'rgba(255,255,255,0.25)' : '#E2E2E2';
+            var size = parseInt($(this).data('size')) || 150;
+            $(this).easyPieChart({
+                barColor: barColor,
+                trackColor: trackColor,
+                scaleColor: false,
+                lineCap: 'butt',
+                lineWidth: parseInt(size / 7),
+                animate: /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase()) ? false : 1000,
+                size: size
+            });
+        })
 
+
+        //flot chart resize plugin, somehow manipulates default browser resize event to optimize it!
+        //but sometimes it brings up errors with normal resize event handlers
+
+
+    })
+    </script>
     <!-- the following scripts are used in demo only for onpage help and you don't need them -->
     <!--link rel="stylesheet" href="../assets/css/ace.onpage-help.css" /-->
     <!--link rel="stylesheet" href="../docs/assets/js/themes/sunburst.css" /-->
