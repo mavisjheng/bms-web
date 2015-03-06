@@ -945,7 +945,7 @@ ColVis.defaults = {
 	 *  @type     string
 	 *  @default  Restore original
 	 */
-	sShowAll: 'Show All',
+	sShowAll: '全部显示',
 
 	/**
 	 * Position of the collection menu when shown - align "left" or "right"

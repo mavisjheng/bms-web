@@ -11013,7 +11013,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": "後",
 	
 	
 				/**
@@ -11036,7 +11036,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": "前"
 			},
 	
 			/**
@@ -11091,7 +11091,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "目前显示 _START_ 到 _END_ 在 _TOTAL_ 笔资料中",
 	
 	
 			/**
@@ -11332,7 +11332,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "搜寻:",
 	
 	
 			/**
