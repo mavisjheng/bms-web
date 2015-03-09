@@ -18,7 +18,11 @@
     <link rel="stylesheet" href="css/ace/ace-fonts.css" />
 
     <!-- ace styles -->
-    <link rel="stylesheet" href="css/ace/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+    <!--link rel="stylesheet" href="css/ace/ace.css" class="ace-main-stylesheet" id="main-ace-style" /-->
+    <link rel="stylesheet" href="css/modify-ace/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+    <!-- main styles -->
+    <link rel="stylesheet" href="css/main.css" />
 
     <!--[if lte IE 9]>
             <link rel="stylesheet" href="../assets/css/ace-part2.css" class="ace-main-stylesheet" />
@@ -62,14 +66,14 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <!-- /section:basics/sidebar.mobile.toggle -->
             <div class="navbar-header pull-left">
                 <!-- #section:basics/navbar.layout.brand -->
                 <a href="index.html" class="navbar-brand">
-                    <small>
-                        <i class="fa fa-desktop"></i>
+                    <span>
+                        <!-- <i class="fa fa-desktop"></i> shung remark -->
+                        <img class="media-object" src="img/eLink_Logo_120.png" alt="e-Link Logo">
                         电池检测系统
-                    </small>
+                    </span>
                 </a>
 
                 <!-- /section:basics/navbar.layout.brand -->
@@ -82,15 +86,19 @@
             <!-- #section:basics/navbar.dropdown -->
             <div class="navbar-buttons navbar-header pull-right" role="navigation">
                 <ul class="nav ace-nav">
-                    <li class="grey">
-                        <a href="log.html">
-                            <i class="ace-icon fa fa-history"></i> 系统纪录
+                    <li class="green">
+                        <a href="log.html" class="test">
+                            <i class="fa fa-history fa-2x"></i>
+                            <span class="navbar-menu-text-size">系统日志</span>
+                            <span class="badge badge-success">7</span>
                         </a>
                     </li>
 
-                    <li class="purple">
+                    <li class="btn-info">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="ace-icon fa fa-cog"></i> 偏好设定
+                            <i class="fa fa-cog fa-2x"></i>
+                            <span class="navbar-menu-text-size">系统设置</span>
+                            <i class="ace-icon fa fa-caret-down fa-2x"></i>
                         </a>
 
                         <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
@@ -100,8 +108,18 @@
                                         <a href="discharge.html">
                                             <div class="clearfix">
                                                 <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-danger fa fa-bolt"></i>
-                                                        放电设定
+                                                        <i class="btn btn-xs no-hover btn-danger fa fa-plug"></i>
+                                                        放电排程
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="notification.html">
+                                            <div class="clearfix">
+                                                <span class="pull-left">
+                                                        <i class="btn btn-xs no-hover btn-purple fa fa-bell"></i>
+                                                        告警配置
                                                     </span>
                                             </div>
                                         </a>
@@ -111,7 +129,17 @@
                                             <div class="clearfix">
                                                 <span class="pull-left">
                                                         <i class="btn btn-xs no-hover btn-primary fa fa-wrench"></i>
-                                                        系统配置
+                                                        网络配置
+                                                    </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="user.html">
+                                            <div class="clearfix">
+                                                <span class="pull-left">
+                                                        <i class="btn btn-xs no-hover btn-grey fa fa-users"></i>
+                                                        個人配置
                                                     </span>
                                             </div>
                                         </a>
@@ -121,11 +149,12 @@
                         </ul>
                     </li>
 
-                    <li class="green">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="ace-icon fa fa-caret-square-o-down"></i> 更多选项
+                    <li class="btn-warning">
+                        <a href="about.html">
+                            <i class="fa fa-info-circle fa-2x"></i>
+                            <span class="navbar-menu-text-size">关于我们</span>
                         </a>
-
+                        <!--
                         <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
                             <li class="dropdown-content">
                                 <ul class="dropdown-menu dropdown-navbar navbar-pink">
@@ -152,11 +181,13 @@
                                 </ul>
                             </li>
                         </ul>
+                        -->
                     </li>
 
-                    <li class="light-blue login-btn">
+                    <li class="login-btn btn-danger">
                         <a href="login.html">
-                            <i class="ace-icon fa fa-sign-in"></i> 登入
+                            <i class="fa fa-sign-in fa-2x"></i>
+                            <span class="navbar-menu-text-size">登入系統<span>
                         </a>
                     </li>
                 </ul>
@@ -229,7 +260,7 @@
                                 <li class="">
                                     <a href="cell.html">
                                         <i class="menu-icon fa fa-caret-right"></i> 电池 3
-                                        <span class="badge badge-transparent tooltip-error" title="2 Important Events">
+                                        <span class="badge badge-transparent">
                                             <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
                                     </span>
                                     </a>
@@ -864,21 +895,7 @@
     <script src="js/ace/ace/ace.searchbox-autocomplete.js"></script>
 
     <!-- inline scripts related to this page -->
-    <script src="js/main.js"></script>
-    <!-- the following scripts are used in demo only for onpage help and you don't need them -->
-    <!--link rel="stylesheet" href="../assets/css/ace.onpage-help.css" /-->
-    <!--link rel="stylesheet" href="../docs/assets/js/themes/sunburst.css" /-->
-
-    <script type="text/javascript">
-    ace.vars['base'] = '..';
-    </script>
-    <script src="js/ace/ace/elements.onpage-help.js"></script>
-    <script src="js/ace/ace/ace.onpage-help.js"></script>
-    <!--script src="../docs/assets/js/rainbow.js"></script>
-        <script src="../docs/assets/js/language/generic.js"></script>
-        <script src="../docs/assets/js/language/html.js"></script>
-        <script src="../docs/assets/js/language/css.js"></script>
-        <script src="../docs/assets/js/language/javascript.js"></script-->
+    
 </body>
 
 </html>
