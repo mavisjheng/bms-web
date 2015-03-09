@@ -1,10 +1,3 @@
-.subscribe, .account, .contact, .login {
-  right: -300px;  /* start off behind the scenes */
-  height: 100%;
-  position: fixed;
-  width: 300px;
-}
-
 /* system-status */
 #system-status {
   height: 260px;

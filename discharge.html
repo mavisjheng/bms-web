@@ -24,12 +24,12 @@
     <!-- main styles -->
     <link rel="stylesheet" href="css/main.css" />
 
-    <!--[if lte IE 9]>
-            <link rel="stylesheet" href="../assets/css/ace-part2.css" class="ace-main-stylesheet" />
+        <!--[if lte IE 9]>
+            <link rel="stylesheet" href="css/ace/ace-part2.css" class="ace-main-stylesheet" />
         <![endif]-->
 
     <!--[if lte IE 9]>
-          <link rel="stylesheet" href="../assets/css/ace-ie.css" />
+          <link rel="stylesheet" href="css/ace/ace-ie.css" />
         <![endif]-->
 
     <!-- inline styles related to this page -->
@@ -40,53 +40,42 @@
     <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
     <!--[if lte IE 8]>
-        <script src="../assets/js/html5shiv.js"></script>
-        <script src="../assets/js/respond.js"></script>
+        <script src="js/ace/html5shiv.js"></script>
+        <script src="js/ace/respond.js"></script>
         <![endif]-->
 </head>
 
 <body class="no-skin">
-    <!-- #section:basics/navbar.layout -->
+    <!-- navbar -->
     <div id="navbar" class="navbar navbar-default">
         <script type="text/javascript">
         try {
             ace.settings.check('navbar', 'fixed')
         } catch (e) {}
         </script>
-
         <div class="navbar-container" id="navbar-container">
-            <!-- #section:basics/sidebar.mobile.toggle -->
-            <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+            <!-- sidebar toggle -->
+            <button type="button" class="pull-left navbar-toggle menu-toggler" id="menu-toggler" data-target="#sidebar">
                 <span class="sr-only">Toggle sidebar</span>
-
                 <span class="icon-bar"></span>
-
                 <span class="icon-bar"></span>
-
                 <span class="icon-bar"></span>
             </button>
 
-            <!-- /section:basics/sidebar.mobile.toggle -->
+            <!-- navbar header -->
             <div class="navbar-header pull-left">
-                <!-- #section:basics/navbar.layout.brand -->
                 <a href="index.html" class="navbar-brand">
                     <span>
-                        <!-- <i class="fa fa-desktop"></i> shung remark -->
                         <img class="media-object" src="img/eLink_Logo_120.png" alt="e-Link Logo">
                         电池检测系统
                     </span>
                 </a>
-
-                <!-- /section:basics/navbar.layout.brand -->
-
-                <!-- #section:basics/navbar.toggle -->
-
-                <!-- /section:basics/navbar.toggle -->
             </div>
 
-            <!-- #section:basics/navbar.dropdown -->
+            <!-- navbar buttons -->
             <div class="navbar-buttons navbar-header pull-right" role="navigation">
                 <ul class="nav ace-nav">
+                    <!-- system log -->
                     <li class="green">
                         <a href="log.html" class="test">
                             <i class="fa fa-history fa-2x"></i>
@@ -95,6 +84,7 @@
                         </a>
                     </li>
 
+                    <!-- system preference -->
                     <li class="btn-info">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <i class="fa fa-cog fa-2x"></i>
@@ -102,15 +92,15 @@
                             <i class="ace-icon fa fa-caret-down fa-2x"></i>
                         </a>
 
-                        <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+                        <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
                             <li class="dropdown-content">
-                                <ul class="dropdown-menu dropdown-navbar navbar-pink">
+                                <ul class="dropdown-menu dropdown-navbar">
                                     <li>
                                         <a href="discharge.html">
                                             <div class="clearfix">
                                                 <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-danger fa fa-plug"></i>
-                                                        放电排程
+                                                    <i class="btn btn-xs no-hover btn-danger fa fa-plug"></i>
+                                                    &nbsp;放电排程
                                                 </span>
                                             </div>
                                         </a>
@@ -119,9 +109,9 @@
                                         <a href="notification.html">
                                             <div class="clearfix">
                                                 <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-purple fa fa-bell"></i>
-                                                        告警配置
-                                                    </span>
+                                                    <i class="btn btn-xs no-hover btn-purple fa fa-bell"></i>
+                                                    &nbsp;告警配置
+                                                </span>
                                             </div>
                                         </a>
                                     </li>
@@ -129,9 +119,9 @@
                                         <a href="network.html">
                                             <div class="clearfix">
                                                 <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-primary fa fa-wrench"></i>
-                                                        网络配置
-                                                    </span>
+                                                    <i class="btn btn-xs no-hover btn-primary fa fa-wrench"></i>
+                                                    &nbsp;网络配置
+                                                </span>
                                             </div>
                                         </a>
                                     </li>
@@ -139,9 +129,9 @@
                                         <a href="user.html">
                                             <div class="clearfix">
                                                 <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-grey fa fa-users"></i>
-                                                        個人配置
-                                                    </span>
+                                                    <i class="btn btn-xs no-hover btn-grey fa fa-users"></i>
+                                                    &nbsp;个人配置
+                                                </span>
                                             </div>
                                         </a>
                                     </li>
@@ -150,57 +140,31 @@
                         </ul>
                     </li>
 
-                    <li class="btn-warning">
+                    <!-- about us -->
+                    <li class="btn-grey">
                         <a href="about.html">
                             <i class="fa fa-info-circle fa-2x"></i>
-                            <span class="navbar-menu-text-size">关于我们</span>
+                            <span class="navbar-menu-text-size">关於我们</span>
                         </a>
-                        <!--
-                        <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-                            <li class="dropdown-content">
-                                <ul class="dropdown-menu dropdown-navbar navbar-pink">
-                                    <li>
-                                        <a href="about.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-purple fa fa-info-circle"></i>
-                                                        关於易联科
-                                                    </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="user.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-grey fa fa-users"></i>
-                                                        个人设定
-                                                    </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        -->
                     </li>
 
-                    <li class="login-btn btn-danger">
+                    <!-- login -->
+                    <li class="btn-danger">
                         <a href="login.html">
                             <i class="fa fa-sign-in fa-2x"></i>
-                            <span class="navbar-menu-text-size">登入系統<span>
+                            <span class="navbar-menu-text-size">登入系统<span>
                         </a>
                     </li>
                 </ul>
             </div>
-            <!-- /section:basics/navbar.dropdown -->
+            <!-- narbar buttons -->
         </div>
-        <!-- /.navbar-container -->
+        <!-- navbar-container -->
     </div>
+    <!-- navbar -->
 
-    <!-- /section:basics/navbar.layout -->
     <div class="main-container" id="main-container">
-        <!-- #section:basics/sidebar -->
+        <!-- sidebar -->
         <div id="sidebar" class="sidebar responsive">
             <script type="text/javascript">
             try {
@@ -208,31 +172,32 @@
             } catch (e) {}
             </script>
 
+            <!-- sidebar shortcuts edit button -->
             <div class="sidebar-shortcuts" id="sidebar-shortcuts">
                 <button class="btn btn-default btn-block">
                     <i class="ace-icon fa fa-edit"></i> 编辑
                 </button>
-                <!-- /section:basics/sidebar.layout.shortcuts -->
             </div>
-            <!-- /.sidebar-shortcuts -->
 
-                       <ul class="nav nav-list">
-                <li class="">
+            <!-- system tree view -->
+            <ul class="nav nav-list">
+                <!-- system 1 -->
+                <li class="#">
                     <a href="#" class="dropdown-toggle">
                         <i class="menu-icon fa fa-tachometer"></i>
                         <span class="menu-text">
-                                系统 XWZ
-                                <span class="badge badge-transparent">
-                                    <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
-                                </span>
+                            系统 XWZ
+                            <span class="badge badge-transparent">
+                                <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                            </span>
                             </span>
                             <b class="arrow fa fa-angle-down"></b>
                         </a>
 
                         <ul class="submenu">
-                            <li class="">
+                            <li class="#">
                                 <a href="#" class="dropdown-toggle">
-                                    <i class="menu-icon fa fa-caret-right"></i> 模组 1
+                                    <i class="menu-icon fa fa-caret-right"></i>模组 1
                                     <span class="badge badge-transparent">
                                     <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
                                 </span>
@@ -240,42 +205,42 @@
                                 </a>
 
                                 <ul class="submenu">
-                                    <li class="">
+                                    <li class="#">
                                         <a href="module.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 模组资讯
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 1
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 2
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 3
                                             <span class="badge badge-transparent">
                                             <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
                                     </span>
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 4
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 5
                                             <span class="badge badge-transparent">
                                             <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
                                         </span>
@@ -284,54 +249,54 @@
                                 </ul>
                             </li>
 
-                            <li class="">
+                            <li class="#">
                                 <a href="#" class="dropdown-toggle">
-                                    <i class="menu-icon fa fa-caret-right"></i> 模组 P
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;P
                                     <b class="arrow fa fa-angle-down"></b>
                                 </a>
 
                                 <ul class="submenu">
-                                    <li class="">
+                                    <li class="#">
                                         <a href="module.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 模组资讯
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 A
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 A
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 B
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 B
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 C
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 C
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 D
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 D
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 E
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 E
                                         </a>
                                     </li>
                                 </ul>
                             </li>
 
-                            <li class="">
+                            <li class="#">
                                 <a href="#" class="dropdown-toggle">
-                                    <i class="menu-icon fa fa-caret-right"></i> 模组 TU
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;TU
                                     <span class="badge badge-transparent">
                                     <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
                                 </span>
@@ -339,283 +304,287 @@
                                 </a>
 
                                 <ul class="submenu">
-                                    <li class="">
+                                    <li class="#">
                                         <a href="module.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 模组资讯
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 1
                                             <span class="badge badge-transparent">
-                                    <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
-                                </span>
+                                                <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                                            </span>
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 2
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 3
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 4
                                             <span class="badge badge-transparent">
-                                    <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
-                                </span>
+                                                <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                                            </span>
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 5
                                         </a>
                                     </li>
                                 </ul>
                             </li>
 
-                            <li class="">
+                            <li class="#">
                                 <a href="#" class="dropdown-toggle">
-                                    <i class="menu-icon fa fa-caret-right"></i> 模组 NN
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;NN
                                     <b class="arrow fa fa-angle-down"></b>
                                 </a>
 
                                 <ul class="submenu">
-                                    <li class="">
+                                    <li class="#">
                                         <a href="module.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 模组资讯
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 K
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 K
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 L
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 L
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 M
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 M
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 N
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 N
                                         </a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
+                    <!-- system 1 -->
 
-                    <li class="">
+                    <!-- system 2 -->
+                    <li class="#">
                         <a href="#" class="dropdown-toggle">
                             <i class="menu-icon fa fa-tachometer"></i>
                             <span class="menu-text">
-                                系统 CHA
+                                系统&nbsp;CHA
                             </span>
 
                             <b class="arrow fa fa-angle-down"></b>
                         </a>
 
                         <ul class="submenu">
-                            <li class="">
+                            <li class="#">
                                 <a href="#" class="dropdown-toggle">
-                                    <i class="menu-icon fa fa-caret-right"></i> 模组 JH
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;JH
                                     <b class="arrow fa fa-angle-down"></b>
                                 </a>
 
                                 <ul class="submenu">
-                                    <li class="">
+                                    <li class="#">
                                         <a href="module.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 模组资讯
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 1
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 2
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 3
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 4
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 5
                                         </a>
                                     </li>
                                 </ul>
                             </li>
 
-                            <li class="">
+                            <li class="#">
                                 <a href="#" class="dropdown-toggle">
-                                    <i class="menu-icon fa fa-caret-right"></i> 模组 KP
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;KP
                                     <b class="arrow fa fa-angle-down"></b>
                                 </a>
 
                                 <ul class="submenu">
-                                    <li class="">
+                                    <li class="#">
                                         <a href="module.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 模组资讯
+                                            <i class="menu-icon fa fa-caret-right"></i>模组资讯
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 A
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 A
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 B
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 B
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 C
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 C
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 D
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 D
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 E
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 E
                                         </a>
                                     </li>
                                 </ul>
                             </li>
 
-                            <li class="">
+                            <li class="#">
                                 <a href="#" class="dropdown-toggle">
-                                    <i class="menu-icon fa fa-caret-right"></i> 模组 ASO
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;ASO
                                     <b class="arrow fa fa-angle-down"></b>
                                 </a>
 
                                 <ul class="submenu">
-                                    <li class="">
+                                    <li class="#">
                                         <a href="module.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 模组资讯
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 1
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 2
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 3
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 4
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 5
                                         </a>
                                     </li>
                                 </ul>
                             </li>
 
-                            <li class="">
+                            <li class="#">
                                 <a href="#" class="dropdown-toggle">
-                                    <i class="menu-icon fa fa-caret-right"></i> 模组 OCD
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;OCD
                                     <b class="arrow fa fa-angle-down"></b>
                                 </a>
 
                                 <ul class="submenu">
-                                    <li class="">
+                                    <li class="#">
                                         <a href="module.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 模组资讯
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 K
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 K
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 L
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 L
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 M
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 M
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 N
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 N
                                         </a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
+                    <!-- system 2 -->
 
-                    <li class="">
+                    <!-- system 3 -->
+                    <li class="#">
                         <a href="#" class="dropdown-toggle">
                             <i class="menu-icon fa fa-tachometer"></i>
                             <span class="menu-text">
-                                系统 TPE
+                                系统&nbsp;TPE
                                 <span class="badge badge-transparent">
                                     <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
                                 </span>
@@ -624,54 +593,54 @@
                         </a>
 
                         <ul class="submenu">
-                            <li class="">
+                            <li class="#">
                                 <a href="#" class="dropdown-toggle">
-                                    <i class="menu-icon fa fa-caret-right"></i> 模组 MNL
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;MNL
                                     <b class="arrow fa fa-angle-down"></b>
                                 </a>
 
                                 <ul class="submenu">
-                                    <li class="">
+                                    <li class="#">
                                         <a href="module.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 模组资讯
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 1
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 2
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 3
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 4
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 5
                                         </a>
                                     </li>
                                 </ul>
                             </li>
 
-                            <li class="">
+                            <li class="#">
                                 <a href="#" class="dropdown-toggle">
-                                    <i class="menu-icon fa fa-caret-right"></i> 模组 NHK
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;NHK
                                     <span class="badge badge-transparent">
                                     <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
                                 </span>
@@ -679,151 +648,152 @@
                                 </a>
 
                                 <ul class="submenu">
-                                    <li class="">
+                                    <li class="#">
                                         <a href="module.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 模组资讯
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 A
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 A
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 B
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 B
                                             <span class="badge badge-transparent">
-                                    <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
-                                </span>
+                                                <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                                            </span>
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 C
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 C
                                             <span class="badge badge-transparent">
-                                    <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
-                                </span>
+                                                <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                                            </span>
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 D
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 D
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 E
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 E
                                         </a>
                                     </li>
                                 </ul>
                             </li>
 
-                            <li class="">
+                            <li class="#">
                                 <a href="#" class="dropdown-toggle">
-                                    <i class="menu-icon fa fa-caret-right"></i> 模组 NASA
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;NASA
                                     <b class="arrow fa fa-angle-down"></b>
                                 </a>
 
                                 <ul class="submenu">
-                                    <li class="">
+                                    <li class="#">
                                         <a href="module.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 模组资讯
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 1
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 1
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 2
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 2
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 3
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 3
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 4
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 4
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 5
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 5
                                         </a>
                                     </li>
                                 </ul>
                             </li>
 
-                            <li class="">
+                            <li class="#">
                                 <a href="#" class="dropdown-toggle">
-                                    <i class="menu-icon fa fa-caret-right"></i> 模组 JP
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;JP
                                     <b class="arrow fa fa-angle-down"></b>
                                 </a>
 
                                 <ul class="submenu">
-                                    <li class="">
+                                    <li class="#">
                                         <a href="module.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 模组资讯
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 K
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 K
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 L
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 L
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 M
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 M
                                         </a>
                                     </li>
 
-                                    <li class="">
+                                    <li class="#">
                                         <a href="cell.html">
-                                            <i class="menu-icon fa fa-caret-right"></i> 电池 N
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 N
                                         </a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
+                    <!-- system 3 -->
                 </ul>
-                <!-- /.nav-list -->
+                <!-- system tree view -->
 
-                <!-- #section:basics/sidebar.layout.minimize -->
+                <!-- sidebar minimize -->
                 <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
                     <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
                 </div>
 
-                <!-- /section:basics/sidebar.layout.minimize -->
+                <!-- sidebar minimize -->
                 <script type="text/javascript">
                 try {
                     ace.settings.check('sidebar', 'collapsed')
                 } catch (e) {}
                 </script>
             </div>
-            <!-- /section:basics/sidebar -->
+            <!-- sidebar -->
 
             <div class="main-content">
                 <div class="main-content-inner">
