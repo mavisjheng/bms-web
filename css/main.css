@@ -52,7 +52,6 @@
 .navbar-menu-text-size {
   font-size: 18px;
 }
-
  
 .widget-title {
   line-height: 36px;
@@ -97,7 +96,6 @@
 /* -----------------------------------------
    Color
 ----------------------------------------- */
-
 .color-brown {
   color: #997744;
 }
@@ -187,11 +185,6 @@
  color: #5f47b0;
 }
 
-
-
-
-
-
 /* -----------------------------------------
    Custom progressbar
 ----------------------------------------- */
@@ -230,9 +223,7 @@
   font-weight: bold;
 }
 
-
 /* Shung add 0309 */
-
 
 .table-header > .table-title {
   line-height: 36px;
@@ -247,9 +238,6 @@
   font-weight: bold;
   text-align: center;
 }
-
-
-
 
 .navbar .navbar-brand {
   color: #ffffff;
@@ -303,7 +291,6 @@
   padding: 12px;
   text-align: center;
 }
-
 
 .widget-box.light-border[class*="widget-color-"]:not(.fullscreen) {
   border-width: 2px;
@@ -363,15 +350,38 @@
 /* -----------------------------------------
    Mavis Code Begins Here
 ----------------------------------------- */
-.table-header {
-  font-size: 18px;
-}
-
 .text-center {
   text-align: center;
 }
 
+.text-left {
+  text-align: left;
+}
 
+#elink { 
+  font-size: 15px;
+}
 
+/* discharge-date-table begins @ discharge.html */
 
+#theader1 {
+  font-size: 18px;
+}
 
+#discharge-date-table > tbody > tr > td {
+  text-align: center;
+  font-size: 15px;
+}
+
+.dataTables_wrapper .row:first-child {
+  padding-top: 8px;
+  padding-bottom: 6px;
+}
+
+.dataTables_wrapper .row:last-child {
+  border-bottom: 1px solid #e0e0e0;
+  padding-top: 10px;
+  padding-bottom: 6px;
+}
+
+/* discharge-date-table ends @ discharge.html */
