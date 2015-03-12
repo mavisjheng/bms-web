@@ -43,12 +43,12 @@
   line-height: 44px;
   font-weight: bold;
 }
+
  /* end */
- 
  .navbar-brand {
   font-weight: bold;
 }
-
+ 
 .navbar-menu-text-size {
   font-size: 18px;
 }
@@ -59,7 +59,7 @@
   margin: 0;
   display: inline;
   font-weight: bold;
-  color: #FFF;
+  
 }
 
 .widget-content {
@@ -362,6 +362,15 @@
   font-size: 15px;
 }
 
+.font-white {
+  color: #FFF;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+
 /* discharge-date-table begins @ discharge.html */
 
 #theader1 {
@@ -385,3 +394,37 @@
 }
 
 /* discharge-date-table ends @ discharge.html */
+
+/* cell page begins here*/
+
+.pie-info {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2d5a6b;
+}
+
+/* cell page ends here */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
