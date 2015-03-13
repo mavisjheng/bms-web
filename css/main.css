@@ -370,8 +370,19 @@
   font-size: 16px;
 }
 
+.font-14 {
+  font-size: 14px;
+}
 
-/* discharge-date-table begins @ discharge.html */
+.white {
+  color: white;
+}
+
+.bkgd-green {
+  background: #459171;
+}
+
+/* discharge-date-table @ discharge.html begins */
 
 #theader1 {
   font-size: 18px;
@@ -393,21 +404,37 @@
   padding-bottom: 6px;
 }
 
-/* discharge-date-table ends @ discharge.html */
+/* discharge-date-table @ discharge.html ends */
 
-/* cell page begins here*/
+/* cell page begins */
 
 .pie-info {
   font-size: 20px;
   font-weight: bold;
   color: #2d5a6b;
+  font-family: sans-serif;
 }
 
-/* cell page ends here */
+/* cell page ends */
 
+/* module page begins here*/
 
+#cell-alarm-setting, #module-alarm-setting {
+  margin-bottom: 10px;
+}
 
+.pie-num {
+  font-size: 18px;
+  font-weight: bold;
+  color: #606060;
+  font-family: sans-serif;
+}
 
+.page-content > .row .margin-bm-8 {
+  margin-bottom: -8px;
+}
+
+/* module page ends here */
 
 
 

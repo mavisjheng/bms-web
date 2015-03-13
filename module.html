@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/ace/font-awesome.css" />
 
     <!-- page specific plugin styles -->
+    <link rel="stylesheet" href="css/morris/morris.css" />
 
     <!-- text fonts -->
     <link rel="stylesheet" href="css/ace/ace-fonts.css" />
@@ -23,7 +24,7 @@
     <!-- main styles -->
     <link rel="stylesheet" href="css/main.css" />
 
-        <!--[if lte IE 9]>
+    <!--[if lte IE 9]>
             <link rel="stylesheet" href="css/ace/ace-part2.css" class="ace-main-stylesheet" />
         <![endif]-->
 
@@ -72,7 +73,7 @@
             </div>
 
             <!-- navbar buttons -->
-                        <div class="navbar-buttons navbar-header pull-right" role="navigation">
+            <div class="navbar-buttons navbar-header pull-right" role="navigation">
                 <ul class="nav ace-nav">
                     <li class="grey">
                         <a href="log.html" class="test">
@@ -792,6 +793,7 @@
 
             <div class="main-content">
                 <div class="main-content-inner">
+                    <!-- breadcrumbs -->
                     <div id="breadcrumbs" class="breadcrumbs">
                         <ul class="breadcrumb">
                             <li><i class="fa fa-home home-icon"></i> <a href="index.html">电池检测系统</a>
@@ -799,344 +801,354 @@
                             <li class="active">模组 TU</li>
                         </ul>
                     </div>
-                    <!-- /.breadcrumb -->
+                    <!-- /.breadcrumbs -->
 
                     <div class="page-content">
+                        <!-- system state -->
                         <div class="row">
-                            <div class="col-sm-12">
-                                <div class="alert alert-block alert-warning">
+                            <div class="space-2"></div>
+                            <div class="col-sm-12 center margin-bm-8">
+                                <div class="alert alert-block alert-warning font-16 bolder">
                                     系统状态：
                                     <strong class="green">
-                                        <i class="ace-icon fa fa-thumbs-up green"></i> 正常&nbsp;&nbsp;
-                                        <i class="ace-icon fa fa-plug green"></i> 充电&nbsp;&nbsp;
-                                        <i class="ace-icon fa fa-bolt green"></i> 放电
+                                        <i class="ace-icon fa fa-thumbs-up green"></i>&nbsp;正常&nbsp;&nbsp;
+                                        <i class="ace-icon fa fa-plug green"></i>&nbsp;充电&nbsp;&nbsp;
+                                        <i class="ace-icon fa fa-bolt green"></i>&nbsp;放电
                                     </strong>
                                 </div>
                             </div>
                         </div>
-
+                        <!-- /.system state -->
+                        <!-- cell state -->
                         <div class="row">
-                            <div class="col-sm-12">
-                                <div class="infobox infobox-green2">
-                                    <div class="infobox-progress">
-                                        <!-- #section:pages/dashboard.infobox.easypiechart -->
-                                        <div class="easy-pie-chart percentage" data-percent="61" data-size="50">
-                                            <span class="percent">61</span>%
-                                        </div>
-
-                                        <!-- /section:pages/dashboard.infobox.easypiechart -->
+                            <div class="col-sm-2">
+                                <div class="widget-box widget-color-red3">
+                                    <div class="widget-header">
+                                        <h4 class="widget-title">电池 1</h4>
                                     </div>
-
-                                    <div class="infobox-data">
-                                        <div class="infobox-content">2V 7A</div>
-                                        <div class="infobox-content">电池 1</div>
+                                    <div class="widget-body">
+                                        <div class="widget-main">
+                                            <div class="easy-pie-chart percentage pie-num" data-percent="73">73%</div>
+                                            <div class="space-4"></div>
+                                            <div class="pie-num">119.3(V)&nbsp;13(A)</div>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="infobox infobox-green2">
-                                    <div class="infobox-progress">
-                                        <!-- #section:pages/dashboard.infobox.easypiechart -->
-                                        <div class="easy-pie-chart percentage" data-percent="29" data-size="50">
-                                            <span class="percent">29</span>%
-                                        </div>
-
-                                        <!-- /section:pages/dashboard.infobox.easypiechart -->
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="widget-box widget-color-red3">
+                                    <div class="widget-header">
+                                        <h4 class="widget-title">电池 2</h4>
                                     </div>
-
-                                    <div class="infobox-data">
-                                        <div class="infobox-content">2V 7A</div>
-                                        <div class="infobox-content">电池 2</div>
+                                    <div class="widget-body">
+                                        <div class="widget-main">
+                                            <div class="easy-pie-chart percentage pie-num" data-percent="20">20%</div>
+                                            <div class="space-4"></div>
+                                            <div class="pie-num">111.7(V)&nbsp;17(A)</div>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="infobox infobox-green2">
-                                    <div class="infobox-progress">
-                                        <!-- #section:pages/dashboard.infobox.easypiechart -->
-                                        <div class="easy-pie-chart percentage" data-percent="100" data-size="50">
-                                            <span class="percent">100</span>%
-                                        </div>
-
-                                        <!-- /section:pages/dashboard.infobox.easypiechart -->
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="widget-box widget-color-red3">
+                                    <div class="widget-header">
+                                        <h4 class="widget-title">电池 3</h4>
                                     </div>
-
-                                    <div class="infobox-data">
-                                        <div class="infobox-content">2V 7A</div>
-                                        <div class="infobox-content">电池 3</div>
+                                    <div class="widget-body">
+                                        <div class="widget-main">
+                                            <div class="easy-pie-chart percentage pie-num" data-percent="66">66%</div>
+                                            <div class="space-4"></div>
+                                            <div class="pie-num">120(V)&nbsp;12(A)</div>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="infobox infobox-green2">
-                                    <div class="infobox-progress">
-                                        <!-- #section:pages/dashboard.infobox.easypiechart -->
-                                        <div class="easy-pie-chart percentage" data-percent="8" data-size="50">
-                                            <span class="percent">8</span>%
-                                        </div>
-
-                                        <!-- /section:pages/dashboard.infobox.easypiechart -->
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="widget-box widget-color-red3">
+                                    <div class="widget-header">
+                                        <h4 class="widget-title">电池 4</h4>
                                     </div>
-
-                                    <div class="infobox-data">
-                                        <div class="infobox-content">2V 7A</div>
-                                        <div class="infobox-content">电池 4</div>
+                                    <div class="widget-body">
+                                        <div class="widget-main">
+                                            <div class="easy-pie-chart percentage pie-num" data-percent="5">5%</div>
+                                            <div class="space-4"></div>
+                                            <div class="pie-num">109.4(V)&nbsp;17(A)</div>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="infobox infobox-green2">
-                                    <div class="infobox-progress">
-                                        <!-- #section:pages/dashboard.infobox.easypiechart -->
-                                        <div class="easy-pie-chart percentage" data-percent="18" data-size="50">
-                                            <span class="percent">18</span>%
-                                        </div>
-
-                                        <!-- /section:pages/dashboard.infobox.easypiechart -->
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="widget-box widget-color-red3">
+                                    <div class="widget-header">
+                                        <h4 class="widget-title">电池 5</h4>
                                     </div>
-
-                                    <div class="infobox-data">
-                                        <div class="infobox-content">2V 7A</div>
-                                        <div class="infobox-content">电池 5</div>
+                                    <div class="widget-body">
+                                        <div class="widget-main">
+                                            <div class="easy-pie-chart percentage pie-num" data-percent="50">50%</div>
+                                            <div class="space-4"></div>
+                                            <div class="pie-num">123.5(V)&nbsp;15(A)</div>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="infobox infobox-green2">
-                                    <div class="infobox-progress">
-                                        <!-- #section:pages/dashboard.infobox.easypiechart -->
-                                        <div class="easy-pie-chart percentage" data-percent="76" data-size="50">
-                                            <span class="percent">76</span>%
-                                        </div>
-
-                                        <!-- /section:pages/dashboard.infobox.easypiechart -->
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="widget-box widget-color-red3">
+                                    <div class="widget-header">
+                                        <h4 class="widget-title">电池 6</h4>
                                     </div>
-
-                                    <div class="infobox-data">
-                                        <div class="infobox-content">2V 7A</div>
-                                        <div class="infobox-content">电池 6</div>
+                                    <div class="widget-body">
+                                        <div class="widget-main">
+                                            <div class="easy-pie-chart percentage pie-num" data-percent="92">92%</div>
+                                            <div class="space-4"></div>
+                                            <div class="pie-num">118(V)&nbsp;11(A)</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="space-6"></div>
-                        <div class="space-6"></div>
+                        <!-- /.cell state -->
+                        <div class="space-8"></div>
+                        <!-- bottom part: tab -->
                         <div class="row">
                             <div class="col-sm-12">
-
-                                <!-- #section:elements.tab.option -->
                                 <div class="tabbable">
-                                    <ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab4">
+                                    <ul class="nav nav-tabs padding-12 tab-color-blue background-blue">
                                         <li class="active">
-                                            <a data-toggle="tab" href="#home4">模组数据</a>
+                                            <a data-toggle="tab" href="#module-chart">历史图表</a>
                                         </li>
-
                                         <li>
-                                            <a data-toggle="tab" href="#profile4">历史图表</a>
+                                            <a data-toggle="tab" href="#module-statistic">模组数据</a>
                                         </li>
-
                                         <li>
-                                            <a data-toggle="tab" href="#dropdown14">告警设定</a>
+                                            <a data-toggle="tab" href="#module-alarm-setting">告警设定</a>
                                         </li>
-
                                         <li>
-                                            <a data-toggle="tab" href="#dropdown1">电池设定</a>
+                                            <a data-toggle="tab" href="#module-cell-setting">电池设定</a>
                                         </li>
                                     </ul>
-
                                     <div class="tab-content">
-                                        <div id="home4" class="tab-pane in active">
-                                            <div>
-                                                <table id="dynamic-table" class="table table-striped table-bordered table-hover">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>项目</th>
-                                                            <th>数值</th>
-                                                            <th>状态</th>
-                                                        </tr>
-                                                    </thead>
-
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>电压</td>
-                                                            <td>12V</td>
-                                                            <td>正常</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>电流</td>
-                                                            <td>42A</td>
-                                                            <td>正常</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>电阻</td>
-                                                            <td>0</td>
-                                                            <td>异常</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>温度</td>
-                                                            <td>30</td>
-                                                            <td>正常</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-
-                                        <div id="profile4" class="tab-pane">
+                                        <!-- module-chart -->
+                                        <div id="module-chart" class="tab-pane active center">
                                             <label>
-                                                <input type="radio" name="history" class="ace" value="voltage" />
+                                                <input type="radio" name="module-history" class="ace" value="voltage" />
                                                 <span class="lbl">电压</span>
                                             </label>
                                             <label>
-                                                <input type="radio" name="history" class="ace" value="current" />
-                                                <span class="lbl">電流</span>
+                                                <input type="radio" name="module-history" class="ace" value="current" />
+                                                <span class="lbl">电流</span>
                                             </label>
                                             <label>
-                                                <input type="radio" name="history" class="ace" value="current" />
+                                                <input type="radio" name="module-history" class="ace" value="resistance" />
                                                 <span class="lbl">电阻</span>
                                             </label>
                                             <label>
-                                                <input type="radio" name="history" class="ace" value="current" />
+                                                <input type="radio" name="module-history" class="ace" value="temp" />
                                                 <span class="lbl">温度</span>
                                             </label>
                                             <label>
-                                                <input type="radio" name="history" class="ace" value="current" />
+                                                <input type="radio" name="module-history" class="ace" value="capacity" />
                                                 <span class="lbl">容量</span>
                                             </label>
-                                            <img src="img/stats.png" height="300" width="800">
+                                            <div id="module-history-line-chart" style="height: 250px;"></div>
                                         </div>
-
-                                        <div id="dropdown14" class="tab-pane">
+                                        <!-- /.module-chart -->
+                                        <!-- module-statistic -->
+                                        <div id="module-statistic" class="tab-pane">
                                             <div class="row">
-                                                <div class="col-sm-6">
-                                                    <div class="widget-box transparent">
-                                                        <div class="widget-header">
-                                                            <h4 class="widget-title lighter">模组告警设定</h4>
+                                                <div class="col-sm-2"></div>
+                                                <div class="col-sm-8">
+                                                    <div class="table-header">
+                                                        即时数据
+                                                        <div class="widget-toolbar">
+                                                            <a data-action="reload" href="#"><i class="ace-icon fa fa-refresh white"></i></a>
                                                         </div>
+                                                    </div>
+                                                    <table class="table table-striped table-bordered table-hover font-14">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>项目</th>
+                                                                <th>数值</th>
+                                                                <th>状态</th>
+                                                            </tr>
+                                                        </thead>
 
-                                                        <div class="widget-body">
-                                                            <div class="widget-main padding-6 no-padding-left no-padding-right">
-                                                                <form>
-                                                                    <table id="dynamic-table" class="table table-striped table-bordered table-hover">
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td>总电压</td>
-                                                                                <td></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <label class="control-label no-padding-right" for="form-field-1"> 超过 </label>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <input type="text" id="form-field-1" />
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <label class="control-label no-padding-right" for="form-field-1"> 低於 </label>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <input type="text" id="form-field-1" />
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>总电流</td>
-                                                                                <td></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <label class="control-label no-padding-right" for="form-field-1"> 超过 </label>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <input type="text" id="form-field-1" />
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <label class="control-label no-padding-right" for="form-field-1"> 低於 </label>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <input type="text" id="form-field-1" />
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <input class="form-control btn btn-success" type="submit" value="确认" />
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="widget-box transparent">
-                                                        <div class="widget-header">
-                                                            <h4 class="widget-title lighter">电池告警设定</h4>
-                                                        </div>
-                                                        <div class="widget-body">
-                                                            <div class="widget-main padding-6 no-padding-left no-padding-right">
-                                                                <form>
-                                                                    <table id="dynamic-table" class="table table-striped table-bordered table-hover">
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td>电压</td>
-                                                                                <td></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <label class="control-label no-padding-right" for="form-field-1"> 超过 </label>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <input type="text" id="form-field-1" />
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <label class="control-label no-padding-right" for="form-field-1"> 低於 </label>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <input type="text" id="form-field-1" />
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>温度</td>
-                                                                                <td></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <label class="control-label no-padding-right" for="form-field-1"> 超过 </label>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <input type="text" id="form-field-1" />
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>电阻</td>
-                                                                                <td></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td></td>
-                                                                                <td></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <input class="form-control btn btn-success" type="submit" value="确认" />
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>电压</td>
+                                                                <td>7.84V</td>
+                                                                <td>正常</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>电流</td>
+                                                                <td>0</td>
+                                                                <td>异常</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>电阻</td>
+                                                                <td>0</td>
+                                                                <td>正常</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>温度</td>
+                                                                <td>28</td>
+                                                                <td>正常</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- /.module-statistic -->
 
-                                        <div id="dropdown1" class="tab-pane">
-                                            <table id="simple-table" class="table table-striped table-bordered table-hover">
+                                        <!-- alarm-setting -->
+                                        <div id="module-alarm-setting" class="tab-pane">
+                                            <div class="row">
+                                                <!-- module alarm setting -->
+                                                <div class="col-sm-6">
+                                                    <form>
+                                                        <div class="table-header bkgd-green">
+                                                            总模组告警设定
+                                                        </div>
+                                                        <table id="module-alarm-setting" class="table table-bordered">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td>电压</td>
+                                                                    <td></td>
+                                                                    <td>电流</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>超过</td>
+                                                                    <td>
+                                                                        <input type="text" name="voltage-over" />
+                                                                    </td>
+                                                                    <td>超过</td>
+                                                                    <td>
+                                                                        <input type="text" name="current-over" />
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>低於</td>
+                                                                    <td>
+                                                                        <input type="text" name="voltage-low" />
+                                                                    </td>
+                                                                    <td>低於</td>
+                                                                    <td>
+                                                                        <input type="text" name="voltage-low" />
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td>温度</td>
+                                                                    <td></td>
+                                                                    <td>电阻</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>超过</td>
+                                                                    <td>
+                                                                        <input type="text" name="temp-over" />
+                                                                    </td>
+                                                                    <td>超过</td>
+                                                                    <td>
+                                                                        <input type="text" name="resist-over" />
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>低於</td>
+                                                                    <td>
+                                                                        <input type="text" name="temp-low" />
+                                                                    </td>
+                                                                    <td>低於</td>
+                                                                    <td>
+                                                                        <input type="text" name="resist-low" />
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <div class="center">
+                                                            <button type="submit" class="btn btn-warning btn-lg btn-white btn-round">
+                                                                <i class="ace-icon fa fa-check-circle"></i><span class="bolder">&nbsp;确认</span>
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <!-- /.module alarm setting -->
+                                                <!-- cell alarm setting -->
+                                                <div class="col-sm-6">
+                                                    <form>
+                                                        <div class="table-header bkgd-green">
+                                                            单一电池告警设定
+                                                        </div>
+                                                        <table id="cell-alarm-setting" class="table table-bordered">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td>电压</td>
+                                                                    <td></td>
+                                                                    <td>电流</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>超过</td>
+                                                                    <td>
+                                                                        <input type="text" name="voltage-over" />
+                                                                    </td>
+                                                                    <td>超过</td>
+                                                                    <td>
+                                                                        <input type="text" name="current-over" />
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>低於</td>
+                                                                    <td>
+                                                                        <input type="text" name="voltage-low" />
+                                                                    </td>
+                                                                    <td>低於</td>
+                                                                    <td>
+                                                                        <input type="text" name="voltage-low" />
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td>温度</td>
+                                                                    <td></td>
+                                                                    <td>电阻</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>超过</td>
+                                                                    <td>
+                                                                        <input type="text" name="temp-over" />
+                                                                    </td>
+                                                                    <td>超过</td>
+                                                                    <td>
+                                                                        <input type="text" name="resist-over" />
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>低於</td>
+                                                                    <td>
+                                                                        <input type="text" name="temp-low" />
+                                                                    </td>
+                                                                    <td>低於</td>
+                                                                    <td>
+                                                                        <input type="text" name="resist-low" />
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <div class="center">
+                                                            <button type="submit" class="btn btn-warning btn-lg btn-white btn-round">
+                                                                <i class="ace-icon fa fa-check-circle"></i><span class="bolder">&nbsp;确认</span>
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <!-- /.cell alarm setting -->
+                                            </div>
+                                        </div>
+                                        <!-- /.alarm-setting -->
+                                        <!-- module-cell-setting -->
+                                        <div id="module-cell-setting" class="tab-pane">
+                                            <table class="table table-striped table-bordered table-hover">
                                                 <thead>
                                                     <tr>
                                                         <th>名称</th>
@@ -1144,10 +1156,9 @@
                                                         <th>制造日期</th>
                                                         <th>注册日期</th>
                                                         <th>制造商</th>
-                                                        <th></th>
+                                                        <th>编辑</th>
                                                     </tr>
                                                 </thead>
-
                                                 <tbody>
                                                     <tr>
                                                         <td>电池 1</td>
@@ -1171,7 +1182,6 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-
                                                     <tr>
                                                         <td>电池 2</td>
                                                         <td>变电站 A</td>
@@ -1194,7 +1204,6 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-
                                                     <tr>
                                                         <td>电池 3</td>
                                                         <td>变电站 A</td>
@@ -1217,7 +1226,6 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-
                                                     <tr>
                                                         <td>电池 4</td>
                                                         <td>变电站 B</td>
@@ -1240,7 +1248,6 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-
                                                     <tr>
                                                         <td>电池 5</td>
                                                         <td>变电站 C</td>
@@ -1266,93 +1273,153 @@
                                                 </tbody>
                                             </table>
                                         </div>
+                                        <!-- /.module-cell-setting -->
                                     </div>
                                 </div>
                                 <!-- /section:elements.tab.option -->
                             </div>
                         </div>
+                        <!-- /.bottom part: tab -->
                     </div>
+                    <!-- /.page-content -->
                 </div>
+                <!-- /.main-content-inner -->
             </div>
-            <!-- /.page-content -->
+            <!-- /.main-content -->
         </div>
-    </div>
-    <!-- /.main-content -->
-    </div>
-    <!-- /.main-content -->
-    </div>
-    <!-- /.main-container -->
+        <!-- /.main-container -->
 
-    <!-- basic scripts -->
+        <!-- basic scripts -->
 
-    <!--[if !IE]> -->
-    <script type="text/javascript">
-    window.jQuery || document.write("<script src='js/ace/jquery.js'>" + "<" + "/script>");
-    </script>
+        <!--[if !IE]> -->
+        <script type="text/javascript">
+        window.jQuery || document.write("<script src='js/ace/jquery.js'>" + "<" + "/script>");
+        </script>
 
-    <!-- <![endif]-->
+        <!-- <![endif]-->
 
-    <!--[if IE]>
+        <!--[if IE]>
 <script type="text/javascript">
- window.jQuery || document.write("<script src='../assets/js/jquery1x.js'>"+"<"+"/script>");
+ window.jQuery || document.write("<script src='js/ace/jquery1x.js'>"+"<"+"/script>");
 </script>
 <![endif]-->
-    <script type="text/javascript">
-    if ('ontouchstart' in document.documentElement) document.write("<script src='js/ace/jquery.mobile.custom.js'>" + "<" + "/script>");
-    </script>
-    <script src="js/ace/bootstrap.js"></script>
-    <!-- page specific plugin scripts -->
-    <script src="js/ace/jquery.easypiechart.js"></script>
+        <script type="text/javascript">
+        if ('ontouchstart' in document.documentElement) document.write("<script src='js/ace/jquery.mobile.custom.js'>" + "<" + "/script>");
+        </script>
+        <script src="js/ace/bootstrap.js"></script>
+        <!-- page specific plugin scripts -->
+        <script src="js/ace/jquery.easypiechart.js"></script>
+        <!-- Morris charts -->
+        <script src="js/morris/raphael-min.js"></script>
+        <script src="js/morris/morris.min.js"></script>
 
-    <!-- ace scripts -->
-    <script src="js/ace/ace/elements.scroller.js"></script>
-    <script src="js/ace/ace/elements.colorpicker.js"></script>
-    <script src="js/ace/ace/elements.fileinput.js"></script>
-    <script src="js/ace/ace/elements.typeahead.js"></script>
-    <script src="js/ace/ace/elements.wysiwyg.js"></script>
-    <script src="js/ace/ace/elements.spinner.js"></script>
-    <script src="js/ace/ace/elements.treeview.js"></script>
-    <script src="js/ace/ace/elements.wizard.js"></script>
-    <script src="js/ace/ace/elements.aside.js"></script>
-    <script src="js/ace/ace/ace.js"></script>
-    <script src="js/ace/ace/ace.ajax-content.js"></script>
-    <script src="js/ace/ace/ace.touch-drag.js"></script>
-    <script src="js/ace/ace/ace.sidebar.js"></script>
-    <script src="js/ace/ace/ace.sidebar-scroll-1.js"></script>
-    <script src="js/ace/ace/ace.submenu-hover.js"></script>
-    <script src="js/ace/ace/ace.widget-box.js"></script>
-    <script src="js/ace/ace/ace.settings.js"></script>
-    <script src="js/ace/ace/ace.settings-rtl.js"></script>
-    <script src="js/ace/ace/ace.settings-skin.js"></script>
-    <script src="js/ace/ace/ace.widget-on-reload.js"></script>
-    <script src="js/ace/ace/ace.searchbox-autocomplete.js"></script>
+        <!-- ace scripts -->
+        <script src="js/ace/ace/elements.scroller.js"></script>
+        <script src="js/ace/ace/elements.colorpicker.js"></script>
+        <script src="js/ace/ace/elements.fileinput.js"></script>
+        <script src="js/ace/ace/elements.typeahead.js"></script>
+        <script src="js/ace/ace/elements.wysiwyg.js"></script>
+        <script src="js/ace/ace/elements.spinner.js"></script>
+        <script src="js/ace/ace/elements.treeview.js"></script>
+        <script src="js/ace/ace/elements.wizard.js"></script>
+        <script src="js/ace/ace/elements.aside.js"></script>
+        <script src="js/ace/ace/ace.js"></script>
+        <script src="js/ace/ace/ace.ajax-content.js"></script>
+        <script src="js/ace/ace/ace.touch-drag.js"></script>
+        <script src="js/ace/ace/ace.sidebar.js"></script>
+        <script src="js/ace/ace/ace.sidebar-scroll-1.js"></script>
+        <script src="js/ace/ace/ace.submenu-hover.js"></script>
+        <script src="js/ace/ace/ace.widget-box.js"></script>
+        <script src="js/ace/ace/ace.settings.js"></script>
+        <script src="js/ace/ace/ace.settings-rtl.js"></script>
+        <script src="js/ace/ace/ace.settings-skin.js"></script>
+        <script src="js/ace/ace/ace.widget-on-reload.js"></script>
+        <script src="js/ace/ace/ace.searchbox-autocomplete.js"></script>
 
-    <!-- inline scripts related to this page -->
-    <script type="text/javascript">
-    jQuery(function($) {
-        $('.easy-pie-chart.percentage').each(function() {
-            var $box = $(this).closest('.infobox');
-            var barColor = $(this).data('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') : 'rgba(255,255,255,0.95)');
-            var trackColor = barColor == 'rgba(255,255,255,0.95)' ? 'rgba(255,255,255,0.25)' : '#E2E2E2';
-            var size = parseInt($(this).data('size')) || 60;
-            $(this).easyPieChart({
-                barColor: barColor,
-                trackColor: trackColor,
-                scaleColor: false,
-                lineCap: 'butt',
-                lineWidth: parseInt(size / 10),
-                animate: /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase()) ? false : 1000,
-                size: size
+        <!-- inline scripts related to this page -->
+        <script type="text/javascript">
+        jQuery(function($) {
+            // pie chart
+            $('.easy-pie-chart.percentage').each(function() {
+                var $box = $(this).closest('.infobox');
+                $(this).easyPieChart({
+                    barColor: '#69aa46',
+                    trackColor: '#E2E2E2',
+                    lineWidth: 18,
+                    lineCap: 'butt',
+                    scaleColor: false,
+                    size: 130,
+                });
+            })
+
+            //morris chart
+            new Morris.Line({
+                element: 'module-history-line-chart',
+                data: [{
+                    y: '2007',
+                    a: 200,
+                    b: 65,
+                    c: 100,
+                    d: 100,
+                    e: 125
+                }, {
+                    y: '2008',
+                    a: 20,
+                    b: 60,
+                    c: 80,
+                    d: 125,
+                    e: 75
+                }, {
+                    y: '2009',
+                    a: 65,
+                    b: 95,
+                    c: 120,
+                    d: 150,
+                    e: 95
+                }, {
+                    y: '2010',
+                    a: 100,
+                    b: 40,
+                    c: 150,
+                    d: 190,
+                    e: 125
+                }, {
+                    y: '2011',
+                    a: 75,
+                    b: 185,
+                    c: 100,
+                    d: 50,
+                    e: 25
+                }, {
+                    y: '2012',
+                    a: 130,
+                    b: 95,
+                    c: 70,
+                    d: 80,
+                    e: 90
+                }, {
+                    y: '2013',
+                    a: 130,
+                    b: 95,
+                    c: 200,
+                    d: 170,
+                    e: 125
+                }, {
+                    y: '2014',
+                    a: 130,
+                    b: 95,
+                    c: 130,
+                    d: 190,
+                    e: 55
+                }],
+                xkey: 'y',
+                ykeys: ['a', 'b', 'c', 'd', 'e'],
+                labels: ['电压', '电流', '电阻', '温度', '容量'],
+                lineColors: ['green', 'purple', '#e31227', 'orange', 'blue']
             });
+
         })
-
-
-        //flot chart resize plugin, somehow manipulates default browser resize event to optimize it!
-        //but sometimes it brings up errors with normal resize event handlers
-
-
-    })
-    </script>
+        </script>
 </body>
 
 </html>

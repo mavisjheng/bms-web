@@ -822,13 +822,9 @@
                                             </strong>
                                         </div>
                                         <!-- cell pie -->
-                                        <div class="row">
-                                            <div class="col-sm-4"></div>
-                                            <div class="col-sm-4 easy-pie-chart pie-info" data-percent="73">73%</div>
-                                            <div class="col-sm-4"></div>
-                                        </div>
-                                        <div class="space-2"></div>
-                                        <div class="center pie-info">119.3(V)&nbsp;&nbsp;13(A)</div>
+                                        <div class="easy-pie-chart percentage pie-info" data-percent="73">73%</div>
+                                        <div class="space-4"></div>
+                                        <div class="pie-info">119.3(V) 13(A)</div>
                                     </div>
                                     <!-- cell statistic -->
                                     <div class="col-sm-7">
@@ -969,33 +965,27 @@
                                         <!-- cell tab content -->
                                         <div class="tab-content">
                                             <!-- cell-history-chart -->
-                                            <div id="cell-history-chart" class="tab-pane active">
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <div class="center">
-                                                            <label>
-                                                                <input type="radio" name="history" class="ace" value="voltage" />
-                                                                <span class="lbl">电压</span>
-                                                            </label>
-                                                            <label>
-                                                                <input type="radio" name="history" class="ace" value="current" />
-                                                                <span class="lbl">电流</span>
-                                                            </label>
-                                                            <label>
-                                                                <input type="radio" name="history" class="ace" value="resistance" />
-                                                                <span class="lbl">电阻</span>
-                                                            </label>
-                                                            <label>
-                                                                <input type="radio" name="history" class="ace" value="temp" />
-                                                                <span class="lbl">温度</span>
-                                                            </label>
-                                                            <label>
-                                                                <input type="radio" name="history" class="ace" value="capacity" />
-                                                                <span class="lbl">容量</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div id="cell-history-chart" class="tab-pane active center">
+                                                <label>
+                                                    <input type="radio" name="cell-history" class="ace" value="voltage" />
+                                                    <span class="lbl">电压</span>
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="cell-history" class="ace" value="current" />
+                                                    <span class="lbl">电流</span>
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="cell-history" class="ace" value="resistance" />
+                                                    <span class="lbl">电阻</span>
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="cell-history" class="ace" value="temp" />
+                                                    <span class="lbl">温度</span>
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="cell-history" class="ace" value="capacity" />
+                                                    <span class="lbl">容量</span>
+                                                </label>
                                                 <div id="cell-history-line-chart" style="height: 250px;"></div>
                                             </div>
                                             <!-- /.cell-history-chart -->
@@ -1323,13 +1313,16 @@
             });
 
             //easy pie chart
-            $('.easy-pie-chart').easyPieChart({
-                barColor: '#87AA2A',
-                trackColor: '#E2E2E2',
-                lineWidth: 25,
-                scaleColor: false,
-                size: 150,
-            });
+            $('.easy-pie-chart.percentage').each(function() {
+                var $box = $(this).closest('.infobox');
+                $(this).easyPieChart({
+                    barColor: '#87AA2A',
+                    trackColor: '#E2E2E2',
+                    lineWidth: 20,
+                    scaleColor: false,
+                    size: 160,
+                });
+            })
 
             //dataTable
             $('#cell-history-table').dataTable({
