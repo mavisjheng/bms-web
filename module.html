@@ -138,7 +138,7 @@
                         </ul>
                     </li>
 
-                    <li class="light-blue">
+                    <li class="purple">
                         <a href="about.html">
                             <i class="fa fa-info-circle fa-2x"></i>
                             <span class="navbar-menu-text-size">关於我们</span>
@@ -170,7 +170,7 @@
 
             <!-- sidebar shortcuts edit button -->
             <div class="sidebar-shortcuts" id="sidebar-shortcuts">
-                <button class="btn btn-default btn-block">
+                <button class="btn btn-inverse btn-block">
                     <i class="ace-icon fa fa-edit"></i> 编辑
                 </button>
             </div>
@@ -807,13 +807,13 @@
                         <!-- system state -->
                         <div class="row">
                             <div class="space-2"></div>
-                            <div class="col-sm-12 center margin-bm-8">
+                            <div class="col-sm-12 center minus-mgbm-8">
                                 <div class="alert alert-block alert-warning font-16 bolder">
                                     系统状态：
                                     <strong class="green">
                                         <i class="ace-icon fa fa-thumbs-up green"></i>&nbsp;正常&nbsp;&nbsp;
-                                        <i class="ace-icon fa fa-plug green"></i>&nbsp;充电&nbsp;&nbsp;
-                                        <i class="ace-icon fa fa-bolt green"></i>&nbsp;放电
+                                        <!--i class="ace-icon fa fa-plug green"></i>&nbsp;充电&nbsp;&nbsp;
+                                        <i class="ace-icon fa fa-bolt green"></i>&nbsp;放电    -->
                                     </strong>
                                 </div>
                             </div>
@@ -929,26 +929,27 @@
                                     <div class="tab-content">
                                         <!-- module-chart -->
                                         <div id="module-chart" class="tab-pane active center">
-                                            <label>
-                                                <input type="radio" name="module-history" class="ace" value="voltage" />
-                                                <span class="lbl">电压</span>
-                                            </label>
-                                            <label>
-                                                <input type="radio" name="module-history" class="ace" value="current" />
-                                                <span class="lbl">电流</span>
-                                            </label>
-                                            <label>
-                                                <input type="radio" name="module-history" class="ace" value="resistance" />
-                                                <span class="lbl">电阻</span>
-                                            </label>
-                                            <label>
-                                                <input type="radio" name="module-history" class="ace" value="temp" />
-                                                <span class="lbl">温度</span>
-                                            </label>
-                                            <label>
-                                                <input type="radio" name="module-history" class="ace" value="capacity" />
-                                                <span class="lbl">容量</span>
-                                            </label>
+                                            <form class="form-horizontal" role="form">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label no-padding-right">图表选择</label>
+                                                    <div class="col-sm-6">
+                                                        <select name="chart-type" class="form-control">
+                                                            <option value="" selected>单体电压</option>
+                                                            <option value="">控母电压</option>
+                                                            <option value="">合母电压</option>
+                                                            <option value="">浮充电流</option>
+                                                            <option value="">绝缘电阻</option>
+                                                            <option value="">直流母线电阻</option>
+                                                            <option value="">单体电池內阻</option>
+                                                            <option value="">电池组容量</option>
+                                                            <option value="">温度</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <input class="form-control btn btn-success btn-round" type="submit" value="确认" />
+                                                    </div>
+                                                </div>
+                                            </form>
                                             <div id="module-history-line-chart" style="height: 250px;"></div>
                                         </div>
                                         <!-- /.module-chart -->
@@ -1168,9 +1169,9 @@
                                                         <td>康舒科技</td>
                                                         <td>
                                                             <div class="hidden-sm hidden-xs btn-group">
-                                                                <button class="btn btn-xs btn-success">
+                                                                <!--button class="btn btn-xs btn-success">
                                                                     <i class="ace-icon fa fa-check bigger-120"></i>
-                                                                </button>
+                                                                </button-->
 
                                                                 <button class="btn btn-xs btn-info">
                                                                     <i class="ace-icon fa fa-pencil bigger-120"></i>
@@ -1190,9 +1191,9 @@
                                                         <td>康舒科技</td>
                                                         <td>
                                                             <div class="hidden-sm hidden-xs btn-group">
-                                                                <button class="btn btn-xs btn-success">
+                                                                <!--button class="btn btn-xs btn-success">
                                                                     <i class="ace-icon fa fa-check bigger-120"></i>
-                                                                </button>
+                                                                </button-->
 
                                                                 <button class="btn btn-xs btn-info">
                                                                     <i class="ace-icon fa fa-pencil bigger-120"></i>
@@ -1212,9 +1213,9 @@
                                                         <td>康舒科技</td>
                                                         <td>
                                                             <div class="hidden-sm hidden-xs btn-group">
-                                                                <button class="btn btn-xs btn-success">
+                                                                <!--button class="btn btn-xs btn-success">
                                                                     <i class="ace-icon fa fa-check bigger-120"></i>
-                                                                </button>
+                                                                </button-->
 
                                                                 <button class="btn btn-xs btn-info">
                                                                     <i class="ace-icon fa fa-pencil bigger-120"></i>
@@ -1234,9 +1235,9 @@
                                                         <td>康舒科技</td>
                                                         <td>
                                                             <div class="hidden-sm hidden-xs btn-group">
-                                                                <button class="btn btn-xs btn-success">
+                                                                <!--button class="btn btn-xs btn-success">
                                                                     <i class="ace-icon fa fa-check bigger-120"></i>
-                                                                </button>
+                                                                </button-->
 
                                                                 <button class="btn btn-xs btn-info">
                                                                     <i class="ace-icon fa fa-pencil bigger-120"></i>
@@ -1256,9 +1257,9 @@
                                                         <td>康舒科技</td>
                                                         <td>
                                                             <div class="hidden-sm hidden-xs btn-group">
-                                                                <button class="btn btn-xs btn-success">
+                                                                <!--button class="btn btn-xs btn-success">
                                                                     <i class="ace-icon fa fa-check bigger-120"></i>
-                                                                </button>
+                                                                </button-->
 
                                                                 <button class="btn btn-xs btn-info">
                                                                     <i class="ace-icon fa fa-pencil bigger-120"></i>
@@ -1357,65 +1358,33 @@
                 element: 'module-history-line-chart',
                 data: [{
                     y: '2007',
-                    a: 200,
-                    b: 65,
-                    c: 100,
-                    d: 100,
-                    e: 125
+                    a: 200
                 }, {
                     y: '2008',
-                    a: 20,
-                    b: 60,
-                    c: 80,
-                    d: 125,
-                    e: 75
+                    a: 130
                 }, {
                     y: '2009',
-                    a: 65,
-                    b: 95,
-                    c: 120,
-                    d: 150,
-                    e: 95
+                    a: 65
                 }, {
                     y: '2010',
-                    a: 100,
-                    b: 40,
-                    c: 150,
-                    d: 190,
-                    e: 125
+                    a: 100
                 }, {
                     y: '2011',
-                    a: 75,
-                    b: 185,
-                    c: 100,
-                    d: 50,
-                    e: 25
+                    a: 75
                 }, {
                     y: '2012',
-                    a: 130,
-                    b: 95,
-                    c: 70,
-                    d: 80,
-                    e: 90
+                    a: 150
                 }, {
                     y: '2013',
-                    a: 130,
-                    b: 95,
-                    c: 200,
-                    d: 170,
-                    e: 125
+                    a: 130
                 }, {
                     y: '2014',
-                    a: 130,
-                    b: 95,
-                    c: 130,
-                    d: 190,
-                    e: 55
+                    a: 178
                 }],
                 xkey: 'y',
-                ykeys: ['a', 'b', 'c', 'd', 'e'],
-                labels: ['电压', '电流', '电阻', '温度', '容量'],
-                lineColors: ['green', 'purple', '#e31227', 'orange', 'blue']
+                ykeys: ['a'],
+                labels: ['电压'],
+                lineColors: ['orange']
             });
 
         })

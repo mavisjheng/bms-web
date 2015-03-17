@@ -139,7 +139,7 @@
                         </ul>
                     </li>
 
-                    <li class="light-blue">
+                    <li class="purple">
                         <a href="about.html">
                             <i class="fa fa-info-circle fa-2x"></i>
                             <span class="navbar-menu-text-size">关於我们</span>
@@ -171,7 +171,7 @@
 
             <!-- sidebar shortcuts edit button -->
             <div class="sidebar-shortcuts" id="sidebar-shortcuts">
-                <button class="btn btn-default btn-block">
+                <button class="btn btn-inverse btn-block">
                     <i class="ace-icon fa fa-edit"></i> 编辑
                 </button>
             </div>
@@ -817,12 +817,13 @@
                                             系统状态：
                                             <strong class="green">
                                                 <i class="ace-icon fa fa-thumbs-up green"></i>&nbsp;正常&nbsp;&nbsp;
-                                                <i class="ace-icon fa fa-plug green"></i>&nbsp;充电&nbsp;&nbsp;
-                                                <i class="ace-icon fa fa-bolt green"></i>&nbsp;放电
+                                                <!--i class="ace-icon fa fa-plug green"></i>&nbsp;充电&nbsp;&nbsp;
+                                                <i class="ace-icon fa fa-bolt green"></i>&nbsp;放电   -->
                                             </strong>
                                         </div>
                                         <!-- cell pie -->
-                                        <div class="easy-pie-chart percentage pie-info" data-percent="73">73%</div>
+                                        <div class="easy-pie-chart percentage pie-info" data-percent="73"><span>73%</span>
+                                        </div>
                                         <div class="space-4"></div>
                                         <div class="pie-info">119.3(V) 13(A)</div>
                                     </div>
@@ -966,26 +967,27 @@
                                         <div class="tab-content">
                                             <!-- cell-history-chart -->
                                             <div id="cell-history-chart" class="tab-pane active center">
-                                                <label>
-                                                    <input type="radio" name="cell-history" class="ace" value="voltage" />
-                                                    <span class="lbl">电压</span>
-                                                </label>
-                                                <label>
-                                                    <input type="radio" name="cell-history" class="ace" value="current" />
-                                                    <span class="lbl">电流</span>
-                                                </label>
-                                                <label>
-                                                    <input type="radio" name="cell-history" class="ace" value="resistance" />
-                                                    <span class="lbl">电阻</span>
-                                                </label>
-                                                <label>
-                                                    <input type="radio" name="cell-history" class="ace" value="temp" />
-                                                    <span class="lbl">温度</span>
-                                                </label>
-                                                <label>
-                                                    <input type="radio" name="cell-history" class="ace" value="capacity" />
-                                                    <span class="lbl">容量</span>
-                                                </label>
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="form-group">
+                                                        <label class="col-sm-3 control-label no-padding-right">图表选择</label>
+                                                        <div class="col-sm-6">
+                                                            <select name="chart-type" class="form-control">
+                                                                <option value="" selected>单体电压</option>
+                                                                <option value="">控母电压</option>
+                                                                <option value="">合母电压</option>
+                                                                <option value="">浮充电流</option>
+                                                                <option value="">绝缘电阻</option>
+                                                                <option value="">直流母线电阻</option>
+                                                                <option value="">单体电池內阻</option>
+                                                                <option value="">电池组容量</option>
+                                                                <option value="">温度</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-1">
+                                                            <input class="form-control btn btn-success btn-round" type="submit" value="确认" />
+                                                        </div>
+                                                    </div>
+                                                </form>
                                                 <div id="cell-history-line-chart" style="height: 250px;"></div>
                                             </div>
                                             <!-- /.cell-history-chart -->
@@ -993,28 +995,24 @@
                                             <div id="cell-history-statistic" class="tab-pane">
                                                 <div class="row">
                                                     <div class="col-sm-12">
-                                                        <div class="center">
-                                                            <label>
-                                                                <input type="radio" name="history" class="ace" value="voltage" />
-                                                                <span class="lbl">电压</span>
-                                                            </label>
-                                                            <label>
-                                                                <input type="radio" name="history" class="ace" value="current" />
-                                                                <span class="lbl">电流</span>
-                                                            </label>
-                                                            <label>
-                                                                <input type="radio" name="history" class="ace" value="resistance" />
-                                                                <span class="lbl">电阻</span>
-                                                            </label>
-                                                            <label>
-                                                                <input type="radio" name="history" class="ace" value="temp" />
-                                                                <span class="lbl">温度</span>
-                                                            </label>
-                                                            <label>
-                                                                <input type="radio" name="history" class="ace" value="capacity" />
-                                                                <span class="lbl">容量</span>
-                                                            </label>
-                                                        </div>
+                                                        <form class="form-horizontal" role="form">
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label no-padding-right">图表选择</label>
+                                                                <div class="col-sm-6">
+                                                                    <select name="chart-type" class="form-control">
+                                                                        <option value="" selected>单体电压</option>
+                                                                        <option value="">控母电压</option>
+                                                                        <option value="">合母电压</option>
+                                                                        <option value="">浮充电流</option>
+                                                                        <option value="">绝缘电阻</option>
+                                                                        <option value="">直流母线电阻</option>
+                                                                        <option value="">单体电池內阻</option>
+                                                                        <option value="">电池组容量</option>
+                                                                        <option value="">温度</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -1030,7 +1028,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-1">
-                                                                    <input class="form-control btn btn-danger btn-white btn-round" type="submit" value="提交" />
+                                                                    <input class="form-control btn btn-info btn-white btn-round" type="submit" value="提交" />
                                                                 </div>
                                                             </div>
                                                         </form>
@@ -1305,8 +1303,14 @@
                 'applyClass': 'btn-sm btn-success',
                 'cancelClass': 'btn-sm btn-default',
                 locale: {
-                    applyLabel: 'Apply',
-                    cancelLabel: 'Cancel',
+                    applyLabel: '确认',
+                    cancelLabel: '取消',
+                    fromLabel: '起始',
+                    toLabel: '结束',
+                    customRangeLabel: 'Custom',
+                    daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+                    monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                    firstDay: 1
                 }
             }).prev().on(ace.click_event, function() {
                 $(this).next().focus();
@@ -1322,7 +1326,19 @@
                     scaleColor: false,
                     size: 160,
                 });
-            })
+            });
+
+            // update cell capacity percentage automatically
+            function updateStatus(percentage) {
+                $('.easy-pie-chart.percentage span').text(percentage + '%');
+                $('.easy-pie-chart.percentage').data('easyPieChart').update(percentage);
+            }
+            setInterval(function() {
+                // create random percentage
+                var percentage = Math.floor(Math.random() * 100 + 1);
+                // update
+                updateStatus(percentage);
+            }, 5000);
 
             //dataTable
             $('#cell-history-table').dataTable({
@@ -1353,65 +1369,33 @@
                 element: 'cell-history-line-chart',
                 data: [{
                     y: '2007',
-                    a: 200,
-                    b: 65,
-                    c: 100,
-                    d: 100,
-                    e: 125
+                    a: 200
                 }, {
                     y: '2008',
-                    a: 20,
-                    b: 60,
-                    c: 80,
-                    d: 125,
-                    e: 75
+                    a: 20
                 }, {
                     y: '2009',
-                    a: 65,
-                    b: 95,
-                    c: 120,
-                    d: 150,
-                    e: 95
+                    a: 65
                 }, {
                     y: '2010',
-                    a: 100,
-                    b: 40,
-                    c: 150,
-                    d: 190,
-                    e: 125
+                    a: 100
                 }, {
                     y: '2011',
-                    a: 75,
-                    b: 185,
-                    c: 100,
-                    d: 50,
-                    e: 25
+                    a: 75
                 }, {
                     y: '2012',
-                    a: 130,
-                    b: 95,
-                    c: 70,
-                    d: 80,
-                    e: 90
+                    a: 130
                 }, {
                     y: '2013',
-                    a: 130,
-                    b: 95,
-                    c: 200,
-                    d: 170,
-                    e: 125
+                    a: 130
                 }, {
                     y: '2014',
-                    a: 130,
-                    b: 95,
-                    c: 130,
-                    d: 190,
-                    e: 55
+                    a: 55
                 }],
                 xkey: 'y',
-                ykeys: ['a', 'b', 'c', 'd', 'e'],
-                labels: ['电压', '电流', '电阻', '温度', '容量'],
-                lineColors: ['green', 'purple', '#e31227', 'orange', 'blue']
+                ykeys: ['a'],
+                labels: ['电压'],
+                lineColors: ['purple']
             });
         });
         </script>

@@ -18,7 +18,7 @@
 
 /* system-charts */
 #history-label {
-  margin-top: 2%;
+  margin-top: -2px;
   margin-bottom: 2%; 
 }
 
@@ -76,7 +76,7 @@
 .widget-content > .unit-total-amp,
 .infobox-data > .value-cell-voltage,
 .infobox-data > .value-cell-amp {
-  font-size: 24px; 
+  font-size: 22px; 
 }
 
 .infobox-data > .unit-cell-voltage,
@@ -115,13 +115,13 @@
 }
 
 .color-purple3 {
-  color: #B97DE6;
-  border-color: #B97DE6;
+  color: #5f47b0;
+  border-color: #5f47b0;
 }
 
 .background-color-yellow {
-  background: #f7d05b;
-  border-color: #f7d05b
+  background: #FCBF07;
+  border-color: #FCBF07;
 }
 
 .background-color-brown {
@@ -324,7 +324,7 @@
   text-align: center; 
   min-width: 130px; 
   position: relative;
-  margin-top: 3%;
+  margin-top: -3%;
 }
 
 .infobox > .infobox-progress {
@@ -350,6 +350,8 @@
 /* -----------------------------------------
    Mavis Code Begins Here
 ----------------------------------------- */
+
+/*----- common style items begin -----*/
 .text-center {
   text-align: center;
 }
@@ -360,6 +362,7 @@
 
 #elink { 
   font-size: 15px;
+  font-family: 'LiHei Pro', '新細明體', sans-serif;
 }
 
 .font-white {
@@ -381,9 +384,10 @@
 .bkgd-green {
   background: #459171;
 }
+/*----- common style items end -----*/
 
-/* discharge-date-table @ discharge.html begins */
 
+/*----- discharge-date-table @ discharge.html begins -----*/
 #theader1 {
   font-size: 18px;
 }
@@ -393,21 +397,20 @@
   font-size: 15px;
 }
 
-.dataTables_wrapper .row:first-child {
-  padding-top: 8px;
-  padding-bottom: 6px;
+#discharge-date-table_wrapper .row:first-child {
+  padding-top: 6px;
+  padding-bottom: 2px;
 }
 
-.dataTables_wrapper .row:last-child {
+#discharge-date-table_wrapper .row:last-child {
   border-bottom: 1px solid #e0e0e0;
   padding-top: 10px;
   padding-bottom: 6px;
 }
+/*----- discharge-date-table @ discharge.html ends -----*/
 
-/* discharge-date-table @ discharge.html ends */
 
-/* cell page begins */
-
+/*----- cell page begins -----*/
 .pie-info {
   font-size: 20px;
   font-weight: bold;
@@ -415,10 +418,20 @@
   font-family: sans-serif;
 }
 
-/* cell page ends */
+#cell-history-table_wrapper .row:first-child {
+  padding-top: 6px;
+  padding-bottom: 2px;
+}
 
-/* module page begins here*/
+#cell-history-table_wrapper .row:last-child {
+  border-bottom: 1px solid #e0e0e0;
+  padding-top: 6px;
+  padding-bottom: 4px;
+}
+/*----- cell page ends -----*/
 
+
+/*----- module page begins here -----*/
 #cell-alarm-setting, #module-alarm-setting {
   margin-bottom: 10px;
 }
@@ -430,19 +443,72 @@
   font-family: sans-serif;
 }
 
-.page-content > .row .margin-bm-8 {
+.page-content > .row .minus-mgbm-8 {
   margin-bottom: -8px;
 }
-
-/* module page ends here */
-
+/*----- module page ends here -----*/
 
 
+/*----- log page begins here -----*/
+.add-mgbm-8 {
+  margin-bottom: 5px;
+  margin-top: -6px;
+}
+
+#user-log-table, #alarm-log-table {
+  margin-bottom: 8px;
+} 
+
+#log-tab-content {
+  padding: 10px 22px 16px 22px;
+}
+
+.bkgd-table-blue {
+  background-color: #EFF3F8;
+}
+
+#alarm-log-table_wrapper, #user-log-table_wrapper {
+  margin-top: -5px;
+}
+
+#alarm-log-table_length, #user-log-table_length {
+  padding-top: 10px;
+  padding-left: 10px;
+  margin-bottom: -30px;
+}
+
+#alarm-log-table_info, #user-log-table_info {
+  padding-left: 10px;
+  margin-bottom: -15px;
+}
+
+#alarm-log-table_paginate, #user-log-table_paginate {
+  padding-bottom: 10px;
+}
+
+#alarm-log-table_filter label,
+#user-log-table_filter label {
+  margin-right: 10px;
+}
+/*----- log page ends here -----*/
 
 
+/*----- index page table begins -----*/
 
+#index-discharge-date_wrapper .row:first-child,
+#index-alarm-log_wrapper .row:first-child {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 
-
+#index-discharge-date_wrapper .row:last-child,
+#index-alarm-log_wrapper .row:last-child {
+  border-bottom: 1px solid #e0e0e0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #EFF3F8;
+}
+/*----- index page table begins -----*/
 
 
 
