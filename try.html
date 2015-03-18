@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
-    <title>放电设定 - 电池检测系统</title>
+    <title>navbar-sidebar</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/ace/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
 
     <!-- main styles -->
-    <!--link rel="stylesheet" href="css/main.css" /-->
+    <link rel="stylesheet" href="css/main.css" />
 
     <!--[if lte IE 9]>
             <link rel="stylesheet" href="css/ace/ace-part2.css" class="ace-main-stylesheet" />
@@ -44,288 +44,1057 @@
         <![endif]-->
 </head>
 
-<body>
-    <!-- start of navbar -->
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+<body class="no-skin">
+    <!-- navbar -->
+    <div id="navbar" class="navbar navbar-default">
+        <script type="text/javascript">
+        try {
+            ace.settings.check('navbar', 'fixed')
+        } catch (e) {}
+        </script>
+        <div class="navbar-container" id="navbar-container">
+            <!-- sidebar toggle -->
+            <button type="button" class="pull-left navbar-toggle menu-toggler" id="menu-toggler" data-target="#sidebar">
+                <span class="sr-only">Toggle sidebar</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- navbar header -->
+            <div class="navbar-header pull-left">
+                <a href="index.html" class="navbar-brand">
+                    <span>
+                        <img class="media-object" src="img/eLink_Logo_120.png" alt="e-Link Logo">
+                        电池检测系统
+                    </span>
+                </a>
+            </div>
+
+            <!-- navbar buttons -->
+            <div class="navbar-buttons navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav">
+                    <li class="grey">
+                        <a href="log.html" class="test">
+                            <i class="fa fa-history fa-2x"></i>
+                            <span class="navbar-menu-text-size">系统日志</span>
+                            <span class="badge badge-danger">7</span>
+                        </a>
+                    </li>
+
+                    <li class="light-green">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="fa fa-cog fa-2x"></i>
+                            <span class="navbar-menu-text-size">系统设置</span>
+                            <i class="ace-icon fa fa-caret-down fa-2x"></i>
+                        </a>
+
+                        <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+                            <li class="dropdown-content">
+                                <ul class="dropdown-menu dropdown-navbar navbar-pink">
+                                    <li>
+                                        <a href="discharge.html">
+                                            <div class="clearfix">
+                                                <span class="pull-left">
+                                                        <i class="btn btn-xs no-hover btn-danger fa fa-plug"></i>
+                                                        放电排程
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="notification.html">
+                                            <div class="clearfix">
+                                                <span class="pull-left">
+                                                        <i class="btn btn-xs no-hover btn-purple fa fa-bell"></i>
+                                                        告警配置
+                                                    </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="network.html">
+                                            <div class="clearfix">
+                                                <span class="pull-left">
+                                                        <i class="btn btn-xs no-hover btn-primary fa fa-wrench"></i>
+                                                        网络配置
+                                                    </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="user.html">
+                                            <div class="clearfix">
+                                                <span class="pull-left">
+                                                        <i class="btn btn-xs no-hover btn-pink fa fa-users"></i>
+                                                        个人配置
+                                                    </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="purple">
+                        <a href="about.html">
+                            <i class="fa fa-info-circle fa-2x"></i>
+                            <span class="navbar-menu-text-size">关於我们</span>
+                        </a>
+                    </li>
+
+                    <li class="login-btn light-orange">
+                        <a href="login.html">
+                            <i class="fa fa-sign-in fa-2x"></i>
+                            <span class="navbar-menu-text-size">登入系统<span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- narbar buttons -->
+        </div>
+        <!-- navbar-container -->
+    </div>
+    <!-- navbar -->
+
+    <div class="main-container" id="main-container">
+        <!-- sidebar -->
+        <div id="sidebar" class="sidebar responsive">
+            <script type="text/javascript">
+            try {
+                ace.settings.check('sidebar', 'fixed')
+            } catch (e) {}
+            </script>
+
+            <!-- sidebar shortcuts edit button -->
+            <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                <button id="edit-btn" class="btn btn-inverse btn-block">
+                    <i class="ace-icon fa fa-edit bigger-130"></i><span class="show-box">编辑</span>
+                    <i class="ace-icon fa fa-plus bigger-130 tooltip-success edit-bar" data-rel="tooltip" data-placement="right" title="新增系统"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">电池检测系统</a>
             </div>
-            <div id="navbar-menu" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- start of 偏好设定 tab -->
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">偏好设定 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="discharge.html">放电设定</a>
+
+            <!-- system tree view -->
+            <ul class="nav nav-list">
+                <!-- system 1 -->
+                <li class="#">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-tachometer"></i>
+                        <span class="menu-text">
+                            系统 XWZ
+                            <span class="badge badge-transparent">
+                                <i class="ace-icon fa fa-exclamation-triangle red bigger-130 show-box"></i>
+                                <i class="ace-icon fa fa-plus bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="新增模组"></i>
+                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                            </span>
+                        </span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+
+                        <ul class="submenu">
+                            <li class="#">
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="menu-icon fa fa-caret-right"></i>模组 1
+                                    <span class="badge badge-transparent">
+                                        <i class="ace-icon fa fa-exclamation-triangle red bigger-130 show-box"></i>
+                                        <i class="ace-icon fa fa-plus bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="新增电池"></i>
+                                        <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                        <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                    </span>
+                                    <b class="arrow fa fa-angle-down"></b>
+                                </a>
+
+                                <ul class="submenu">
+                                    <li class="#">
+                                        <a href="module.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 1
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 2
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 3
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-exclamation-triangle red bigger-130 show-box"></i>
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                    </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 4
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 5
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-exclamation-triangle red bigger-130 show-box"></i>
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li><a href="network.html">网路配置</a>
+
+                            <li class="#">
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;P
+                                    <span class="badge badge-transparent">
+                                        <i class="ace-icon fa fa-plus bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="新增电池"></i>
+                                        <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                        <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                    </span>
+                                    <b class="arrow fa fa-angle-down"></b>
+                                </a>
+
+                                <ul class="submenu">
+                                    <li class="#">
+                                        <a href="module.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 A
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 B
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 C
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 D
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 E
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li class="subscribe-btn"><a href="#">订阅通知</a>
+
+                            <li class="#">
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;TU
+                                    <span class="badge badge-transparent">
+                                        <i class="ace-icon fa fa-exclamation-triangle red bigger-130 show-box"></i>
+                                        <i class="ace-icon fa fa-plus bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="新增电池"></i>
+                                        <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                        <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                    </span>
+                                    <b class="arrow fa fa-angle-down"></b>
+                                </a>
+
+                                <ul class="submenu">
+                                    <li class="#">
+                                        <a href="module.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 1
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-exclamation-triangle red bigger-130 show-box"></i>
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 2
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 3
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 4
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-exclamation-triangle red bigger-130 show-box"></i>
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 5
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li class="account-btn"><a href="#">个人帐号</a>
+
+                            <li class="#">
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;NN
+                                    <span class="badge badge-transparent">
+                                        <i class="ace-icon fa fa-plus bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="新增电池"></i>
+                                        <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                        <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                    </span>
+                                    <b class="arrow fa fa-angle-down"></b>
+                                </a>
+
+                                <ul class="submenu">
+                                    <li class="#">
+                                        <a href="module.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 K
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 L
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 M
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 N
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
-                    <!-- start of 更多设置 tab -->
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多设置 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="log.html">系统纪录</a>
+                    <!-- system 1 -->
+                    <!-- system 2 -->
+                    <li class="#">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="menu-icon fa fa-tachometer"></i>
+                            <span class="menu-text">
+                                系统&nbsp;CHA
+                                <span class="badge badge-transparent">
+                                    <i class="ace-icon fa fa-plus bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="新增模组"></i>
+                                    <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                    <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                </span>
+                            </span>
+                            <b class="arrow fa fa-angle-down"></b>
+                        </a>
+
+                        <ul class="submenu">
+                            <li class="#">
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;JH
+                                    <span class="badge badge-transparent">
+                                        <i class="ace-icon fa fa-plus bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="新增电池"></i>
+                                        <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                        <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                    </span>
+                                    <b class="arrow fa fa-angle-down"></b>
+                                </a>
+
+                                <ul class="submenu">
+                                    <li class="#">
+                                        <a href="module.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 1
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 2
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 3
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 4
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 5
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li><a href="about.html">关於易联科</a>
+
+                            <li class="#">
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;KP
+                                    <span class="badge badge-transparent">
+                                        <i class="ace-icon fa fa-plus bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="新增电池"></i>
+                                        <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                        <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                    </span>
+                                    <b class="arrow fa fa-angle-down"></b>
+                                </a>
+
+                                <ul class="submenu">
+                                    <li class="#">
+                                        <a href="module.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>模组资讯
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 A
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 B
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 C
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 D
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 E
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li class="contact-btn"><a href="#">联络我们</a>
+
+                            <li class="#">
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;ASO
+                                    <span class="badge badge-transparent">
+                                        <i class="ace-icon fa fa-plus bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="新增电池"></i>
+                                        <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                        <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                    </span>
+                                    <b class="arrow fa fa-angle-down"></b>
+                                </a>
+
+                                <ul class="submenu">
+                                    <li class="#">
+                                        <a href="module.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 1
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 2
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 3
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 4
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 5
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="#">
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;OCD
+                                    <span class="badge badge-transparent">
+                                        <i class="ace-icon fa fa-plus bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="新增电池"></i>
+                                        <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                        <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                    </span>
+                                    <b class="arrow fa fa-angle-down"></b>
+                                </a>
+
+                                <ul class="submenu">
+                                    <li class="#">
+                                        <a href="module.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
+
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 K
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 L
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 M
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 N
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
-                    <!-- start of 登入 tab -->
-                    <li class="login-btn"><a href="#">登入</a>
+                    <!-- system 2 -->
+
+                    <!-- system 3 -->
+                    <li class="#">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="menu-icon fa fa-tachometer"></i>
+                            <span class="menu-text">
+                                系统&nbsp;TPE
+                                <span class="badge badge-transparent">
+                                    <i class="ace-icon fa fa-exclamation-triangle red bigger-130 show-box"></i>
+                                    <i class="ace-icon fa fa-plus bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="新增模组"></i>
+                                    <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                    <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                </span>
+                            </span>
+                            <b class="arrow fa fa-angle-down"></b>
+                        </a>
+
+                        <ul class="submenu">
+                            <li class="#">
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;MNL
+                                    <span class="badge badge-transparent">
+                                        <i class="ace-icon fa fa-plus bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="新增电池"></i>
+                                        <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                        <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                    </span>
+                                    <b class="arrow fa fa-angle-down"></b>
+                                </a>
+
+                                <ul class="submenu">
+                                    <li class="#">
+                                        <a href="module.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 1
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 2
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 3
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 4
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 5
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="#">
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;NHK
+                                    <span class="badge badge-transparent">
+                                        <i class="ace-icon fa fa-exclamation-triangle red bigger-130 show-box"></i>
+                                        <i class="ace-icon fa fa-plus bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="新增电池"></i>
+                                        <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                        <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                    </span>
+                                    <b class="arrow fa fa-angle-down"></b>
+                                </a>
+
+                                <ul class="submenu">
+                                    <li class="#">
+                                        <a href="module.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 A
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 B
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-exclamation-triangle red bigger-130 show-box"></i>
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 C
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-exclamation-triangle red bigger-130 show-box"></i>
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 D
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 E
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="#">
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;NASA
+                                    <span class="badge badge-transparent">
+                                        <i class="ace-icon fa fa-plus bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="新增电池"></i>
+                                        <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                        <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                    </span>
+                                    <b class="arrow fa fa-angle-down"></b>
+                                </a>
+
+                                <ul class="submenu">
+                                    <li class="#">
+                                        <a href="module.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 1
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 2
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 3
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 4
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 5
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="#">
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="menu-icon fa fa-caret-right"></i>模组&nbsp;JP
+                                    <span class="badge badge-transparent">
+                                        <i class="ace-icon fa fa-plus bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="新增电池"></i>
+                                        <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                        <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                    </span>
+                                    <b class="arrow fa fa-angle-down"></b>
+                                </a>
+
+                                <ul class="submenu">
+                                    <li class="#">
+                                        <a href="module.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;模组资讯
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 K
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 L
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 M
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="#">
+                                        <a href="cell.html">
+                                            <i class="menu-icon fa fa-caret-right"></i>&nbsp;电池 N
+                                            <span class="badge badge-transparent">
+                                                <i class="ace-icon fa fa-pencil bigger-130 edit-bar edit-blue tooltip-success" data-rel="tooltip" data-placement="top" title="重新命名"></i>
+                                                <i class="ace-icon fa fa-trash bigger-130 edit-bar red tooltip-error" data-rel="tooltip" data-placement="top" title="删除"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </li>
+                    <!-- system 3 -->
                 </ul>
+                <!-- system tree view -->
+
+                <!-- sidebar minimize -->
+                <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+                    <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+                </div>
+
+                <!-- sidebar minimize -->
+                <script type="text/javascript">
+                try {
+                    ace.settings.check('sidebar', 'collapsed')
+                } catch (e) {}
+                </script>
             </div>
+            <!-- sidebar -->
+            <div class="main-content">
+                <div class="main-content-inner">
+                    <div id="breadcrumbs" class="breadcrumbs">
+                        <ul class="breadcrumb">
+                            <li><i class="fa fa-home home-icon"></i> <a href="index.html">Home</a>
+                            </li>
+                            <li class="active">Dashboard</li>
+                        </ul>
+                    </div>
+                    <!-- /.breadcrumb -->
+
+                    <div class="page-content">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                page content goes here
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.page-content -->
+                </div>
+            </div>
+            <!-- /.main-content -->
         </div>
-    </nav>
-    <!-- start of content -->
-    <div class="container-fluid">
-        <div class="row">
-            <!-- start of left part: battery relationship tree -->
-            <div class="col-sm-3 col-md-2 left-part">
-                <ul class="nav">
-                    <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li><a href="#">Reports</a>
-                    </li>
-                    <li><a href="#">Analytics</a>
-                    </li>
-                    <li><a href="#">Export</a>
-                    </li>
-                    <li><a href="">Nav item</a>
-                    </li>
-                    <li><a href="">Nav item again</a>
-                    </li>
-                    <li><a href="">One more nav</a>
-                    </li>
-                    <li><a href="">Another nav item</a>
-                    </li>
-                    <li><a href="">More navigation</a>
-                    </li>
-                    <li><a href="">Nav item again</a>
-                    </li>
-                    <li><a href="">One more nav</a>
-                    </li>
-                    <li><a href="">Another nav item</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- start of middle part-->
-            <div class="col-sm-9 col-md-10">
-                <div class="breadcrumb">
-                    <li><a href="index.html">电池检测系统</a>
-                    </li>
-                    <li class="active">关於易联科</li>
-                </div>
-                <div class="media">
-                    <div class="col-sm-offset-2 col-sm-7 col-md-offset-2 col-md-7">
-                        <div class="media-left">
-                            <img class="media-object" src="img/introduction_1.jpg" alt="about e-link">
-                        </div>
-                        <div class="media-body">
-                            <p>大连易联科信息技术有限公司成立于2005年，是注册于大连市保税区的高新技术企业。公司致力于电力线通信（PLC）技术和产品的研发及生产，先后开发完成室内电力线宽带适配器（电力猫）、配电网电力线宽带载波通信调制解调器、载波耦合器等产品和相应的智能化载波通信管理软件，产品广泛应用于电力和通信行业。</p>
-                        </div>
-                        <div class="media">
-                            <p>在大连市供电公司配电网自动化项目中，提供了基于电力线的宽带载波通信解决方案，对12个站点（开关站→环网箱→变电亭）的DTU终端柜进行数据传输，平均带宽达到70M，平均时延 15 ms，平均无故障运行达到99.96 %。在辽宁省农电智能化改造项目——沈阳沈北新区营配调一体化系统工程中，为10KV主干线路的8个智能台区及33个负控点提供了电力线载波通信解决方案，为配电网建立了高带宽、高可靠性的柔性数据传输通道。</p>
-                        </div>
-                        <div class="media-body">
-                            <p>在配电网自动化项目——尤其是城市配电网自动化改造项目中，与新建光纤、无线等通信方式相比，宽带载波通信系统具有建设成本低，建设周期短，不受天气、地上建筑遮挡及地下屏蔽等环境因素影响的特点。系统维护简便（只需要维护好电缆），远程控制，宽带可调，运行稳定，完全满足配电网自动化、视频监控、门禁控制、数字语音等应用对通信系统的要求。</p>
-                        </div>
-                        <div class="media-right">
-                            <img class="media-object" src="img/introduction_2.jpg" alt="about e-link">
-                        </div>
-                        <div class="media">
-                            <p><a href="#" class="contact-btn">如有需求，请联系我们</a></p>
-                            <a href="http://china-elink.cn/index.html" target="_blank">http://china-elink.cn/index.html</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- start of subscribe notification form -->
-            <form class="subscribe">
-                <div class="panel panel-info">
-                    <div class="panel-heading">订阅告警通知
-                        <button type="button" class="close subscribe-close"><span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>姓名</td>
-                                <td>
-                                    <input type="text" name="subscribe-name" class="form-control" id="subscribe-name" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>电子信箱</td>
-                                <td>
-                                    <input type="email" name="subscribe-email" class="form-control" id="subscribe-email">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>电话</td>
-                                <td>
-                                    <input type="text" name="subscribe-phone" class="form-control" id="subscribe-phone">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="subscribe" id="subscribe" value="yes">订阅
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="subscribe" id="subscribe" value="no">取消订阅
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <input type="submit" id="subscribe-submit" class="btn btn-info btn-block" value="确认">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </form>
-            <!-- start of my account form -->
-            <form class="account">
-                <div class="panel panel-warning">
-                    <div class="panel-heading">个人资料
-                        <button type="button" class="close account-close"><span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>帐号</td>
-                                <td>shungyang@elink.com</td>
-                            </tr>
-                            <tr>
-                                <td>姓名</td>
-                                <td>
-                                    <input type="text" name="account-name" class="form-control" id="account-name">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>电子信箱</td>
-                                <td>
-                                    <input type="email" name="account-email" class="form-control" id="account-email">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="panel-heading">修改密码
-                    </div>
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>目前密码</td>
-                                <td>
-                                    <input type="password" name="old-pwd" class="form-control" id="old-pwd">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>新密码</td>
-                                <td>
-                                    <input type="password" name="new-pwd" class="form-control" id="new-pwd">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <input type="submit" id="pwd-submit" class="btn btn-warning btn-block" value="更新">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </form>
-            <!-- start of contact us form -->
-            <form class="contact">
-                <div class="panel panel-success">
-                    <div class="panel-heading">联络我们
-                        <button type="button" class="close contact-close"><span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>姓名</td>
-                                <td>
-                                    <input type="text" name="contact-name" class="form-control" id="contact-name" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>电子信箱</td>
-                                <td>
-                                    <input type="email" name="contact-email" class="form-control" id="contact-email" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>讯息</td>
-                                <td>
-                                    <textarea type="text" name="contact-message" class="form-control" rows="7" id="contact-message" required></textarea>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <input type="submit" id="contact-submit" class="btn btn-success btn-block" value="送出">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </form>
-            <!-- start of log in form -->
-            <form class="login">
-                <div class="panel panel-danger">
-                    <div class="panel-heading">登入
-                        <a href="#">&#40;建立新帐号&#41;</a>
-                        <button type="button" class="close login-close"><span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>电子信箱</td>
-                                <td>
-                                    <input type="email" name="login-email" class="form-control" id="login-email" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>密码</td>
-                                <td>
-                                    <input type="password" name="login-pwd" class="form-control" id="login-pwd" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <input type="submit" id="login-submit" class="btn btn-danger btn-block" value="登入">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </form>
-        </div>
+        <!-- /.main-content -->
     </div>
     <!-- /.main-container -->
 
@@ -348,9 +1117,6 @@
     </script>
     <script src="js/ace/bootstrap.js"></script>
     <!-- page specific plugin scripts -->
-    <!-- dataTables and tableTools-->
-    <script src="js/ace/dataTables/jquery.dataTables.js"></script>
-    <script src="js/ace/dataTables/jquery.dataTables.bootstrap.js"></script>
 
     <!-- ace scripts -->
     <script src="js/ace/ace/elements.scroller.js"></script>
@@ -377,17 +1143,20 @@
 
     <!-- inline scripts related to this page -->
     <script type="text/javascript">
-    $(function() {
-        //dataTable
-        $('#discharge-date').dataTable({
-            sDom: 'tip',
-            paging: true,
-            info: true,
-            filter: false
+    $(function($) {
+        // sidebar edit action
+        $(".edit-bar").css({
+            display: "none"
         });
+        var editBar = $(".edit-bar");
+        var showBox = $(".show-box");
+        $("#edit-btn").click(function() {
+            editBar.toggle();
+            showBox.toggle();
+        });
+        $('[data-rel=tooltip]').tooltip();
     });
     </script>
-
 </body>
 
 </html>
