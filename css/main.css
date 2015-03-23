@@ -1,6 +1,6 @@
 /* system-status */
 #system-status {
-  height: 260px;
+  height: 263px;
 }
 
 #system-hr {
@@ -29,7 +29,7 @@
 }
 
 #history-chart {
-  height: 428px;
+  height: 304px;
 }
 
 /* -----------------------------------------
@@ -104,6 +104,11 @@
   color: #9e9e9e;
 }
 
+.color-green {
+  color: #2e8965;
+  border-color: #2e8965;
+}
+
 .color-blue4 {
   color: #A0C8FA;
   border-color: #A0C8FA;
@@ -119,9 +124,9 @@
   border-color: #5f47b0;
 }
 
-.background-color-yellow {
-  background: #FCBF07;
-  border-color: #FCBF07;
+.background-color-redpurple {
+  background: #A25067;
+  border-color: #A25067;
 }
 
 .background-color-brown {
@@ -352,6 +357,10 @@
 ----------------------------------------- */
 
 /*----- common style items begin -----*/
+.edit-bar{
+  display: none;
+}
+
 .text-center {
   text-align: center;
 }
@@ -388,28 +397,54 @@
 .edit-blue {
   color: #478FCA;
 }
+
+.color-red {
+  color: #FF2E41;
+}
 /*----- common style items end -----*/
 
 
-/*----- discharge-date-table @ discharge.html begins -----*/
-#theader1 {
+/*----- two discharge date tables @ discharge.html begins -----*/
+.theader1 {
   font-size: 18px;
 }
 
-#discharge-date-table > tbody > tr > td {
+#future-discharge-date > tbody > tr > td,
+#past-discharge-date > tbody > tr > td {
   text-align: center;
   font-size: 15px;
 }
 
-#discharge-date-table_wrapper .row:first-child {
+#future-discharge-date_wrapper .row:first-child,
+#past-discharge-date_wrapper .row:first-child {
+  border-top: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
   padding-top: 6px;
   padding-bottom: 2px;
 }
 
-#discharge-date-table_wrapper .row:last-child {
+#future-discharge-date_wrapper .row:last-child,
+#past-discharge-date_wrapper .row:last-child {
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
   padding-top: 10px;
   padding-bottom: 6px;
+}
+
+#future-discharge-date > thead > tr > th:first-child,
+#past-discharge-date > thead > tr > th:first-child {
+  border-left-color: #dddddd;
+  border-right-color: #dddddd;
+}
+
+#future-discharge-date_filter, #past-discharge-date_filter {
+  text-align: left;
+}
+
+#future-discharge-date_paginate, #past-discharge-date_paginate {
+  margin-right: -10px;
 }
 /*----- discharge-date-table @ discharge.html ends -----*/
 
@@ -512,8 +547,15 @@
   padding-bottom: 5px;
   background-color: #EFF3F8;
 }
-/*----- index page table begins -----*/
 
+.timely-status.col-md-2 {
+  width: 20%;
+}
+
+.more-date, .more-error{
+  display: none;
+}
+/*----- index page table begins -----*/
 
 
 

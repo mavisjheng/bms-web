@@ -1,7 +1,7 @@
 $(document).ready(function() {
     //dataTable
-    $('#discharge-date-table').dataTable({
-        lengthMenu: [8, 20, 30, 50, "All"],
+    $('#future-discharge-date, #past-discharge-date').dataTable({
+        lengthMenu: [7, 10, 20, 30, 50, "All"],
         length: false,
         ordering: true,
         paging: true,

@@ -1,8 +1,5 @@
 $(document).ready(function() {
     // sidebar edit action for every page
-    $(".edit-bar").css({
-        display: "none"
-    });
     var editBar = $(".edit-bar");
     var showBox = $(".show-box");
     $("#edit-btn").click(function() {
@@ -11,4 +8,9 @@ $(document).ready(function() {
     });
     $('[data-rel=tooltip]').tooltip();
 
+    // breadcrumbs
+    $('ul li a').click(function() {
+        var currentTabText = $(this).text();
+        $('.breadcrumbs li.active').text(currentTabText);
+    });
 });

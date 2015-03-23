@@ -1,6 +1,7 @@
 $(document).ready(function() {
     // dataTable
     $('.table').dataTable({
+        length: false,
         paging: false,
         info: false,
         filter: false
@@ -16,7 +17,7 @@ $(document).ready(function() {
             barColor: barColor,
             trackColor: trackColor,
             scaleColor: false,
-            lineCap: 'butt',
+            lineCap: 'round',
             lineWidth: parseInt(size / 10),
             animate: /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase()) ? false : 1000,
             size: size
@@ -32,6 +33,7 @@ $(document).ready(function() {
         $('.easy-pie-chart.percentage #main-percent').text(percentage);
         $('.easy-pie-chart.percentage.color-purple3').data('easyPieChart').update(percentage);
     }
+
     setInterval(function() {
         // percentage decreases 1 every 5 seconds until reach to 0%
         percentage--;
@@ -44,24 +46,12 @@ $(document).ready(function() {
 
     //create random percentage when system-module click switched
     $('.module-switch').click(function() {
-        var cellPercent1 = Math.floor(Math.random() * 100 + 1);
-        var cellPercent2 = Math.floor(Math.random() * 100 + 1);
-        var cellPercent3 = Math.floor(Math.random() * 100 + 1);
-        var cellPercent4 = Math.floor(Math.random() * 100 + 1);
-        var cellPercent5 = Math.floor(Math.random() * 100 + 1);
-        var cellPercent6 = Math.floor(Math.random() * 100 + 1);
-        $('#cell1 .cell-percent').text(cellPercent1);
-        $('#cell2 .cell-percent').text(cellPercent2);
-        $('#cell3 .cell-percent').text(cellPercent3);
-        $('#cell4 .cell-percent').text(cellPercent4);
-        $('#cell5 .cell-percent').text(cellPercent5);
-        $('#cell6 .cell-percent').text(cellPercent6);
-        $('#cell1').data('easyPieChart').update(cellPercent1);
-        $('#cell2').data('easyPieChart').update(cellPercent2);
-        $('#cell3').data('easyPieChart').update(cellPercent3);
-        $('#cell4').data('easyPieChart').update(cellPercent4);
-        $('#cell5').data('easyPieChart').update(cellPercent5);
-        $('#cell6').data('easyPieChart').update(cellPercent6);
+        $('#module-widget .easy-pie-chart.percentage').each(function() {
+            var cellPercent = Math.floor(Math.random() * 100 + 1);
+            $(this).find('.percent').text(cellPercent);
+            $(this).data('easyPieChart').update(cellPercent);
+        });
+
         var systemTree = ['系统XWZ / 模组1', '系统XWZ / 模组P', '系统XWZ / 模组TU', '系统XWZ / 模组NN', '系统CHA / 模组JH', '系统CHA / 模组KP',
             '系统CHA / 模组ASO', '系统CHA / 模组OCD', '系统TPE / 模组MNL', '系统TPE / 模组NHK', '系统TPE / 模组NASA', '系统TPE / 模组JP'
         ];
@@ -71,99 +61,60 @@ $(document).ready(function() {
         $('#system-module').text(moduleName);
     });
 
-    // morris line charts
+    // update cell-history-morris-chart upon the type selection changes
+    // morris chart
+    var initData = prepareDemoCellData();
+
     var graph = new Morris.Line({
         element: 'history-line-chart',
-        data: [{
-            y: '2007',
-            a: 75
-        }, {
-            y: '2008',
-            a: 20
-        }, {
-            y: '2009',
-            a: 65
-        }, {
-            y: '2010',
-            a: 100
-        }, {
-            y: '2011',
-            a: 75
-        }, {
-            y: '2012',
-            a: 130
-        }, {
-            y: '2013',
-            a: 10
-        }, {
-            y: '2014',
-            a: 175
-        }],
-        xkey: 'y',
-        ykeys: ['a'],
+        data: initData,
+        xkey: 'year',
+        ykeys: ['value'],
         labels: ['平均'],
         ymin: 0,
         ymax: 200,
         lineColors: ['green']
     });
 
-    $("input[name=history]:radio").change(function() {
-        var text = $("input[type='radio']:checked + span").text();
-        if (text === '历史电流') {
-            var curData = [{
-                y: '2007',
-                a: 20
-            }, {
-                y: '2008',
-                a: 200
-            }, {
-                y: '2009',
-                a: 75
-            }, {
-                y: '2010',
-                a: 160
-            }, {
-                y: '2011',
-                a: 100
-            }, {
-                y: '2012',
-                a: 130
-            }, {
-                y: '2013',
-                a: 10
-            }, {
-                y: '2014',
-                a: 55
-            }];
-            graph.setData(curData);
-        } else {
-            var originData = [{
-                y: '2007',
-                a: 75
-            }, {
-                y: '2008',
-                a: 20
-            }, {
-                y: '2009',
-                a: 65
-            }, {
-                y: '2010',
-                a: 100
-            }, {
-                y: '2011',
-                a: 75
-            }, {
-                y: '2012',
-                a: 130
-            }, {
-                y: '2013',
-                a: 10
-            }, {
-                y: '2014',
-                a: 175
-            }];
-            graph.setData(originData);
-        }
-    })
+    function prepareDemoCellData() {
+        var data = [];
+        for (var startYear = 2007; startYear <= 2014; startYear++) {
+            var currentYear = startYear;
 
+            var max = 200;
+            var min = 1;
+
+            var value = Math.floor(Math.random() * max + min);
+            var dataPoint = {
+                year: currentYear.toString(),
+                value: value
+            };
+            data.push(dataPoint);
+        }
+        return data;
+    }
+
+    $("input[name=history]:radio").change(function() {
+        var chartType = $("input[type='radio']:checked").val();
+        if (chartType) {
+            var cellData = prepareDemoCellData(chartType);
+            graph.setData(cellData);
+        }
+    });
+
+    // update table content when discharge pagination button clicked
+    var hideDate = $(".more-date");
+    var showDate = $(".less-date");
+    $("#next-date, #pre-date").click(function() {
+        hideDate.toggle();
+        showDate.toggle();
+    });
+
+    // update table content when error pagination button clicked
+    var hideError = $(".more-error");
+    var showError = $(".less-error");
+    $("#next-error, #pre-error").click(function() {
+        hideError.toggle();
+        showError.toggle();
+    });
 });
