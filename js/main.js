@@ -13,4 +13,5 @@ $(document).ready(function() {
         var currentTabText = $(this).text();
         $('.breadcrumbs li.active').text(currentTabText);
     });
+
 });

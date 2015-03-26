@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // dataTable
-    $('.table').dataTable({
+    $('#index-discharge-date, #index-alarm-log').dataTable({
         length: false,
         paging: false,
         info: false,
@@ -8,13 +8,45 @@ $(document).ready(function() {
     });
 
     // easy-pie-chart
-    $('.easy-pie-chart.percentage').each(function() {
+    $('.easy-pie-chart.color-purple3').each(function() {
         var $box = $(this).closest('.infobox');
         var barColor = $(this).css('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') : 'rgba(255,255,255,0.95)');
         var trackColor = barColor == 'rgba(255,255,255,0.95)' ? 'rgba(255,255,255,0.25)' : '#E2E2E2';
         var size = parseInt($(this).data('size')) || 50;
         $(this).easyPieChart({
-            barColor: barColor,
+            barColor: function colorChange(percentage) {
+                if (percentage < 50) {
+                    return '#E32815';
+                } else if (percentage > 49 && percentage < 80){
+                    return '#F8C119';
+                } else {
+                    return '#5f47b0';
+                }
+            },
+            trackColor: trackColor,
+            scaleColor: false,
+            lineCap: 'round',
+            lineWidth: parseInt(size / 10),
+            animate: /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase()) ? false : 1000,
+            size: size
+        });
+    });
+
+    $('.easy-pie-chart.color-blue4').each(function() {
+        var $box = $(this).closest('.infobox');
+        var barColor = $(this).css('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') : 'rgba(255,255,255,0.95)');
+        var trackColor = barColor == 'rgba(255,255,255,0.95)' ? 'rgba(255,255,255,0.25)' : '#E2E2E2';
+        var size = parseInt($(this).data('size')) || 50;
+        $(this).easyPieChart({
+            barColor: function colorChange(percentage) {
+                if (percentage < 50) {
+                    return '#E32815';
+                } else if (percentage > 49 && percentage < 80){
+                    return '#F8C119';
+                } else {
+                    return '#A0C8FA';
+                }
+            },
             trackColor: trackColor,
             scaleColor: false,
             lineCap: 'round',
@@ -38,13 +70,13 @@ $(document).ready(function() {
         // percentage decreases 1 every 5 seconds until reach to 0%
         percentage--;
         if (percentage < 0) {
-            percentage = percentInt;
+            percentage = 100;
         }
         // update
         updateStatus(percentage);
     }, 5000);
 
-    //create random percentage when system-module click switched
+    //create random percentage when module-switch clicked
     $('.module-switch').click(function() {
         $('#module-widget .easy-pie-chart.percentage').each(function() {
             var cellPercent = Math.floor(Math.random() * 100 + 1);
@@ -58,7 +90,7 @@ $(document).ready(function() {
         var treeLength = systemTree.length;
         var treeIndex = Math.floor(Math.random() * treeLength);
         var moduleName = systemTree[treeIndex];
-        $('#system-module').text(moduleName);
+        $('#module-name').text(moduleName);
     });
 
     // update cell-history-morris-chart upon the type selection changes
@@ -66,7 +98,7 @@ $(document).ready(function() {
     var initData = prepareDemoCellData();
 
     var graph = new Morris.Line({
-        element: 'history-line-chart',
+        element: 'history-morris-chart',
         data: initData,
         xkey: 'year',
         ykeys: ['value'],
@@ -94,7 +126,7 @@ $(document).ready(function() {
         return data;
     }
 
-    $("input[name=history]:radio").change(function() {
+    $("input[name=history-chart-type]:radio").change(function() {
         var chartType = $("input[type='radio']:checked").val();
         if (chartType) {
             var cellData = prepareDemoCellData(chartType);
@@ -103,17 +135,17 @@ $(document).ready(function() {
     });
 
     // update table content when discharge pagination button clicked
-    var hideDate = $(".more-date");
-    var showDate = $(".less-date");
-    $("#next-date, #pre-date").click(function() {
+    var hideDate = $(".more-discharge");
+    var showDate = $(".less-discharge");
+    $("#next-discharge, #pre-discharge").click(function() {
         hideDate.toggle();
         showDate.toggle();
     });
 
     // update table content when error pagination button clicked
-    var hideError = $(".more-error");
-    var showError = $(".less-error");
-    $("#next-error, #pre-error").click(function() {
+    var hideError = $(".more-alarm");
+    var showError = $(".less-alarm");
+    $("#next-alarm, #pre-alarm").click(function() {
         hideError.toggle();
         showError.toggle();
     });

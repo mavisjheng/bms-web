@@ -17,11 +17,11 @@
     <!-- main styles -->
     <link rel="stylesheet" href="css/main.css" />
     <!--[if lte IE 9]>
-            <link rel="stylesheet" href="css/ace/ace-part2.css" class="ace-main-stylesheet" />
-        <![endif]-->
+        <link rel="stylesheet" href="css/ace/ace-part2.css" class="ace-main-stylesheet" />
+    <![endif]-->
     <!--[if lte IE 9]>
-          <link rel="stylesheet" href="css/ace/ace-ie.css" />
-        <![endif]-->
+        <link rel="stylesheet" href="css/ace/ace-ie.css" />
+    <![endif]-->
     <!-- inline styles related to this page -->
     <!-- ace settings handler -->
     <script src="js/ace/ace-extra.js"></script>
@@ -29,7 +29,7 @@
     <!--[if lte IE 8]>
         <script src="js/ace/html5shiv.js"></script>
         <script src="js/ace/respond.js"></script>
-        <![endif]-->
+    <![endif]-->
 </head>
 
 <body class="no-skin">
@@ -48,7 +48,7 @@
                 <a href="index.html" class="navbar-brand">
                     <span>
                         <img class="media-object" src="img/eLink_Logo_120.png" alt="e-Link Logo">
-                        电池检测系统
+                        通信站在线电池监控系统
                     </span>
                 </a>
             </div>
@@ -69,55 +69,28 @@
                         </a>
                     </li>
                     <li class="grey">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
                             <i class="fa fa-cog fa-2x"></i>
                             <span class="navbar-menu-text-size">系统设置</span>
-                            <i class="ace-icon fa fa-caret-down fa-2x"></i>
+                            <i class="ace-icon fa fa-caret-down"></i>
                         </a>
-                        <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-                            <li class="dropdown-content">
-                                <ul class="dropdown-menu dropdown-navbar navbar-pink">
-                                    <li>
-                                        <a href="discharge.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-danger fa fa-plug"></i>
-                                                        放电排程
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="notification.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-purple fa fa-bell"></i>
-                                                        告警配置
-                                                    </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="network.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-primary fa fa-wrench"></i>
-                                                        网络配置
-                                                    </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="user.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-pink fa fa-users"></i>
-                                                        个人配置
-                                                    </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="discharge.html">
+                                    <i class="ace-icon fa fa-plug"></i> 放电排程
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="notification.html">
+                                    <i class="ace-icon fa fa-bell"></i> 告警配置
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="network.html">
+                                    <i class="ace-icon fa fa-wrench"></i> 网络配置
+                                </a>
                             </li>
                         </ul>
                     </li>
@@ -128,10 +101,30 @@
                         </a>
                     </li>
                     <li class="login-btn red">
-                        <a href="login.html">
+                        <a href="#" data-toggle="modal" data-target="#myModal">
                             <i class="fa fa-sign-in fa-2x"></i>
                             <span class="navbar-menu-text-size">登入系统<span>
                         </a>
+                    </li>
+                    <li class="light-blue">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <img src="img/face.png">
+                            <span class="navbar-menu-text-size">Hi,智翔</span>
+                            <i class="ace-icon fa fa-caret-down"></i>
+                        </a>
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="user.html">
+                                    <i class="ace-icon fa fa-users"></i> 个人配置
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <i class="ace-icon fa fa-power-off"></i> 登出
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -140,7 +133,6 @@
         <!-- navbar-container -->
     </div>
     <!-- navbar -->
-
     <div class="main-container" id="main-container">
         <!-- sidebar -->
         <div id="sidebar" class="sidebar responsive">
@@ -148,8 +140,8 @@
             <div class="sidebar-shortcuts" id="sidebar-shortcuts">
                 <button id="edit-btn" class="btn btn-inverse btn-block">
                     <i class="ace-icon fa fa-edit bigger-130"></i><span class="show-box">编辑</span>
-                            <i class="ace-icon fa fa-plus bigger-130 tooltip-success edit-bar" data-rel="tooltip" data-placement="right" title="新增系统"></i>
-                            </button>
+                    <i class="ace-icon fa fa-plus bigger-130 tooltip-success edit-bar" data-rel="tooltip" data-placement="right" title="新增系统"></i>
+                </button>
             </div>
             <!-- system tree view -->
             <ul class="nav nav-list">
@@ -981,6 +973,256 @@
     </div>
     <!-- /.main-content -->
     </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <div class="login-container">
+                            <div class="center">
+                                <h1 class="bolder">
+                                <span class="red">电池检测系统</span>
+                            </h1>
+                                <span><img class="media-object" src="img/eLink_Logo_120.png" alt="e-Link Logo"></span>
+                            </div>
+                            <div class="space-6"></div>
+                            <div class="position-relative">
+                                <div id="login-box" class="login-box visible widget-box no-border">
+                                    <div class="widget-body">
+                                        <div class="widget-main">
+                                            <h4 class="header blue lighter bigger">
+                                                <i class="ace-icon fa fa-pencil green"></i>
+                                                请输入您的资讯
+                                            </h4>
+                                            <div class="space-6"></div>
+                                            <form>
+                                                <fieldset>
+                                                    <label class="block clearfix">
+                                                        <span class="block input-icon input-icon-right">
+                                                            <input type="text" class="form-control" placeholder="使用者名称" />
+                                                            <i class="ace-icon fa fa-user"></i>
+                                                        </span>
+                                                    </label>
+                                                    <label class="block clearfix">
+                                                        <span class="block input-icon input-icon-right">
+                                                            <input type="password" class="form-control" placeholder="密码" />
+                                                            <i class="ace-icon fa fa-lock"></i>
+                                                        </span>
+                                                    </label>
+                                                    <div class="space"></div>
+                                                    <div class="clearfix">
+                                                        <label class="inline">
+                                                            <input type="checkbox" class="ace" />
+                                                            <span class="lbl"> 记住我</span>
+                                                        </label>
+                                                        <a href="index.html" id="login-btn">
+                                                            <button type="button" class="width-35 pull-right btn btn-sm btn-primary">
+                                                                <i class="ace-icon fa fa-key"></i>
+                                                                <span class="bigger-110">登入</span>
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                    <div class="space-4"></div>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                        <!-- /.widget-main -->
+                                        <div class="toolbar clearfix">
+                                            <div>
+                                                <a href="#" data-target="#forgot-box" class="forgot-password-link">
+                                                    <i class="ace-icon fa fa-arrow-left"></i> 忘记密码
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href="#" data-target="#signup-box" class="user-signup-link">
+                                                    注册新帐号
+                                                    <i class="ace-icon fa fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.widget-body -->
+                                </div>
+                                <!-- /.login-box -->
+                                <!-- /.forgot-box -->
+                                <!-- /.signup-box -->
+                            </div>
+                            <!-- /.position-relative -->
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <div class="login-container">
+                            <div class="center">
+                                <h1 class="bolder">
+                                <span class="red">电池检测系统</span>
+                            </h1>
+                                <span><img class="media-object" src="img/eLink_Logo_120.png" alt="e-Link Logo"></span>
+                            </div>
+                            <div class="space-6"></div>
+                            <div class="position-relative">
+                                <div id="forgot-box" class="forgot-box widget-box no-border">
+                                    <div class="widget-body">
+                                        <div class="widget-main">
+                                            <h4 class="header red lighter bigger">
+                                                <i class="ace-icon fa fa-key"></i>
+                                                重新取得密码
+                                            </h4>
+                                            <div class="space-6"></div>
+                                            <h5>
+                                            请输入邮箱以取得登入说明
+                                        </h5>
+                                            <form>
+                                                <fieldset>
+                                                    <label class="block clearfix">
+                                                        <span class="block input-icon input-icon-right">
+                                                            <input type="email" class="form-control" placeholder="邮箱" />
+                                                            <i class="ace-icon fa fa-envelope"></i>
+                                                        </span>
+                                                    </label>
+                                                    <div class="clearfix">
+                                                        <button type="button" class="width-35 pull-right btn btn-sm btn-danger">
+                                                            <i class="ace-icon fa fa-lightbulb-o"></i>
+                                                            <span class="bigger-110">确认</span>
+                                                        </button>
+                                                    </div>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                        <!-- /.widget-main -->
+                                        <div class="toolbar center">
+                                            <a href="#" data-target="#login-box" class="back-to-login-link">
+                                                返回登入页面
+                                                <i class="ace-icon fa fa-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- /.widget-body -->
+                                </div>
+                            </div>
+                            <!-- /.position-relative -->
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <div class="login-container">
+                            <div class="center">
+                                <h1 class="bolder">
+                                <span class="red">电池检测系统</span>
+                            </h1>
+                                <span><img class="media-object" src="img/eLink_Logo_120.png" alt="e-Link Logo"></span>
+                            </div>
+                            <div class="space-6"></div>
+                            <div class="position-relative">
+                                <div id="signup-box" class="signup-box widget-box no-border">
+                                    <div class="widget-body">
+                                        <div class="widget-main">
+                                            <h4 class="header green lighter bigger">
+                                                <i class="ace-icon fa fa-users blue"></i>
+                                                新用户注册
+                                            </h4>
+                                            <h5>请输入以下资讯：</h5>
+                                            <form>
+                                                <fieldset>
+                                                    <label class="block clearfix">
+                                                        <select id="monitor-center" name="monitor-center" class="form-control">
+                                                            <option value="" disabled selected>监测中心名称</option>
+                                                            <option value="">渖阳市</option>
+                                                            <option value="">大连市</option>
+                                                            <option value="">抚顺市</option>
+                                                        </select>
+                                                    </label>
+                                                    <label class="block clearfix">
+                                                        <select id="system-center" name="system-center" class="form-control">
+                                                            <option value="" disabled selected>通信站</option>
+                                                            <option value="">和平区</option>
+                                                            <option value="">渖河区</option>
+                                                            <option value="">大东区</option>
+                                                        </select>
+                                                    </label>
+                                                    <label class="block clearfix">
+                                                        <span class="block input-icon input-icon-right">
+                                                            <input type="text" class="form-control" placeholder="员工号" />
+                                                            <i class="ace-icon fa fa-smile-o"></i>
+                                                        </span>
+                                                    </label>
+                                                    <label class="block clearfix">
+                                                        <span class="block input-icon input-icon-right">
+                                                            <input type="text" class="form-control" placeholder="使用者名称" />
+                                                            <i class="ace-icon fa fa-user"></i>
+                                                        </span>
+                                                    </label>
+                                                    <label class="block clearfix">
+                                                        <span class="block input-icon input-icon-right">
+                                                            <input type="password" class="form-control" placeholder="密码" />
+                                                            <i class="ace-icon fa fa-lock"></i>
+                                                        </span>
+                                                    </label>
+                                                    <label class="block clearfix">
+                                                        <span class="block input-icon input-icon-right">
+                                                            <input type="password" class="form-control" placeholder="再次输入密码" />
+                                                            <i class="ace-icon fa fa-retweet"></i>
+                                                        </span>
+                                                    </label>
+                                                    <label class="block clearfix">
+                                                        <span class="block input-icon input-icon-right">
+                                                            <input type="text" class="form-control" placeholder="电话" />
+                                                            <i class="ace-icon fa fa-phone-square"></i>
+                                                        </span>
+                                                    </label>
+                                                    <label class="block clearfix">
+                                                        <span class="block input-icon input-icon-right">
+                                                            <input type="email" class="form-control" placeholder="邮箱" />
+                                                            <i class="ace-icon fa fa-envelope"></i>
+                                                        </span>
+                                                    </label>
+                                                    <div class="space-2"></div>
+                                                    <div class="clearfix">
+                                                        <button type="reset" class="width-30 pull-left btn btn-sm">
+                                                            <i class="ace-icon fa fa-refresh"></i>
+                                                            <span class="bigger-110">重设</span>
+                                                        </button>
+                                                        <button type="button" class="width-65 pull-right btn btn-sm btn-success">
+                                                            <span class="bigger-110">注册</span>
+                                                            <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+                                                        </button>
+                                                    </div>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                        <div class="toolbar center">
+                                            <a href="#" data-target="#login-box" class="back-to-login-link">
+                                                <i class="ace-icon fa fa-arrow-left"></i> 返回登入页面
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- /.widget-body -->
+                                </div>
+                            </div>
+                            <!-- /.position-relative -->
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- /.main-container -->
     <!-- basic scripts -->
     <!--[if !IE]> -->
@@ -1020,22 +1262,8 @@
     <script src="js/ace/ace/ace.settings-skin.js"></script>
     <script src="js/ace/ace/ace.widget-on-reload.js"></script>
     <script src="js/ace/ace/ace.searchbox-autocomplete.js"></script>
-    <!-- inline scripts related to this page -->
-    <script type="text/javascript">
-    $(function($) {
-        // sidebar edit action
-        $(".edit-bar").css({
-            display: "none"
-        });
-        var editBar = $(".edit-bar");
-        var showBox = $(".show-box");
-        $("#edit-btn").click(function() {
-            editBar.toggle();
-            showBox.toggle();
-        });
-        $('[data-rel=tooltip]').tooltip();
-    });
-    </script>
+    <!-- main script -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>

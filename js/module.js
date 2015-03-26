@@ -3,12 +3,20 @@ $(document).ready(function() {
     $('.easy-pie-chart.percentage').each(function() {
         var $box = $(this).closest('.infobox');
         $(this).easyPieChart({
-            barColor: '#69aa46',
+            barColor: function colorChange(percentage) {
+                if (percentage < 50) {
+                    return '#E32815';
+                } else if (percentage > 49 && percentage < 80){
+                    return '#F8C119';
+                } else {
+                    return '#69aa46';
+                }
+            },
             trackColor: '#E2E2E2',
-            lineWidth: 18,
+            lineWidth: 15,
             lineCap: 'butt',
             scaleColor: false,
-            size: 130,
+            size: 120,
         });
     })
 
@@ -17,7 +25,7 @@ $(document).ready(function() {
     var initData = prepareDemoCellData();
     
     var graph = new Morris.Line({
-        element: 'module-history-line-chart',
+        element: 'module-history-morris-chart',
         data: initData,
         xkey: 'year',
         ykeys: ['value'],
@@ -45,11 +53,11 @@ $(document).ready(function() {
         return data;
     }
 
-    $("#module-history-chart-form").submit(function(event) {
+    $("#module-chart-form").submit(function(event) {
         event.preventDefault();
         var chartType = $("#module-chart-type option:selected").val();
         if (chartType) {
-            var cellData = prepareDemoCellData(chartType);
+            var cellData = prepareDemoCellData();
             graph.setData(cellData);
         }
     });

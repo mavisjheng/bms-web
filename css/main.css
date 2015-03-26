@@ -76,7 +76,7 @@
 .widget-content > .unit-total-amp,
 .infobox-data > .value-cell-voltage,
 .infobox-data > .value-cell-amp {
-  font-size: 22px; 
+  font-size: 20px; 
 }
 
 .infobox-data > .unit-cell-voltage,
@@ -329,7 +329,7 @@
   text-align: center; 
   min-width: 130px; 
   position: relative;
-  margin-top: -3%;
+  margin-top: -8%;
 }
 
 .infobox > .infobox-progress {
@@ -357,7 +357,8 @@
 ----------------------------------------- */
 
 /*----- common style items begin -----*/
-.edit-bar{
+
+.edit-bar {
   display: none;
 }
 
@@ -369,7 +370,7 @@
   text-align: left;
 }
 
-#elink { 
+#elink-info { 
   font-size: 15px;
   font-family: 'LiHei Pro', '新細明體', sans-serif;
 }
@@ -380,6 +381,10 @@
 
 .font-16 {
   font-size: 16px;
+}
+
+.font-15 {
+  font-size: 15px;
 }
 
 .font-14 {
@@ -405,18 +410,15 @@
 
 
 /*----- two discharge date tables @ discharge.html begins -----*/
-.theader1 {
-  font-size: 18px;
-}
 
-#future-discharge-date > tbody > tr > td,
-#past-discharge-date > tbody > tr > td {
+#future-discharge-table > tbody > tr > td,
+#past-discharge-table > tbody > tr > td {
   text-align: center;
   font-size: 15px;
 }
 
-#future-discharge-date_wrapper .row:first-child,
-#past-discharge-date_wrapper .row:first-child {
+#future-discharge-table_wrapper .row:first-child,
+#past-discharge-table_wrapper .row:first-child {
   border-top: 1px solid #e0e0e0;
   border-left: 1px solid #e0e0e0;
   border-right: 1px solid #e0e0e0;
@@ -424,8 +426,8 @@
   padding-bottom: 2px;
 }
 
-#future-discharge-date_wrapper .row:last-child,
-#past-discharge-date_wrapper .row:last-child {
+#future-discharge-table_wrapper .row:last-child,
+#past-discharge-table_wrapper .row:last-child {
   border-left: 1px solid #e0e0e0;
   border-right: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
@@ -433,18 +435,31 @@
   padding-bottom: 6px;
 }
 
-#future-discharge-date > thead > tr > th:first-child,
-#past-discharge-date > thead > tr > th:first-child {
+#future-discharge-table > thead > tr > th:first-child,
+#past-discharge-table > thead > tr > th:first-child {
   border-left-color: #dddddd;
   border-right-color: #dddddd;
 }
 
-#future-discharge-date_filter, #past-discharge-date_filter {
+#future-discharge-table_filter, #past-discharge-table_filter {
   text-align: left;
 }
 
-#future-discharge-date_paginate, #past-discharge-date_paginate {
+#future-discharge-table_paginate, #past-discharge-table_paginate {
   margin-right: -10px;
+}
+
+#discharge-tables {
+  padding: 0px;
+}
+
+.discharge-submit {
+  padding-bottom: 6px;
+}
+
+#future-discharge .table-header,
+#past-discharge .table-header {
+  margin-bottom: 0px;
 }
 /*----- discharge-date-table @ discharge.html ends -----*/
 
@@ -457,12 +472,12 @@
   font-family: sans-serif;
 }
 
-#cell-history-table_wrapper .row:first-child {
+#cell-history_wrapper .row:first-child {
   padding-top: 6px;
   padding-bottom: 2px;
 }
 
-#cell-history-table_wrapper .row:last-child {
+#cell-history_wrapper .row:last-child {
   border-bottom: 1px solid #e0e0e0;
   padding-top: 6px;
   padding-bottom: 4px;
@@ -533,7 +548,6 @@
 
 
 /*----- index page table begins -----*/
-
 #index-discharge-date_wrapper .row:first-child,
 #index-alarm-log_wrapper .row:first-child {
   padding-top: 0px;
@@ -552,18 +566,14 @@
   width: 20%;
 }
 
-.more-date, .more-error{
+.more-discharge, .more-alarm {
   display: none;
 }
-/*----- index page table begins -----*/
 
-
-
-
-
-
-
-
+#system-infobox-data.infobox-data {
+  margin-top: 0%;
+}
+/*----- index page table ends -----*/
 
 
 

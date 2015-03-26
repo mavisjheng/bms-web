@@ -49,7 +49,7 @@
                 <a href="index.html" class="navbar-brand">
                     <span>
                         <img class="media-object" src="img/eLink_Logo_120.png" alt="e-Link Logo" />
-                        电池检测系统
+                        通信站在线电池监控系统
                     </span>
                 </a>
             </div>
@@ -69,55 +69,28 @@
                         </a>
                     </li>
                     <li class="grey">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="fa fa-cog fa-2x"></i>
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        <i class="fa fa-cog fa-2x"></i>
                             <span class="navbar-menu-text-size">系统设置</span>
-                            <i class="ace-icon fa fa-caret-down fa-2x"></i>
+                            <i class="ace-icon fa fa-caret-down"></i>
                         </a>
-                        <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-                            <li class="dropdown-content">
-                                <ul class="dropdown-menu dropdown-navbar navbar-pink">
-                                    <li>
-                                        <a href="discharge.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                    <i class="btn btn-xs no-hover btn-danger fa fa-plug"></i>
-                                                    放电排程
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="notification.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                    <i class="btn btn-xs no-hover btn-purple fa fa-bell"></i>
-                                                    告警配置
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="network.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                    <i class="btn btn-xs no-hover btn-primary fa fa-wrench"></i>
-                                                    网络配置
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="user.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                    <i class="btn btn-xs no-hover btn-pink fa fa-users"></i>
-                                                    个人配置
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="discharge.html">
+                                    <i class="ace-icon fa fa-plug"></i> 放电排程
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="notification.html">
+                                    <i class="ace-icon fa fa-bell"></i> 告警配置
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                             <li>
+                                <a href="network.html">
+                                    <i class="ace-icon fa fa-wrench"></i> 网络配置
+                                </a>
                             </li>
                         </ul>
                     </li>
@@ -127,11 +100,25 @@
                             <span class="navbar-menu-text-size">关於我们</span>
                         </a>
                     </li>
-                    <li class="login-btn red">
+                    <!--li class="login-btn red">
                         <a href="login.html">
                             <i class="fa fa-sign-in fa-2x"></i>
                             <span class="navbar-menu-text-size">登入系统<span>
                         </a>
+                    </li-->
+                    <li class="light-blue">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <img src="img/ironman.png">
+                            <span class="navbar-menu-text-size">Hi,使用者</span>
+                        <i class="ace-icon fa fa-caret-down"></i>
+                        </a>
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="login.html">
+                                    <i class="ace-icon fa fa-sign-in"></i> 登入系统
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -970,11 +957,11 @@
                                 </div>
                                 <div id="system-status" class="widget-body">
                                     <div class="widget-main">
-                                        <div class="easy-pie-chart percentage color-purple3" data-percent="68" data-size="160">
-                                            <span class="percent" id="main-percent">68</span><span class="unit">%</span>
+                                        <div class="easy-pie-chart percentage color-purple3" data-percent="81" data-size="160">
+                                            <span class="percent" id="main-percent">81</span><span class="unit">%</span>
                                         </div>
                                         <div id="system-hr" class="hr hr-double hr8"></div>
-                                        <div class="infobox-data infobox-purple2">
+                                        <div id="system-infobox-data" class="infobox-data infobox-purple2">
                                             <span class="infobox-data-number">正常</span>
                                         </div>
                                     </div>
@@ -989,14 +976,14 @@
                                 <div class="widget-body">
                                     <div id="history-label" class="widget-main">
                                         <label class="history-label">
-                                            <input type="radio" name="history" class="ace" value="voltage" checked/>
+                                            <input type="radio" name="history-chart-type" class="ace" value="voltage" checked/>
                                             <span class="lbl">历史电压</span>
                                         </label>
                                         <label class="history-label" style="margin-left:5%;">
-                                            <input type="radio" name="history" class="ace" value="current" />
+                                            <input type="radio" name="history-chart-type" class="ace" value="current" />
                                             <span class="lbl">历史电流</span>
                                         </label>
-                                        <div id="history-line-chart" style="height: 200px"></div>
+                                        <div id="history-morris-chart" style="height: 200px"></div>
                                     </div>
                                 </div>
                             </div>
@@ -1083,13 +1070,13 @@
                     <!-- #section:custom/widget-box -->
                     <div class="widget-box widget-color-blue">
                         <div class="widget-header">
-                            <h5 class="widget-title" id="system-module">系统XWZ / 模组1</h5>
+                            <h5 class="widget-title" id="module-name">系统XWZ / 模组1</h5>
                             <!-- #section:custom/widget-box.toolbar -->
                             <div class="widget-toolbar">
-                                <a id="pre-module" class="module-switch" data-action="back" style="margin-right:5px; color:#FFF">
+                                <a class="module-switch" data-action="back" style="margin-right:5px; color:#FFF">
                                     <i class="ace-icon fa fa-arrow-left"></i>
                                 </a>
-                                <a id="next-module" class="module-switch" data-action="next" style="margin-right:5px; color:#FFF">
+                                <a class="module-switch" data-action="next" style="margin-right:5px; color:#FFF">
                                     <i class="ace-icon fa fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -1210,10 +1197,10 @@
                             <div class="table-header background-color-redpurple">
                                 <h5 class="table-title">排定放电日程</h5>
                                 <div class="widget-toolbar">
-                                    <a id="pre-date" data-action="back" style="margin-right:5px; color:#FFF">
+                                    <a id="pre-discharge" data-action="back" style="margin-right:5px; color:#FFF">
                                         <i class="ace-icon fa fa-arrow-left"></i>
                                     </a>
-                                    <a id="next-date" data-action="next" style="margin-right:5px; color:#FFF">
+                                    <a id="next-discharge" data-action="next" style="margin-right:5px; color:#FFF">
                                         <i class="ace-icon fa fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1226,43 +1213,43 @@
                                     </tr>
                                 </thead>
                                 <tbody class="table-content">
-                                    <tr class="less-date">
+                                    <tr class="less-discharge">
                                         <td>1</td>
                                         <td>03/03/2015 10:00</td>
                                     </tr>
-                                    <tr class="less-date">
+                                    <tr class="less-discharge">
                                         <td>2</td>
                                         <td>04/03/2015 10:00</td>
                                     </tr>
-                                    <tr class="less-date">
+                                    <tr class="less-discharge">
                                         <td>3</td>
                                         <td>05/03/2015 10:00</td>
                                     </tr>
-                                    <tr class="less-date">
+                                    <tr class="less-discharge">
                                         <td>4</td>
                                         <td>06/03/2015 10:00</td>
                                     </tr>
-                                    <tr class="less-date">
+                                    <tr class="less-discharge">
                                         <td>5</td>
                                         <td>07/03/2015 10:00</td>
                                     </tr>
-                                    <tr class="more-date">
+                                    <tr class="more-discharge">
                                         <td>6</td>
                                         <td>08/03/2015 10:00</td>
                                     </tr>
-                                    <tr class="more-date">
+                                    <tr class="more-discharge">
                                         <td>7</td>
                                         <td>09/03/2015 10:00</td>
                                     </tr>
-                                    <tr class="more-date">
+                                    <tr class="more-discharge">
                                         <td>8</td>
                                         <td>10/03/2015 10:00</td>
                                     </tr>
-                                    <tr class="more-date">
+                                    <tr class="more-discharge">
                                         <td>9</td>
                                         <td>11/03/2015 10:00</td>
                                     </tr>
-                                    <tr class="more-date">
+                                    <tr class="more-discharge">
                                         <td>10</td>
                                         <td>12/03/2015 10:00</td>
                                     </tr>
@@ -1273,10 +1260,10 @@
                             <div class="table-header background-color-grey">
                                 <h5 class="table-title">即时告警</h5>
                                 <div class="widget-toolbar">
-                                    <a id="pre-error" data-action="back" style="margin-right:5px; color:#FFF">
+                                    <a id="pre-alarm" data-action="back" style="margin-right:5px; color:#FFF">
                                         <i class="ace-icon fa fa-arrow-left"></i>
                                     </a>
-                                    <a id="next-error" data-action="next" style="margin-right:5px; color:#FFF">
+                                    <a id="next-alarm" data-action="next" style="margin-right:5px; color:#FFF">
                                         <i class="ace-icon fa fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1292,70 +1279,70 @@
                                     </tr>
                                 </thead>
                                 <tbody class="table-content">
-                                    <tr class="less-error">
+                                    <tr class="less-alarm">
                                         <td>1</td>
                                         <td>基站 E</td>
                                         <td>通讯故障</td>
                                         <td>08/15/2014 21:36</td>
                                         <td></td>
                                     </tr>
-                                    <tr class="less-error">
+                                    <tr class="less-alarm">
                                         <td>2</td>
                                         <td>系统 2, 模组 C, 电池 1</td>
                                         <td>电阻错误</td>
                                         <td>08/10/2014 11:06</td>
                                         <td>0</td>
                                     </tr>
-                                    <tr class="less-error">
+                                    <tr class="less-alarm">
                                         <td>3</td>
                                         <td>基站 C</td>
                                         <td>通讯故障</td>
                                         <td>08/15/2014 21:36</td>
                                         <td></td>
                                     </tr>
-                                    <tr class="less-error">
+                                    <tr class="less-alarm">
                                         <td>4</td>
                                         <td>系统 4, 模组 D, 电池 4</td>
                                         <td>温度过高</td>
                                         <td>08/15/2014 21:36</td>
                                         <td>40</td>
                                     </tr>
-                                    <tr class="less-error">
+                                    <tr class="less-alarm">
                                         <td>5</td>
                                         <td>系统 4, 模组 C, 电池 5</td>
                                         <td>电流错误</td>
                                         <td>08/17/2014 00:20</td>
                                         <td>7.84A</td>
                                     </tr>
-                                    <tr class="more-error">
+                                    <tr class="more-alarm">
                                         <td>6</td>
                                         <td>系统 4, 模组 C, 电池 5</td>
                                         <td>电流过低</td>
                                         <td>08/19/2014 12:00</td>
                                         <td>7.84A</td>
                                     </tr>
-                                    <tr class="more-error">
+                                    <tr class="more-alarm">
                                         <td>7</td>
                                         <td>系统 6, 模组 A, 电池 3</td>
                                         <td>电流过高</td>
                                         <td>08/20/2014 13:02</td>
                                         <td>20A</td>
                                     </tr>
-                                    <tr class="more-error">
+                                    <tr class="more-alarm">
                                         <td>8</td>
                                         <td>系统 4, 模组 C, 电池 5</td>
                                         <td>电阻过低</td>
                                         <td>08/21/2014 17:48</td>
                                         <td>2Ω</td>
                                     </tr>
-                                    <tr class="more-error">
+                                    <tr class="more-alarm">
                                         <td>9</td>
                                         <td>基站 A</td>
                                         <td>通讯故障</td>
                                         <td>08/31/2014 15:03</td>
                                         <td></td>
                                     </tr>
-                                    <tr class="more-error">
+                                    <tr class="more-alarm">
                                         <td>10</td>
                                         <td>系统 4, 模组 C, 电池 5</td>
                                         <td>电压错误</td>

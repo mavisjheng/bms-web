@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
-    <title>系统纪录 - 电池检测系统</title>
+    <title>系统日志 - 电池检测系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <!-- bootstrap & fontawesome -->
     <link rel="stylesheet" href="css/ace/bootstrap.css" />
@@ -50,7 +50,7 @@
                 <a href="index.html" class="navbar-brand">
                     <span>
                         <img class="media-object" src="img/eLink_Logo_120.png" alt="e-Link Logo">
-                        电池检测系统
+                        通信站在线电池监控系统
                     </span>
                 </a>
             </div>
@@ -71,55 +71,28 @@
                         </a>
                     </li>
                     <li class="grey">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="fa fa-cog fa-2x"></i>
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        <i class="fa fa-cog fa-2x"></i>
                             <span class="navbar-menu-text-size">系统设置</span>
-                            <i class="ace-icon fa fa-caret-down fa-2x"></i>
+                            <i class="ace-icon fa fa-caret-down"></i>
                         </a>
-                        <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-                            <li class="dropdown-content">
-                                <ul class="dropdown-menu dropdown-navbar navbar-pink">
-                                    <li>
-                                        <a href="discharge.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-danger fa fa-plug"></i>
-                                                        放电排程
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="notification.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-purple fa fa-bell"></i>
-                                                        告警配置
-                                                    </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="network.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-primary fa fa-wrench"></i>
-                                                        网络配置
-                                                    </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="user.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-pink fa fa-users"></i>
-                                                        个人配置
-                                                    </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="discharge.html">
+                                    <i class="ace-icon fa fa-plug"></i> 放电排程
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="notification.html">
+                                    <i class="ace-icon fa fa-bell"></i> 告警配置
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                             <li>
+                                <a href="network.html">
+                                    <i class="ace-icon fa fa-wrench"></i> 网络配置
+                                </a>
                             </li>
                         </ul>
                     </li>
@@ -129,11 +102,31 @@
                             <span class="navbar-menu-text-size">关於我们</span>
                         </a>
                     </li>
-                    <li class="login-btn red">
+                    <!--li class="login-btn red">
                         <a href="login.html">
                             <i class="fa fa-sign-in fa-2x"></i>
                             <span class="navbar-menu-text-size">登入系统<span>
                         </a>
+                    </li-->
+                    <li class="light-blue">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <img src="img/yoda.png">
+                            <span class="navbar-menu-text-size">Hi,智翔</span>
+                        <i class="ace-icon fa fa-caret-down"></i>
+                        </a>
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="user.html">
+                                    <i class="ace-icon fa fa-users"></i> 个人配置
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="index.html">
+                                    <i class="ace-icon fa fa-power-off"></i> 登出
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -979,12 +972,12 @@
                                 <ul class="nav nav-tabs">
                                     <li class="active">
                                         <a data-toggle="tab" href="#alarm-log">
-                                            <i class="green ace-icon fa fa-exclamation-triangle bigger-120"></i> 系统告警纪录
+                                            <i class="green ace-icon fa fa-exclamation-circle bigger-120"></i> 系统告警纪录
                                         </a>
                                     </li>
                                     <li>
                                         <a data-toggle="tab" href="#user-log">
-                                            <i class="green ace-icon fa fa-users bigger-120"></i> 系统使用纪录
+                                            <i class="green ace-icon fa fa-archive bigger-120"></i> 系统使用纪录
                                         </a>
                                     </li>
                                 </ul>

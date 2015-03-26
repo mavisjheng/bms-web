@@ -18,7 +18,7 @@ $(document).ready(function() {
     });
 
     // dataTable
-    $('#cell-history-table').dataTable({
+    $('#cell-history').dataTable({
         lengthMenu: [5, 10, 20, 30, 50, "All"],
         length: false,
         ordering: true,
@@ -41,11 +41,19 @@ $(document).ready(function() {
         }
     });
 
-    // easy pie chart
+    // easy pie chart, 80% yellow, 50% red
     $('.easy-pie-chart.percentage').each(function() {
         var $box = $(this).closest('.infobox');
         $(this).easyPieChart({
-            barColor: '#87AA2A',
+            barColor: function colorChange(percentage) {
+                if (percentage < 50) {
+                    return '#E32815';
+                } else if (percentage > 49 && percentage < 80){
+                    return '#F8C119';
+                } else {
+                    return '#87AA2A';
+                }
+            },
             trackColor: '#E2E2E2',
             lineWidth: 20,
             scaleColor: false,
@@ -60,8 +68,9 @@ $(document).ready(function() {
     function updateStatus(percentage) {
         $('.easy-pie-chart.percentage span').text(percentage);
         $('.easy-pie-chart.percentage').data('easyPieChart').update(percentage);
+
     }
-    
+
     setInterval(function() {
         // percentage decreases 1 every 5 seconds until reach to 0%
         percentage--;
@@ -75,9 +84,9 @@ $(document).ready(function() {
     // update cell-history-morris-chart upon the type selection changes
     // morris chart
     var initData = prepareDemoCellData();
-    
+
     var graph = new Morris.Line({
-        element: 'cell-history-line-chart',
+        element: 'cell-history-morris-chart',
         data: initData,
         xkey: 'year',
         ykeys: ['value'],
@@ -89,13 +98,13 @@ $(document).ready(function() {
 
     function prepareDemoCellData() {
         var data = [];
-        for(var startYear = 2007; startYear <= 2014; startYear ++){
+        for (var startYear = 2007; startYear <= 2014; startYear++) {
             var currentYear = startYear;
 
             var max = 200;
             var min = 1;
 
-            var value = Math.floor(Math.random()*max+min);
+            var value = Math.floor(Math.random() * max + min);
             var dataPoint = {
                 year: currentYear.toString(),
                 value: value
@@ -114,4 +123,3 @@ $(document).ready(function() {
         }
     });
 });
-

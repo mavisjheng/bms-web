@@ -18,7 +18,7 @@ $(document).ready(function() {
     });
 
     // dataTable
-    $('.table').DataTable({
+    $('#alarm-log-table, #user-log-table').DataTable({
         dom: 'lTftip', // length, tableTools, filter, table, information, pagination
         lengthMenu: [
             [10, 25, 50, -1],

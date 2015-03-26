@@ -1,6 +1,6 @@
 $(document).ready(function() {
     //dataTable
-    $('#future-discharge-date, #past-discharge-date').dataTable({
+    $('#future-discharge-table, #past-discharge-table').dataTable({
         lengthMenu: [7, 10, 20, 30, 50, "All"],
         length: false,
         ordering: true,

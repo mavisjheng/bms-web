@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
-    <title>个人设定 - 电池检测系统</title>
+    <title>个人配置 - 电池检测系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <!-- bootstrap & fontawesome -->
     <link rel="stylesheet" href="css/ace/bootstrap.css" />
@@ -48,7 +48,7 @@
                 <a href="index.html" class="navbar-brand">
                     <span>
                         <img class="media-object" src="img/eLink_Logo_120.png" alt="e-Link Logo">
-                        电池检测系统
+                        通信站在线电池监控系统
                     </span>
                 </a>
             </div>
@@ -69,55 +69,28 @@
                         </a>
                     </li>
                     <li class="grey">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
                             <i class="fa fa-cog fa-2x"></i>
                             <span class="navbar-menu-text-size">系统设置</span>
-                            <i class="ace-icon fa fa-caret-down fa-2x"></i>
+                            <i class="ace-icon fa fa-caret-down"></i>
                         </a>
-                        <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-                            <li class="dropdown-content">
-                                <ul class="dropdown-menu dropdown-navbar navbar-pink">
-                                    <li>
-                                        <a href="discharge.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-danger fa fa-plug"></i>
-                                                        放电排程
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="notification.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-purple fa fa-bell"></i>
-                                                        告警配置
-                                                    </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="network.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-primary fa fa-wrench"></i>
-                                                        网络配置
-                                                    </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="user.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-pink fa fa-users"></i>
-                                                        个人配置
-                                                    </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="discharge.html">
+                                    <i class="ace-icon fa fa-plug"></i> 放电排程
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="notification.html">
+                                    <i class="ace-icon fa fa-bell"></i> 告警配置
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="network.html">
+                                    <i class="ace-icon fa fa-wrench"></i> 网络配置
+                                </a>
                             </li>
                         </ul>
                     </li>
@@ -127,11 +100,31 @@
                             <span class="navbar-menu-text-size">关於我们</span>
                         </a>
                     </li>
-                    <li class="login-btn red">
+                    <!--li class="login-btn red">
                         <a href="login.html">
                             <i class="fa fa-sign-in fa-2x"></i>
                             <span class="navbar-menu-text-size">登入系统<span>
                         </a>
+                    </li-->
+                    <li class="light-blue">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <img src="img/squidward.png">
+                            <span class="navbar-menu-text-size">Hi,智翔</span>
+                            <i class="ace-icon fa fa-caret-down"></i>
+                        </a>
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="user.html">
+                                    <i class="ace-icon fa fa-users"></i> 个人配置
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="index.html">
+                                    <i class="ace-icon fa fa-power-off"></i> 登出
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -140,7 +133,6 @@
         <!-- navbar-container -->
     </div>
     <!-- navbar -->
-
     <div class="main-container" id="main-container">
         <!-- sidebar -->
         <div id="sidebar" class="sidebar responsive">
@@ -148,8 +140,8 @@
             <div class="sidebar-shortcuts" id="sidebar-shortcuts">
                 <button id="edit-btn" class="btn btn-inverse btn-block">
                     <i class="ace-icon fa fa-edit bigger-130"></i><span class="show-box">编辑</span>
-                            <i class="ace-icon fa fa-plus bigger-130 tooltip-success edit-bar" data-rel="tooltip" data-placement="right" title="新增系统"></i>
-                            </button>
+                    <i class="ace-icon fa fa-plus bigger-130 tooltip-success edit-bar" data-rel="tooltip" data-placement="right" title="新增系统"></i>
+                </button>
             </div>
             <!-- system tree view -->
             <ul class="nav nav-list">
@@ -985,12 +977,12 @@
                                 </ul>
                                 <!-- tab content -->
                                 <div class="tab-content no-border">
+                                    <!-- user tab -->
                                     <div id="user-tab" class="tab-pane active">
                                         <div class="space-4"></div>
                                         <div class="row">
                                             <!-- user info box-->
-                                            <div class="col-sm-1"></div>
-                                            <div class="col-sm-5">
+                                            <div class="col-sm-4">
                                                 <div class="widget-box widget-color-green">
                                                     <div class="widget-header">
                                                         <h5 class="widget-title">个人资料</h5>
@@ -999,27 +991,27 @@
                                                         <div class="widget-main padding-12">
                                                             <form>
                                                                 <div class="form-group">
-                                                                    <label class="col-sm-3 text-center">
+                                                                    <label class="col-sm-3">
                                                                         帐号
                                                                     </label>
                                                                     <div class="col-sm-9 input-group">
-                                                                        <label class="text-center">
+                                                                        <label>
                                                                             shungyang@elink.com
                                                                         </label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label class="col-sm-3 text-center">
+                                                                    <label class="col-sm-3">
                                                                         姓名
                                                                     </label>
                                                                     <div class="col-sm-9 input-group">
-                                                                        <span class="input-group-addon"><i class="ace-icon fa fa-user"></i></span>
+                                                                        <span class="input-group-addon"><i class="ace-icon fa fa-male"></i></span>
                                                                         <input class="form-control" type="text" name="account-name" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label class="col-sm-3 text-center">
-                                                                        电子信箱
+                                                                    <label class="col-sm-3">
+                                                                        邮箱
                                                                     </label>
                                                                     <div class="col-sm-9 input-group">
                                                                         <span class="input-group-addon"><i class="ace-icon fa fa-envelope"></i></span>
@@ -1039,7 +1031,7 @@
                                             </div>
                                             <!-- /.user info box -->
                                             <!-- user password box -->
-                                            <div class="col-sm-5">
+                                            <div class="col-sm-4">
                                                 <div class="widget-box widget-color-green">
                                                     <div class="widget-header">
                                                         <h5 class="widget-title">修改密码</h5>
@@ -1048,19 +1040,19 @@
                                                         <div class="widget-main padding-12">
                                                             <form>
                                                                 <div class="form-group">
-                                                                    <label class="col-sm-3 text-center">
+                                                                    <label class="col-sm-4">
                                                                         目前密码
                                                                     </label>
-                                                                    <div class="col-sm-9 input-group">
+                                                                    <div class="col-sm-8 input-group">
                                                                         <span class="input-group-addon"><i class="ace-icon fa fa-unlock"></i></span>
                                                                         <input class="form-control" type="password" name="account-old-pwd" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label class="col-sm-3 text-center">
+                                                                    <label class="col-sm-4">
                                                                         新密码
                                                                     </label>
-                                                                    <div class="col-sm-9 input-group">
+                                                                    <div class="col-sm-8 input-group">
                                                                         <span class="input-group-addon"><i class="ace-icon fa fa-unlock-alt"></i></span>
                                                                         <input class="form-control" type="password" name="account-new-pwd" />
                                                                     </div>
@@ -1077,8 +1069,40 @@
                                                 </div>
                                             </div>
                                             <!-- /.user password box -->
+                                            <!-- subscribe widget box -->
+                                            <div class="col-sm-4">
+                                                <div class="widget-box widget-color-green">
+                                                    <div class="widget-header">
+                                                        <h5 class="widget-title">订阅告警通知</h5>
+                                                    </div>
+                                                    <div class="widget-body">
+                                                        <div class="widget-main padding-8">
+                                                            <form>
+                                                                <div class="form-group radio center">
+                                                                    <label>
+                                                                        <input type="radio" name="subscribe" class="ace" value="yes" />
+                                                                        <span class="lbl">&nbsp;订阅</span>
+                                                                    </label>
+                                                                    <label>
+                                                                        <input type="radio" name="subscribe" class="ace" value="no" />
+                                                                        <span class="lbl">&nbsp;取消订阅</span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="hr hr-12 hr-dotted"></div>
+                                                                <div class="center">
+                                                                    <button type="submit" class="btn btn-success btn-lg btn-white btn-round">
+                                                                        <i class="ace-icon fa fa-check-circle"></i><span class="bolder">&nbsp;确认</span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.subscribe widget box -->
                                         </div>
                                     </div>
+                                    <!-- /.user tab -->
                                 </div>
                                 <!-- /.tab content -->
                             </div>

@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
-    <title>放电设定 - 电池检测系统</title>
+    <title>放电排程 - 电池检测系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <!-- bootstrap & fontawesome -->
     <link rel="stylesheet" href="css/ace/bootstrap.css" />
@@ -17,11 +17,11 @@
     <!-- main styles -->
     <link rel="stylesheet" href="css/main.css" />
     <!--[if lte IE 9]>
-            <link rel="stylesheet" href="css/ace/ace-part2.css" class="ace-main-stylesheet" />
-        <![endif]-->
+        <link rel="stylesheet" href="css/ace/ace-part2.css" class="ace-main-stylesheet" />
+    <![endif]-->
     <!--[if lte IE 9]>
-          <link rel="stylesheet" href="css/ace/ace-ie.css" />
-        <![endif]-->
+        <link rel="stylesheet" href="css/ace/ace-ie.css" />
+    <![endif]-->
     <!-- inline styles related to this page -->
     <!-- ace settings handler -->
     <script src="js/ace/ace-extra.js"></script>
@@ -29,7 +29,7 @@
     <!--[if lte IE 8]>
         <script src="js/ace/html5shiv.js"></script>
         <script src="js/ace/respond.js"></script>
-        <![endif]-->
+    <![endif]-->
 </head>
 
 <body class="no-skin">
@@ -48,7 +48,7 @@
                 <a href="index.html" class="navbar-brand">
                     <span>
                         <img class="media-object" src="img/eLink_Logo_120.png" alt="e-Link Logo">
-                        电池检测系统
+                        通信站在线电池监控系统
                     </span>
                 </a>
             </div>
@@ -69,55 +69,28 @@
                         </a>
                     </li>
                     <li class="grey">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="fa fa-cog fa-2x"></i>
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        <i class="fa fa-cog fa-2x"></i>
                             <span class="navbar-menu-text-size">系统设置</span>
-                            <i class="ace-icon fa fa-caret-down fa-2x"></i>
+                            <i class="ace-icon fa fa-caret-down"></i>
                         </a>
-                        <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-                            <li class="dropdown-content">
-                                <ul class="dropdown-menu dropdown-navbar navbar-pink">
-                                    <li>
-                                        <a href="discharge.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-danger fa fa-plug"></i>
-                                                        放电排程
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="notification.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-purple fa fa-bell"></i>
-                                                        告警配置
-                                                    </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="network.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-primary fa fa-wrench"></i>
-                                                        网络配置
-                                                    </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="user.html">
-                                            <div class="clearfix">
-                                                <span class="pull-left">
-                                                        <i class="btn btn-xs no-hover btn-pink fa fa-users"></i>
-                                                        个人配置
-                                                    </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="discharge.html">
+                                    <i class="ace-icon fa fa-plug"></i> 放电排程
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="notification.html">
+                                    <i class="ace-icon fa fa-bell"></i> 告警配置
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                             <li>
+                                <a href="network.html">
+                                    <i class="ace-icon fa fa-wrench"></i> 网络配置
+                                </a>
                             </li>
                         </ul>
                     </li>
@@ -127,11 +100,31 @@
                             <span class="navbar-menu-text-size">关於我们</span>
                         </a>
                     </li>
-                    <li class="login-btn red">
+                    <!--li class="login-btn red">
                         <a href="login.html">
                             <i class="fa fa-sign-in fa-2x"></i>
                             <span class="navbar-menu-text-size">登入系统<span>
                         </a>
+                    </li-->
+                    <li class="light-blue">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <img src="img/peter.png">
+                            <span class="navbar-menu-text-size">Hi,智翔</span>
+                        <i class="ace-icon fa fa-caret-down"></i>
+                        </a>
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="user.html">
+                                    <i class="ace-icon fa fa-users"></i> 个人配置
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="index.html">
+                                    <i class="ace-icon fa fa-power-off"></i> 登出
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -981,10 +974,10 @@
                                     <div class="space-4"></div>
                                     <div class="widget-box widget-color-blue3">
                                         <div class="widget-header">
-                                            <h4 class="widget-title">即时放电设定</h4>
+                                            <h5 class="widget-title">即时放电设定</h5>
                                         </div>
                                         <div class="widget-body">
-                                            <div class="widget-main padding-6">
+                                            <div class="widget-main padding-2">
                                                 <form>
                                                     <div class="form-group">
                                                         <label class="col-sm-4 text-left">
@@ -1009,8 +1002,8 @@
                                                         <label class="col-sm-4 text-left">CC数设定</label>
                                                         <input type="text" name="on-demand-cc" placeholder="1CC &#61; 15分钟" />
                                                     </div>
-                                                    <div class="center">
-                                                        <button type="submit" class="btn btn-purple btn-white btn-round">
+                                                    <div class="center discharge-submit">
+                                                        <button type="submit" class="btn btn-purple btn-lg btn-white btn-round">
                                                             <i class="ace-icon fa fa-check-circle"></i><span class="bolder">&nbsp;确认</span>
                                                         </button>
                                                     </div>
@@ -1025,10 +1018,10 @@
                                     <div class="space-4"></div>
                                     <div class="widget-box widget-color-red3">
                                         <div class="widget-header">
-                                            <h4 class="widget-title">重复放电设定</h4>
+                                            <h5 class="widget-title">重复放电设定</h5>
                                         </div>
                                         <div class="widget-body">
-                                            <div class="widget-main padding-6">
+                                            <div class="widget-main padding-2">
                                                 <form>
                                                     <div class="form-group">
                                                         <label class="col-sm-4 text-center">
@@ -1060,8 +1053,8 @@
                                                         <label class="col-sm-4 text-center">CC数设定</label>
                                                         <input type="text" name="repeat-demand-cc" placeholder="1CC &#61; 15分钟" />
                                                     </div>
-                                                    <div class="center">
-                                                        <button type="submit" class="btn btn-danger btn-white btn-round">
+                                                    <div class="center discharge-submit">
+                                                        <button type="submit" class="btn btn-danger btn-lg btn-white btn-round">
                                                             <i class="ace-icon fa fa-check-circle"></i><span class="bolder">&nbsp;确认</span>
                                                         </button>
                                                     </div>
@@ -1075,28 +1068,29 @@
                         </div>
                         <!-- /. on demand and future discharge setting -->
                         <!-- future/past discharge date -->
+                        <div class="space-6"></div>
                         <div class="col-sm-6">
                             <div class="tabbable">
                                 <!-- tab header icon -->
-                                <ul class="nav nav-tabs tab-size-bigger">
+                                <ul class="nav nav-tabs">
                                     <li class="active">
-                                        <a data-toggle="tab" href="#future-date"><span class="bolder">未来放电</span></a>
+                                        <a data-toggle="tab" href="#future-discharge"><span class="bolder font-15">未来放电</span></a>
                                     </li>
                                     <li>
-                                        <a data-toggle="tab" href="#past-date"><span class="bolder">过去放电</span></a>
+                                        <a data-toggle="tab" href="#past-discharge"><span class="bolder font-15">过去放电</span></a>
                                     </li>
                                 </ul>
                                 <!-- tab content -->
-                                <div class="tab-content">
+                                <div class="tab-content" id="discharge-tables">
                                     <!-- future-discharge-date tab -->
-                                    <div id="future-date" class="tab-pane active">
+                                    <div id="future-discharge" class="tab-pane active">
                                         <div>
                                             <div class="table-header">
                                                 <div class="widget-toolbar no-border">
                                                     <a data-action="settings" href="#"><i class="ace-icon fa fa-cog blue"></i></a>
                                                 </div>
                                             </div>
-                                            <table id="future-discharge-date" class="table table-striped table-bordered table-hover">
+                                            <table id="future-discharge-table" class="table table-striped table-bordered table-hover">
                                                 <thead>
                                                     <tr>
                                                         <th>已排定放电日</th>
@@ -1169,14 +1163,14 @@
                                     </div>
                                     <!-- /.future-discharge-date tab -->
                                     <!-- past-discharge-date tab -->
-                                    <div id="past-date" class="tab-pane">
+                                    <div id="past-discharge" class="tab-pane">
                                         <div>
                                             <div class="table-header">
                                                 <div class="widget-toolbar no-border">
                                                     <a data-action="settings" href="#"><i class="ace-icon fa fa-cog blue"></i></a>
                                                 </div>
                                             </div>
-                                            <table id="past-discharge-date" class="table table-striped table-bordered table-hover">
+                                            <table id="past-discharge-table" class="table table-striped table-bordered table-hover">
                                                 <thead>
                                                     <tr>
                                                         <th>已执行放电纪录</th>
