@@ -4,7 +4,7 @@
 }
 
 #system-hr {
-  background-color: #5f47b0;
+  background-color: #77ab59;
 }
 
 #system-status .percentage .percent {
@@ -107,6 +107,16 @@
 .color-green {
   color: #2e8965;
   border-color: #2e8965;
+}
+
+.color-green3 {
+  color: rgb(41, 147, 41);
+  border-color: rgb(41, 147, 41);
+}
+
+.color-green4 {
+  color: rgb(41, 147, 41);
+  border-color: rgb(41, 147, 41);
 }
 
 .color-blue4 {
@@ -395,8 +405,12 @@
   color: white;
 }
 
-.bkgd-green {
+.bkgd-green1 {
   background: #459171;
+}
+
+.bkgd-green2 {
+  background: #82af6f;
 }
 
 .edit-blue {
@@ -409,8 +423,7 @@
 /*----- common style items end -----*/
 
 
-/*----- two discharge date tables @ discharge.html begins -----*/
-
+/*----- discharge date tables @ discharge.html begins -----*/
 #future-discharge-table > tbody > tr > td,
 #past-discharge-table > tbody > tr > td {
   text-align: center;
@@ -461,11 +474,18 @@
 #past-discharge .table-header {
   margin-bottom: 0px;
 }
-/*----- discharge-date-table @ discharge.html ends -----*/
+/*----- discharge-date-tables @ discharge.html ends -----*/
 
 
 /*----- cell page begins -----*/
-.pie-info {
+#pie-info {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2d5a6b;
+  font-family: sans-serif;
+}
+
+#pie-infos {
   font-size: 20px;
   font-weight: bold;
   color: #2d5a6b;
@@ -491,6 +511,13 @@
 }
 
 .pie-num {
+  font-size: 24px;
+  font-weight: bold;
+  color: #606060;
+  font-family: sans-serif;
+}
+
+.pie-nums {
   font-size: 18px;
   font-weight: bold;
   color: #606060;
@@ -499,6 +526,11 @@
 
 .page-content > .row .minus-mgbm-8 {
   margin-bottom: -8px;
+}
+
+#cell-alarm-setting td,
+#module-alarm-setting td {
+  text-align: center;
 }
 /*----- module page ends here -----*/
 
@@ -573,7 +605,25 @@
 #system-infobox-data.infobox-data {
   margin-top: 0%;
 }
+
+.infobox-green3 {
+  color: green;    /* system state */
+}
+
+input[type=radio].ace + .lbl.bold {
+  font-weight: bold;   /* 历史电压电流 */
+}
+
+#index-discharge-date th,
+#index-alarm-log th {
+  text-align: center;
+}
 /*----- index page table ends -----*/
 
 
 
+/*----- notification page begins here -----*/
+#system-alarm-setting td {
+  text-align: center;
+}
+/*----- notification page ends here -----*/

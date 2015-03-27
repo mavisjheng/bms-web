@@ -8,7 +8,7 @@ $(document).ready(function() {
     });
 
     // easy-pie-chart
-    $('.easy-pie-chart.color-purple3').each(function() {
+    $('.easy-pie-chart.color-green3').each(function() {
         var $box = $(this).closest('.infobox');
         var barColor = $(this).css('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') : 'rgba(255,255,255,0.95)');
         var trackColor = barColor == 'rgba(255,255,255,0.95)' ? 'rgba(255,255,255,0.25)' : '#E2E2E2';
@@ -16,11 +16,11 @@ $(document).ready(function() {
         $(this).easyPieChart({
             barColor: function colorChange(percentage) {
                 if (percentage < 50) {
-                    return '#E32815';
+                    return '#d4301d';
                 } else if (percentage > 49 && percentage < 80){
-                    return '#F8C119';
+                    return '#f6a509';
                 } else {
-                    return '#5f47b0';
+                    return '#77ab59';
                 }
             },
             trackColor: trackColor,
@@ -32,7 +32,7 @@ $(document).ready(function() {
         });
     });
 
-    $('.easy-pie-chart.color-blue4').each(function() {
+    $('.easy-pie-chart.color-green4').each(function() {
         var $box = $(this).closest('.infobox');
         var barColor = $(this).css('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') : 'rgba(255,255,255,0.95)');
         var trackColor = barColor == 'rgba(255,255,255,0.95)' ? 'rgba(255,255,255,0.25)' : '#E2E2E2';
@@ -40,11 +40,11 @@ $(document).ready(function() {
         $(this).easyPieChart({
             barColor: function colorChange(percentage) {
                 if (percentage < 50) {
-                    return '#E32815';
+                    return '#d4301d';
                 } else if (percentage > 49 && percentage < 80){
-                    return '#F8C119';
+                    return '#f6a509';
                 } else {
-                    return '#A0C8FA';
+                    return '#77ab59';
                 }
             },
             trackColor: trackColor,
@@ -63,7 +63,7 @@ $(document).ready(function() {
 
     function updateStatus(percentage) {
         $('.easy-pie-chart.percentage #main-percent').text(percentage);
-        $('.easy-pie-chart.percentage.color-purple3').data('easyPieChart').update(percentage);
+        $('.easy-pie-chart.percentage.color-green3').data('easyPieChart').update(percentage);
     }
 
     setInterval(function() {
@@ -105,7 +105,7 @@ $(document).ready(function() {
         labels: ['平均'],
         ymin: 0,
         ymax: 200,
-        lineColors: ['green']
+        lineColors: ['#7e6eb0']
     });
 
     function prepareDemoCellData() {

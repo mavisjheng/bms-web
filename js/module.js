@@ -5,9 +5,9 @@ $(document).ready(function() {
         $(this).easyPieChart({
             barColor: function colorChange(percentage) {
                 if (percentage < 50) {
-                    return '#E32815';
+                    return '#d4301d';
                 } else if (percentage > 49 && percentage < 80){
-                    return '#F8C119';
+                    return '#f6a509';
                 } else {
                     return '#69aa46';
                 }

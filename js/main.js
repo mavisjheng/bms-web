@@ -9,9 +9,9 @@ $(document).ready(function() {
     $('[data-rel=tooltip]').tooltip();
 
     // breadcrumbs
-    $('ul li a').click(function() {
+    /*$('ul.submenu li a').click(function() {
         var currentTabText = $(this).text();
-        $('.breadcrumbs li.active').text(currentTabText);
-    });
+        $('.breadcrumb li.active').text(currentTabText);
+    });*/
 
 });
